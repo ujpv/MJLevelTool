@@ -55,7 +55,7 @@ void Date::set(int month, int day, int year, int hour24, int minute, int second,
 	//get proper day light savings.
 
 	time_t loc = time(NULL);
-	struct tm tmLoc = *localtime(&loc);
+    struct tm tmLoc = *localtime(&loc);
 	//std::cout<<"tmLoc.tm_isdst = "<<tmLoc.tm_isdst<<std::endl;
 	tmTime.tm_isdst = tmLoc.tm_isdst;
 
@@ -162,7 +162,7 @@ void Date::setTimeFromXMLConvention(const std::string& timeString)
 	int month, day, year, hour24, minute, second;
 
 	// parse date string.  E.g.  2011-09-25T02:31:04Z
-	sscanf(timeString.c_str(), "%4d-%2d-%2dT%2d:%2d:%2dZ", &year, &month, &day, &hour24, &minute, &second);
+    sscanf_s(timeString.c_str(), "%4d-%2d-%2dT%2d:%2d:%2dZ", &year, &month, &day, &hour24, &minute, &second);
 	set(month, day, year, hour24, minute, second, true);
 
 }

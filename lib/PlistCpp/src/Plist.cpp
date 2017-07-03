@@ -698,7 +698,7 @@ int countArray(const array_type& array)
 
 void readPlist(std::istream& stream, boost::any& message)
 {
-	int start = stream.tellg();
+    int start = static_cast<int>(stream.tellg());
 	stream.seekg(0, std::ifstream::end);
 	int size = ((int) stream.tellg()) - start;
 	if(size > 0)
