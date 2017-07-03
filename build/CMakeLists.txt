@@ -19,11 +19,18 @@ include_directories(
     "${Plist_DIR}/include"
     "${Plist_DIR}/src"
     "${Json_DIR}"
+    "../src"
     )
 
 add_executable(${PROJECT_NAME}
     ${Json_Sources}
     ${Plist_Sources}
+    "../src/Exceptions/Exceptions.cpp"
+    "../src/Exceptions/Exceptions.h"
+    "../src/LevelObject/LevelObject.h"
+    "../src/LevelObject/LevelObject.cpp"
+    "../src/LevelObject/Chip.h"
+    "../src/LevelObject/Chip.cpp"
     "../src/Config/ToolConfig.h"
     "../src/Config/ToolConfig.cpp"
     "../src/main.cpp"
