@@ -2,6 +2,8 @@
 
 #include "Exceptions/Exceptions.h"
 #include "Chip.h"
+#include <cmath>
+#include <cfloat>
 
 //static const std::string kChipLayers = "Layers";
 //static const std::string kChipsLayerEdge = "ChipsLayerEdge";

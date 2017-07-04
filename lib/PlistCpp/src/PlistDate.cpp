@@ -162,7 +162,7 @@ void Date::setTimeFromXMLConvention(const std::string& timeString)
 	int month, day, year, hour24, minute, second;
 
 	// parse date string.  E.g.  2011-09-25T02:31:04Z
-    sscanf_s(timeString.c_str(), "%4d-%2d-%2dT%2d:%2d:%2dZ", &year, &month, &day, &hour24, &minute, &second);
+    sscanf(timeString.c_str(), "%4d-%2d-%2dT%2d:%2d:%2dZ", &year, &month, &day, &hour24, &minute, &second);
 	set(month, day, year, hour24, minute, second, true);
 
 }
