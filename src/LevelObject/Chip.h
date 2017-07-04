@@ -4,6 +4,8 @@
 #include <set>
 #include <Plist.hpp>
 
+#include "Utils/Utils.h"
+
 enum MJChipType
 {
   MJChipTypeStandard = 0,
@@ -14,25 +16,60 @@ enum MJChipType
   MJChipTypeUnknown,
 };
 
+enum MJDirection
+{
+  Top,
+  Bottom,
+  Left,
+  Right
+};
+
 class MJChip
 {
 public:
-    MJChip();
-    bool InitWithParameters
+  MJChip();
+  bool InitWithParameters(
+      const boost::any * _params,
+      int                _zLayer
+    );
+
+  void SetTypeValue(
+      const std::string & _value
+    );
+
+  const std::string & GetTypeValue() const;
+
+  MJChipType GetType() const;
+
+  const SPoint2d & GetPosition() const;
+
+  int GetZOrder() const;
+
+  void SetupNeighbors(
+      std::vector<MJChip> & _chips
+    );
+
+  std::set<MJChip *> & GetNeighbors(
+      MJDirection _direction
+    );
 
 private:
-    std::set<MJChip *> m_rNeighborsTop;
-    std::set<MJChip *> m_rNeighborsLeft;
-    std::set<MJChip *> m_rNeighborsRight;
-    std::set<MJChip *> m_rNeighborsBottom;
+  bool SetPosition(
+      const Plist::dictionary_type * _params
+    );
 
-    MJChipType  m_eChipType;
-    std::string m_eChipTypeValue;
+private:
+  std::set<MJChip *> m_rNeighborsTop;
+  std::set<MJChip *> m_rNeighborsLeft;
+  std::set<MJChip *> m_rNeighborsRight;
+  std::set<MJChip *> m_rNeighborsBottom;
 
-    struct
-    {
-      float x; float y;
-    } m_position;
+  int         m_eChipType; // MJChipType
+  std::string m_sChipTypeValue;
+  std::string m_sId; // TODO!
+
+  SPoint2d m_position;
+  int      m_zLayer;
 };
 
 #endif // CHIP_H

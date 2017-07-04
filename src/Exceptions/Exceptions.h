@@ -3,7 +3,7 @@
 
 #include <stdexcept>
 
-class MJToolException : public std::exception
+class MJToolException : public std::runtime_error
 {
 public:
   MJToolException(

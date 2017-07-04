@@ -25,6 +25,10 @@ include_directories(
 add_executable(${PROJECT_NAME}
     ${Json_Sources}
     ${Plist_Sources}
+    "../src/Utils/Utils.h"
+    "../src/Utils/Utils.cpp"
+    "../src/Utils/Constants.h"
+    "../src/Utils/Constants.cpp"
     "../src/Exceptions/Exceptions.cpp"
     "../src/Exceptions/Exceptions.h"
     "../src/LevelObject/LevelObject.h"
@@ -33,6 +37,11 @@ add_executable(${PROJECT_NAME}
     "../src/LevelObject/Chip.cpp"
     "../src/Config/ToolConfig.h"
     "../src/Config/ToolConfig.cpp"
+    "../src/Randomizer/Randomizer.cpp"
+    "../src/Randomizer/Randomizer.h"
+    "../src/Randomizer/RandomWrapper.h"
+    "../src/Randomizer/Match3Random.cpp"
+    "../src/Randomizer/Match3Random.h"
     "../src/main.cpp"
     )
 

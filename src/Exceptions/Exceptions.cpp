@@ -2,6 +2,6 @@
 
 MJToolException::MJToolException(
     const std::string & _what_arg
-  ): std::exception(_what_arg.c_str())
+  ): std::runtime_error(_what_arg.c_str())
 {
 }
