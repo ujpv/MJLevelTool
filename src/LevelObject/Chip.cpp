@@ -14,6 +14,7 @@ static const std::string kChipPosition = "Position";
 //static const std::string kDepth = "Depth";
 
 static const float POSITION_ACCURACY = 0.1f;
+static const float POSITION_CENTER =   0.5f;
 
 MJChip::MJChip()
   : m_eChipType(MJChipTypeUnknown)
@@ -110,11 +111,11 @@ void MJChip::SetupNeighbors(
       if (m_rNeighborsRight.size() < 2)
       {
         if (
-            (fDiffX <= 0.0f && fDiffX >= -2 * POSITION_ACCURACY) &&
+            (fDiffX >= -2 * POSITION_ACCURACY && fDiffX <= 0.0f) &&
             (
               (fDiffY1 <= POSITION_ACCURACY && fDiffY1 >= -POSITION_ACCURACY) ||
               (fDiffY2 <= POSITION_ACCURACY && fDiffY2 >= -POSITION_ACCURACY) ||
-              (chipY - chip.GetPosition().y <= FLT_EPSILON)
+              (std::abs(chipY - chip.GetPosition().y) <= FLT_EPSILON)
             )
            )
         {
@@ -128,7 +129,55 @@ void MJChip::SetupNeighbors(
     {
       if (m_rNeighborsTop.size() < 4)
       {
+        float fDiffX1 = chipX - chip.GetPosition().x - POSITION_CENTER;
+        float fDiffX2 = chipX - chip.GetPosition().x + POSITION_CENTER;
+        float fDiffY1 = chipY - chip.GetPosition().y - POSITION_CENTER;
+        float fDiffY2 = chipY - chip.GetPosition().y + POSITION_CENTER;
 
+        if (
+            (
+              (fDiffX1 <= POSITION_ACCURACY && fDiffX1 >= -POSITION_ACCURACY) ||
+              (fDiffX2 <= POSITION_ACCURACY && fDiffX2 >= -POSITION_ACCURACY) ||
+              (std::abs(chipX - chip.GetPosition().x) <= FLT_EPSILON)
+            ) &&
+            (
+              (fDiffY1 <= POSITION_ACCURACY && fDiffY1 >= -POSITION_ACCURACY) ||
+              (fDiffY2 <= POSITION_ACCURACY && fDiffY2 >= -POSITION_ACCURACY) ||
+              (std::abs(chipY - chip.GetPosition().y) <= FLT_EPSILON)
+            )
+           )
+        {
+          m_rNeighborsTop.insert(&chip);
+          chip.GetNeighbors(Bottom).insert(this);
+        }
+      }
+    }
+    else
+    if (m_zLayer - 1 == chip.GetZOrder())
+    {
+      if (m_rNeighborsBottom.size() < 4)
+      {
+        float fDiffX1 = chipX - chip.GetPosition().x - POSITION_CENTER;
+        float fDiffX2 = chipX - chip.GetPosition().x + POSITION_CENTER;
+        float fDiffY1 = chipY - chip.GetPosition().y - POSITION_CENTER;
+        float fDiffY2 = chipY - chip.GetPosition().y + POSITION_CENTER;
+
+        if (
+            (
+              (fDiffX1 <= 0.1f && fDiffX1 >= -0.1f) ||
+              (fDiffX2 <= 0.1f && fDiffX2 >= -0.1f) ||
+              (std::abs(chipX  - chip.GetPosition().x) <= FLT_EPSILON)
+             ) &&
+            (
+              (fDiffY1 <= 0.1f && fDiffY1 >= -0.1f) ||
+              (fDiffY2 <= 0.1f && fDiffY2 >= -0.1f) ||
+              (std::abs(chipY - chip.GetPosition().y) <= FLT_EPSILON)
+            )
+           )
+        {
+          m_rNeighborsBottom.insert(&chip);
+          chip.GetNeighbors(Top).insert(this);
+        }
       }
     }
   }
