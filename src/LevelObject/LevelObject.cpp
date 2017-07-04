@@ -16,7 +16,7 @@ void MJLevelObject::initWithDictionary(
   {
     Plist::readPlist(_levelFileName.c_str(), params);
   }
-  catch (Plist::Error e)
+  catch (Plist::Error & e)
   {
     throw MJToolException("Can't read " + _levelFileName + ". Reason: \n" + e.what());
   }

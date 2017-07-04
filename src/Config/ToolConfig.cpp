@@ -63,9 +63,9 @@ void CToolConfig::Init(
 
       m_useCFG.push_back(it->asString());
     }
-    catch (Json::LogicError e)
+    catch (Json::LogicError & e)
     {
-      throw MJToolException("Can't parse block: \n" + it->toStyledString());
+      throw MJToolException("Can't parse block: \n" + it->toStyledString() + "\nReason: " + e.what());
     }
   }
 
@@ -107,9 +107,9 @@ void CToolConfig::Init(
 
       m_levelsForCheck.push_back(it->asString());
     }
-    catch (Json::LogicError e)
+    catch (Json::LogicError & e)
     {
-      throw MJToolException("Can't parse block: \n" + it->toStyledString());
+      throw MJToolException("Can't parse block: \n" + it->toStyledString() + "Reason:" + e.what());
     }
   }
 }
