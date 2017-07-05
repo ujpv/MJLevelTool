@@ -1,4 +1,5 @@
 #include "Utils.h"
+#include <sstream>
 
 bool PlistUtils::getIntForKey(
     const Plist::dictionary_type & _dict,
@@ -66,4 +67,50 @@ const Plist::array_type * PlistUtils::getArrayForIndex(
   )
 {
   return boost::any_cast<Plist::array_type>(&_array[_index]);
+}
+
+bool ParsePoint2d(
+    const std::string & _array,
+    SPoint2d &          _point
+  )
+{
+  size_t nPosLeft  = _array.find('{');
+  size_t nPosRight = _array.find('}');
+
+  if (nPosLeft == std::string::npos || nPosRight == std::string::npos || nPosLeft > nPosRight)
+    return false;
+
+  std::stringstream ss(_array.substr(nPosLeft + 1, nPosRight - nPosLeft - 1));
+  std::string trash;
+
+  float x = 0;
+  float y = 0;
+
+  ss >> x;
+  if (ss.fail())
+    return false;
+  ss >> trash;
+  if (ss.fail() || trash != ",")
+    return false;
+  ss >> y;
+  if (ss.fail())
+    return false;
+
+  _point.x = x;
+  _point.y = y;
+  return true;
+}
+
+bool PlistUtils::getStringForIndex(
+    const Plist::array_type & _array,
+    int                       _index,
+    std::string &             _value
+  )
+{
+  const Plist::string_type * pValue = boost::any_cast<Plist::string_type>(&_array[_index]);
+  if (!pValue)
+    return false;
+
+  _value = *pValue;
+  return true;
 }

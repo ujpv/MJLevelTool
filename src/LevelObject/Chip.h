@@ -69,7 +69,7 @@ private:
   std::string m_sId; // TODO!
 
   SPoint2d m_position;
-  int      m_zLayer;
+  int      m_zOreder;
 };
 
 #endif // CHIP_H

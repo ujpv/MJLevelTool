@@ -2,7 +2,10 @@
 #include "LevelObject.h"
 #include "Utils/Constants.h"
 
-static const std::string kChipLayers = "Layers";;
+static const std::string kChipLayers = "Layers";
+static const std::string kFirstGoldenChipPosition = "FirstGoldenChipPosition";
+static const std::string kSecondGoldenChipPosition = "SecondGoldenChipPosition";
+static const std::string kMetadata = "Metadata";
 
 MJLevelObject::MJLevelObject()
 {}
@@ -55,6 +58,47 @@ void MJLevelObject::initWithDictionary(
 
   for (MJChip & chip: m_levelChips)
     chip.SetupNeighbors(m_levelChips);
+
+  const Plist::dictionary_type * pMetadata = PlistUtils::getDictForKey(params, kMetadata);
+  if (!pMetadata)
+    throw MJToolException("There is no " + kMetadata + " section");
+
+  const Plist::array_type * pFirstGoldenChipPositions = PlistUtils::getArrayForKey(*pMetadata, kFirstGoldenChipPosition);
+  const Plist::array_type * pSecondGoldenChipPositions = PlistUtils::getArrayForKey(*pMetadata, kSecondGoldenChipPosition);
+
+  if (!pFirstGoldenChipPositions || pFirstGoldenChipPositions->empty() ||
+      !pSecondGoldenChipPositions || pSecondGoldenChipPositions->empty())
+  {
+    throw MJToolException("Golden positions not specified");
+  }
+
+  m_firstGoldenChipPositions.clear();
+  m_secondGoldenChipPositions.clear();
+  for (int i = 0; pFirstGoldenChipPositions->size(); ++i)
+  {
+    std::string sPosition;
+    if (!PlistUtils::getStringForIndex(*pFirstGoldenChipPositions, i, sPosition))
+      throw MJToolException("Golden positions not specified");
+
+    SPoint2d point;
+    if (!ParsePoint2d(sPosition, point))
+      throw MJToolException("Can't parse first gold ship #" + std::to_string(i));
+
+    m_firstGoldenChipPositions.push_back(point);
+  }
+
+  for (int i = 0; pSecondGoldenChipPositions->size(); ++i)
+  {
+    std::string sPosition;
+    if (!PlistUtils::getStringForIndex(*pSecondGoldenChipPositions, i, sPosition))
+      throw MJToolException("Golden positions not specified");
+
+    SPoint2d point;
+    if (!ParsePoint2d(sPosition, point))
+      throw MJToolException("Can't parse first gold ship #" + std::to_string(i));
+
+    m_secondGoldenChipPositions.push_back(point);
+  }
 }
 
 void MJLevelObject::Clear()

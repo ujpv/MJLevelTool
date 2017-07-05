@@ -9,6 +9,11 @@ struct SPoint2d
   float y;
 };
 
+bool ParsePoint2d(
+    const std::string & _array,
+    SPoint2d &          _point
+  );
+
 namespace PlistUtils
 {
   bool getIntForKey(
@@ -21,6 +26,12 @@ namespace PlistUtils
       const Plist::dictionary_type & _dict,
       const std::string &            _key,
       std::string &                  _value
+    );
+
+  bool getStringForIndex(
+      const Plist::array_type & _array,
+      int                       _index,
+      std::string &             _value
     );
 
   const Plist::dictionary_type * getDictForKey(

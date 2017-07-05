@@ -19,6 +19,9 @@ private:
   MJRandomizer        m_randomiser;
   std::vector<MJChip> m_levelChips;
   std::set<MJChip *>  m_startChips;
+
+  std::vector<SPoint2d> m_firstGoldenChipPositions;
+  std::vector<SPoint2d> m_secondGoldenChipPositions;
 };
 
 #endif // LEVELOBJECT_H

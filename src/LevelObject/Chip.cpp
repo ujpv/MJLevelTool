@@ -37,7 +37,7 @@ bool MJChip::InitWithParameters(
   if (!SetPosition(params))
     return false;
 
-  m_zLayer = _zLayer;
+  m_zOreder= _zLayer;
 
   return true;
 }
@@ -66,7 +66,7 @@ const SPoint2d &MJChip::GetPosition() const
 
 int MJChip::GetZOrder() const
 {
-  return m_zLayer;
+  return m_zOreder;
 }
 
 void MJChip::SetupNeighbors(
@@ -86,7 +86,7 @@ void MJChip::SetupNeighbors(
     if (&chip == this)
       continue;
 
-    if (m_zLayer == chip.GetZOrder())
+    if (m_zOreder == chip.GetZOrder())
     {
       float fDiffX  = chipX - chip.GetPosition().x;
       float fDiffY1 = chipY - chip.GetPosition().y - 0.5f;
@@ -125,7 +125,7 @@ void MJChip::SetupNeighbors(
       }
     }
     else
-    if (m_zLayer + 1 == chip.GetZOrder())
+    if (m_zOreder + 1 == chip.GetZOrder())
     {
       if (m_rNeighborsTop.size() < 4)
       {
@@ -153,7 +153,7 @@ void MJChip::SetupNeighbors(
       }
     }
     else
-    if (m_zLayer - 1 == chip.GetZOrder())
+    if (m_zOreder - 1 == chip.GetZOrder())
     {
       if (m_rNeighborsBottom.size() < 4)
       {
@@ -164,13 +164,13 @@ void MJChip::SetupNeighbors(
 
         if (
             (
-              (fDiffX1 <= 0.1f && fDiffX1 >= -0.1f) ||
-              (fDiffX2 <= 0.1f && fDiffX2 >= -0.1f) ||
+              (fDiffX1 <= POSITION_ACCURACY && fDiffX1 >= -POSITION_ACCURACY) ||
+              (fDiffX2 <= POSITION_ACCURACY && fDiffX2 >= -POSITION_ACCURACY) ||
               (std::abs(chipX  - chip.GetPosition().x) <= FLT_EPSILON)
              ) &&
             (
-              (fDiffY1 <= 0.1f && fDiffY1 >= -0.1f) ||
-              (fDiffY2 <= 0.1f && fDiffY2 >= -0.1f) ||
+              (fDiffY1 <= POSITION_ACCURACY && fDiffY1 >= -POSITION_ACCURACY) ||
+              (fDiffY2 <= POSITION_ACCURACY && fDiffY2 >= -POSITION_ACCURACY) ||
               (std::abs(chipY - chip.GetPosition().y) <= FLT_EPSILON)
             )
            )
@@ -207,31 +207,5 @@ bool MJChip::SetPosition(
   if (!_params || !PlistUtils::getStringForKey(*_params, kChipPosition, value))
     return false;
 
-  size_t nPosLeft  = value.find('{');
-  size_t nPosRight = value.find('}');
-
-  if (nPosLeft == std::string::npos || nPosRight == std::string::npos || nPosLeft > nPosRight)
-    return false;
-
-  value = value.substr(nPosLeft + 1, nPosRight - nPosLeft - 1);
-
-  std::stringstream ss(value);
-  std::string trash;
-
-  float x = 0;
-  float y = 0;
-
-  ss >> x;
-  if (ss.fail())
-    return false;
-  ss >> trash;
-  if (ss.fail() || trash != ",")
-    return false;
-  ss >> y;
-  if (ss.fail())
-    return false;
-
-  m_position.x = x;
-  m_position.y = y;
-  return true;
+  return ParsePoint2d(value, m_position);
 }
