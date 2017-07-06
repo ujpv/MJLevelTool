@@ -17,7 +17,7 @@ public:
   };
 
   CRandomWrapper(
-      eRandomType _type
+      eRandomType _type = match3random
     )
     : m_Type(_type)
   {}
@@ -34,6 +34,13 @@ public:
     {
       m_StdRandom.seed(_seed);
     }
+  }
+
+  void SetType(
+      eRandomType _type
+    )
+  {
+    m_Type = _type;
   }
 
   std::int64_t GetRandomValue(

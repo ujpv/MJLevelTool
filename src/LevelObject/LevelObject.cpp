@@ -8,6 +8,7 @@ static const std::string kSecondGoldenChipPosition = "SecondGoldenChipPosition";
 static const std::string kMetadata = "Metadata";
 
 MJLevelObject::MJLevelObject()
+  : m_Type(EAlgorithmType::algorithm_type_count)
 {}
 
 void MJLevelObject::initWithDictionary(
@@ -51,7 +52,7 @@ void MJLevelObject::initWithDictionary(
 
       m_startChips.insert(&chip);
 
-      if (chip.GetTypeValue().find(kGoldChipGroupPrefix) == std::string::npos)
+      if (chip.GetTypeValue().find(ChipUtils::GetGroupPrefix(MJGoldChipGroup)) == std::string::npos)
         chip.SetTypeValue("g0");
     }
   }
@@ -74,10 +75,10 @@ void MJLevelObject::initWithDictionary(
 
   m_firstGoldenChipPositions.clear();
   m_secondGoldenChipPositions.clear();
-  for (int i = 0; pFirstGoldenChipPositions->size(); ++i)
+  for (size_t i = 0; i < pFirstGoldenChipPositions->size(); ++i)
   {
     std::string sPosition;
-    if (!PlistUtils::getStringForIndex(*pFirstGoldenChipPositions, i, sPosition))
+    if (!PlistUtils::getStringForIndex(*pFirstGoldenChipPositions, int(i), sPosition))
       throw MJToolException("Golden positions not specified");
 
     SPoint2d point;
@@ -87,22 +88,68 @@ void MJLevelObject::initWithDictionary(
     m_firstGoldenChipPositions.push_back(point);
   }
 
-  for (int i = 0; pSecondGoldenChipPositions->size(); ++i)
+  for (size_t i = 0; i < pSecondGoldenChipPositions->size(); ++i)
   {
     std::string sPosition;
-    if (!PlistUtils::getStringForIndex(*pSecondGoldenChipPositions, i, sPosition))
+    if (!PlistUtils::getStringForIndex(*pSecondGoldenChipPositions, int(i), sPosition))
       throw MJToolException("Golden positions not specified");
 
     SPoint2d point;
     if (!ParsePoint2d(sPosition, point))
-      throw MJToolException("Can't parse first gold ship #" + std::to_string(i));
+      throw MJToolException("Can't parse second gold ship #" + std::to_string(i));
 
     m_secondGoldenChipPositions.push_back(point);
   }
+}
+
+void MJLevelObject::SetCFG(
+    const SCFG & _cfg
+  )
+{
+  AddChipPairType(MJFirstDigitGroup,  _cfg.m_iFirstGroupDigitChipsNumber,  false);
+  AddChipPairType(MJSecondDigitGroup, _cfg.m_iSecondGroupDigitChipsNumber, false);
+  AddChipPairType(MJThirdDigitGroup,  _cfg.m_iThirdGroupDigitChipsNumber,  false);
+  AddChipPairType(MJMysticGroup,      _cfg.m_iMysticGroupChipsNumber,      false);
+  AddChipPairType(MJDragonGroup,      _cfg.m_iDragonChipGroupNumber,       false);
+  AddChipPairType(MJWindGroup,        _cfg.m_iWindChipGroupNumber,         false);
+
+  int flowerChipGroupNumber = _cfg.m_iFlowerChipGroupNumber;
+  int seasonChipGroupNumber = _cfg.m_iSeasonChipGroupNumber;
+
+  if (m_Type != EAlgorithmType::algorithm_type_count)
+  {
+    flowerChipGroupNumber = std::min(1, flowerChipGroupNumber);
+    seasonChipGroupNumber = std::min(1, seasonChipGroupNumber);
+  }
+
+  AddChipPairType(MJFlowerGroup, _cfg.m_iFlowerChipGroupNumber, true);
+  AddChipPairType(MJSeasonGroup, _cfg.m_iSeasonChipGroupNumber, true);
 }
 
 void MJLevelObject::Clear()
 {
   m_startChips.clear();
   m_levelChips.clear();
+}
+
+void MJLevelObject::AddChipPairType(
+    MJChipGroup _group,
+    int         _count,
+    bool        _useRandom
+  )
+{
+  std::string value1;
+  std::string value2;
+
+  for (int i = 0; i < _count; ++i)
+  {
+    const std::string &prefix = ChipUtils::GetGroupPrefix(_group);
+    value1 = prefix + std::to_string(i);
+    if (_useRandom)
+      value2 = prefix + std::to_string(i);
+    else
+      value2 = prefix + std::to_string(std::rand() % _count);
+
+    m_chipsTypes.push_back({value1, value2});
+  }
 }
