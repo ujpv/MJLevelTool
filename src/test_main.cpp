@@ -23,15 +23,8 @@ static const char * kTop = "top";
 static const char * kBottom = "bottom";
 static const char * kRigth = "right";
 static const char * kLeft = "left";
-
-static const char * kDigitChipFirstGroupNumber = "DigitChipFirstGroupNumber";
-static const char * kDigitChipSecondGroupNumber = "DigitChipSecondGroupNumber";
-static const char * kDigitChipThirdGroupNumber = "DigitChipThirdGroupNumber";
-static const char * kDragonChipGroupNumber = "DragonChipGroupNumber";
-static const char * kFlowerChipGroupNumber = "FlowerChipGroupNumber";
-static const char * kMysticChipGroupNumber = "MysticChipGroupNumber";
-static const char * kSeasonChipGroupNumber = "SeasonChipGroupNumber";
-static const char * kWindChipGroupNumber = "WindChipGroupNumber";
+static const char * kCFG = "CFG";
+static const char * kChips = "chips";
 
 const int FILE_COUNT = 1;
 
@@ -49,8 +42,9 @@ int main()
 
     std::string plistFileName;
     int seed;
-    std::set<std::pair<std::string, std::string>> chipTypesSet;
-    std::map<std::string, std::vector<std::set<std::string>>> neighborsSet;
+    SCFG cfg;
+    std::set<std::pair<std::string, std::string>> chipTypesSetTest;
+    std::map<std::string, std::vector<std::set<std::string>>> neighborsMapTest;
 
     try
     {
@@ -68,17 +62,70 @@ int main()
       if (seed < 0)
         throw MJToolException("Invalid seed");
 
+      cfg.Load(root[kCFG]);
 
+      Json::Value chipsTypes = root[kChips];
+
+      if (chipsTypes.isNull() || !chipsTypes.isArray() || !chipsTypes.size())
+        throw MJToolException(std::string("There are no correct ") + kChips + " section");
+
+      for (Json::Value::const_iterator it = chipsTypes.begin(); it != chipsTypes.end(); ++it)
+      {
+        std::string id = it->get(kId, "").asString();
+        std::string type = it->get(kType, "").asString();
+
+        if (id.empty() || type.empty())
+          throw MJToolException("Invalide chip type");
+
+        chipTypesSetTest.insert({id, type});
+      }
+
+      Json::Value chipsNeighbors = root[kNeighbors];
+      if (chipsNeighbors.isNull() || !chipsNeighbors.isObject() || !chipsNeighbors.size())
+        throw MJToolException(std::string("There are no correct ") + kNeighbors + " section");
+
+      for (const std::string & name: chipsNeighbors.getMemberNames())
+      {
+        Json::Value neighborsTop = chipsNeighbors[name][kTop];
+        Json::Value neighborsBottom = chipsNeighbors[name][kBottom];
+        Json::Value neighborsLeft = chipsNeighbors[name][kLeft];
+        Json::Value neighborsRigth = chipsNeighbors[name][kRigth];
+
+        neighborsMapTest[name] = std::vector<std::set<std::string>>(4);
+
+        for (Json::Value::const_iterator it = neighborsTop.begin(); it != neighborsTop.end(); ++it)
+          neighborsMapTest[name][Top].insert(it->asString());
+        for (Json::Value::const_iterator it = neighborsBottom.begin(); it != neighborsBottom.end(); ++it)
+          neighborsMapTest[name][Bottom].insert(it->asString());
+        for (Json::Value::const_iterator it = neighborsLeft.begin(); it != neighborsLeft.end(); ++it)
+          neighborsMapTest[name][Left].insert(it->asString());
+        for (Json::Value::const_iterator it = neighborsRigth.begin(); it != neighborsRigth.end(); ++it)
+          neighborsMapTest[name][Right].insert(it->asString());
+      }
     }
     catch (std::exception & e)
     {
-      std::cout << "\nCan't read test. Reason: " << e.what() << '\n';
+      std::cout << "\nCan't read test: " << testFileName << ". Reason: " << e.what() << '\n';
       continue;
     }
 
+    try
+    {
+      MJLevelObject level;
+      level.InitWithDictionary(LEVEL_PATH + plistFileName);
+      level.SetCFG(cfg);
+      level.BuildWithSeed(seed);
+    }
+    catch (std::exception & e)
+    {
+      std::cout << "\nCan't build level: " << plistFileName << ". Reason: " << e.what() << '\n';
+      continue;
+    }
 
+    std::set<std::pair<std::string, std::string>> chipTypesSet;
+    std::map<std::string, std::vector<std::set<std::string>>> neighborsMap;
   }
-  CToolConfig & config = CToolConfig::Instance();
+
 ////  std::cout << "Loadin config...";
 //  try
 //  {

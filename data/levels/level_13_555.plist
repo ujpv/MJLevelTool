@@ -1,0 +1,661 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>Layers</key>
+    <array>
+      <array>
+        <dict>
+          <key>Position</key>
+          <string>{6.5, 9}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{7.5, 9}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{8.5, 9}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{9.5, 9}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{10.5, 9}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{11.5, 9}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{12.5, 9}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{13.5, 9}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{14.5, 9}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{6.5, 8}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{6.5, 7}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{6.5, 6}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{6.5, 5}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{8.5, 8}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{8.5, 7}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{8.5, 6}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{8.5, 5}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{8.5, 4}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{10.5, 8}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{10.5, 7}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{10.5, 6}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{10.5, 5}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{10.5, 4}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{10.5, 3}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{12.5, 8}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{12.5, 7}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{12.5, 6}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{12.5, 5}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{12.5, 4}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{14.5, 8}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{14.5, 7}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{14.5, 6}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{14.5, 5}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{8.5, 10}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{9.5, 10}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{10.5, 10}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{11.5, 10}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{12.5, 10}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{5.5, 8.5}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{5.5, 7.5}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{15.5, 8.5}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{15.5, 7.5}</string>
+        </dict>
+      </array>
+      <array>
+        <dict>
+          <key>Position</key>
+          <string>{10.5, 4}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{8.5, 5}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{10.5, 5}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{12.5, 5}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{6.5, 6}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{8.5, 6}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{10.5, 6}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{12.5, 6}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{14.5, 6}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{6.5, 7}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{8.5, 7}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{10.5, 7}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{12.5, 7}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{14.5, 7}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{6.5, 8}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{8.5, 8}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{10.5, 8}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{12.5, 8}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{14.5, 8}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{6.5, 9}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{7.5, 9}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{8.5, 9}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{9.5, 9}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{10.5, 9}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{11.5, 9}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{12.5, 9}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{13.5, 9}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{14.5, 9}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{9, 10}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{10, 10}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{11, 10}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{12, 10}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{5.5, 8.5}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{5.5, 7.5}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{15.5, 8.5}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{15.5, 7.5}</string>
+        </dict>
+      </array>
+      <array>
+        <dict>
+          <key>Position</key>
+          <string>{10.5, 5}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{8.5, 6}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{10.5, 6}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{12.5, 6}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{6.5, 7}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{8.5, 7}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{10.5, 7}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{12.5, 7}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{14.5, 7}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{6.5, 8}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{8.5, 8}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{10.5, 8}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{12.5, 8}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{14.5, 8}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{6.5, 9}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{7.5, 9}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{8.5, 9}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{9.5, 9}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{10.5, 9}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{11.5, 9}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{12.5, 9}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{13.5, 9}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{14.5, 9}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{9, 10}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{10, 10}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{11, 10}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{12, 10}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{5.5, 8.5}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{5.5, 7.5}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{15.5, 8.5}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{15.5, 7.5}</string>
+        </dict>
+      </array>
+      <array>
+        <dict>
+          <key>Position</key>
+          <string>{10.5, 6}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{8.5, 7}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{10.5, 7}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{12.5, 7}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{6.5, 8}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{8.5, 8}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{10.5, 8}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{12.5, 8}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{14.5, 8}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{6.5, 9}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{7.5, 9}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{8.5, 9}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{9.5, 9}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{10.5, 9}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{11.5, 9}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{12.5, 9}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{13.5, 9}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{14.5, 9}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{9, 10}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{10, 10}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{11, 10}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{12, 10}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{5.5, 8.5}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{15.5, 8.5}</string>
+        </dict>
+      </array>
+      <array>
+        <dict>
+          <key>Position</key>
+          <string>{10.5, 7}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{8.5, 8}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{10.5, 8}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{12.5, 8}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{6.5, 9}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{7.5, 9}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{8.5, 9}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{9.5, 9}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{10.5, 9}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{11.5, 9}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{12.5, 9}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{13.5, 9}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{14.5, 9}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{9, 10}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{10, 10}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{11, 10}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{12, 10}</string>
+        </dict>
+      </array>
+    </array>
+    <key>Metadata</key>
+    <dict>
+      <key>Offset</key>
+      <string>{0, 0}</string>
+      <key>BonusTimeLimit</key>
+      <integer>280</integer>
+      <key>DigitChipFirstGroupNumber</key>
+      <integer>8</integer>
+      <key>DigitChipSecondGroupNumber</key>
+      <integer>8</integer>
+      <key>DigitChipThirdGroupNumber</key>
+      <integer>8</integer>
+      <key>DragonChipGroupNumber</key>
+      <integer>2</integer>
+      <key>FirstGoldenChipPosition</key>
+      <array>
+        <string>{8.5, 9}</string>
+        <string>{12.5, 9}</string>
+      </array>
+      <key>FlowerChipGroupNumber</key>
+      <integer>4</integer>
+      <key>MysticChipGroupNumber</key>
+      <integer>0</integer>
+      <key>IsSecretChipEnabled</key>
+      <false />
+      <key>LevelTime</key>
+      <integer>280</integer>
+      <key>SeasonChipGroupNumber</key>
+      <integer>4</integer>
+      <key>SecondGoldenChipPosition</key>
+      <array>
+        <string>{10.5, 10}</string>
+      </array>
+      <key>StarOneTime</key>
+      <integer>280</integer>
+      <key>StarThreeTime</key>
+      <integer>140</integer>
+      <key>StarTwoTime</key>
+      <integer>210</integer>
+      <key>WindChipGroupNumber</key>
+      <integer>4</integer>
+    </dict>
+  </dict>
+</plist>

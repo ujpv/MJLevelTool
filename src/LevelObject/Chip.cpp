@@ -33,6 +33,8 @@ bool MJChip::InitWithParameters(
   if (!SetPosition(params))
     return false;
 
+  PlistUtils::getStringForKey(*params, kChipPosition, m_sDebugID);
+
   m_zOreder= _zLayer;
 
   return true;
@@ -220,7 +222,9 @@ const std::set<MJChip *> &MJChip::GetNeighbors(
 
 bool MJChip::IsBlockedByNeighbors() const
 {
-  return !m_rNeighborsTop.empty() || (m_rNeighborsRight.size() > 0 && m_rNeighborsLeft.size() > 0);
+  return
+      !m_rNeighborsTop.empty() ||
+      (m_rNeighborsRight.size() > 0 && m_rNeighborsLeft.size() > 0);
 }
 
 void MJChip::RemoveNeighbors()

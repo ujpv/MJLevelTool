@@ -22,6 +22,8 @@ public:
       int _seed
     );
 
+//  std::vector<MJChip>
+
 private:
   void Clear();
 

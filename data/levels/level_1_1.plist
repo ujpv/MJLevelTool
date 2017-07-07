@@ -1,0 +1,548 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Layers</key>
+	<array>
+		<array>
+			<dict>
+				<key>Position</key>
+				<string>{10, 6}</string>
+			</dict>
+			<dict>
+				<key>Position</key>
+				<string>{11, 6}</string>
+			</dict>
+		</array>
+		<array>
+			<dict>
+				<key>Position</key>
+				<string>{9.5, 5.5}</string>
+			</dict>
+			<dict>
+				<key>Position</key>
+				<string>{10.5, 5.5}</string>
+			</dict>
+			<dict>
+				<key>Position</key>
+				<string>{11.5, 5.5}</string>
+			</dict>
+			<dict>
+				<key>Position</key>
+				<string>{9.5, 6.5}</string>
+			</dict>
+			<dict>
+				<key>Position</key>
+				<string>{10.5, 6.5}</string>
+			</dict>
+			<dict>
+				<key>Position</key>
+				<string>{11.5, 6.5}</string>
+			</dict>
+		</array>
+		<array>
+			<dict>
+				<key>Position</key>
+				<string>{9.5, 5.5}</string>
+			</dict>
+			<dict>
+				<key>Position</key>
+				<string>{10.5, 5.5}</string>
+			</dict>
+			<dict>
+				<key>Position</key>
+				<string>{11.5, 5.5}</string>
+			</dict>
+			<dict>
+				<key>Position</key>
+				<string>{9.5, 6.5}</string>
+			</dict>
+			<dict>
+				<key>Position</key>
+				<string>{10.5, 6.5}</string>
+			</dict>
+			<dict>
+				<key>Position</key>
+				<string>{11.5, 6.5}</string>
+			</dict>
+		</array>
+		<array>
+			<dict>
+				<key>Position</key>
+				<string>{9, 5.5}</string>
+			</dict>
+			<dict>
+				<key>Position</key>
+				<string>{9, 6.5}</string>
+			</dict>
+			<dict>
+				<key>Position</key>
+				<string>{12, 5.5}</string>
+			</dict>
+			<dict>
+				<key>Position</key>
+				<string>{12, 6.5}</string>
+			</dict>
+			<dict>
+				<key>Position</key>
+				<string>{10.5, 5.5}</string>
+			</dict>
+			<dict>
+				<key>Position</key>
+				<string>{10.5, 6.5}</string>
+			</dict>
+		</array>
+		<array>
+			<dict>
+				<key>Position</key>
+				<string>{8.5, 5}</string>
+			</dict>
+			<dict>
+				<key>Position</key>
+				<string>{8.5, 6}</string>
+			</dict>
+			<dict>
+				<key>Position</key>
+				<string>{8.5, 7}</string>
+			</dict>
+			<dict>
+				<key>Position</key>
+				<string>{12.5, 5}</string>
+			</dict>
+			<dict>
+				<key>Position</key>
+				<string>{12.5, 6}</string>
+			</dict>
+			<dict>
+				<key>Position</key>
+				<string>{12.5, 7}</string>
+			</dict>
+			<dict>
+				<key>Position</key>
+				<string>{10.5, 5}</string>
+			</dict>
+			<dict>
+				<key>Position</key>
+				<string>{10.5, 7}</string>
+			</dict>
+		</array>
+		<array>
+			<dict>
+				<key>Position</key>
+				<string>{8, 4.5}</string>
+			</dict>
+			<dict>
+				<key>Position</key>
+				<string>{8, 5.5}</string>
+			</dict>
+			<dict>
+				<key>Position</key>
+				<string>{8, 6.5}</string>
+			</dict>
+			<dict>
+				<key>Position</key>
+				<string>{8, 7.5}</string>
+			</dict>
+			<dict>
+				<key>Position</key>
+				<string>{13, 4.5}</string>
+			</dict>
+			<dict>
+				<key>Position</key>
+				<string>{13, 5.5}</string>
+			</dict>
+			<dict>
+				<key>Position</key>
+				<string>{13, 6.5}</string>
+			</dict>
+			<dict>
+				<key>Position</key>
+				<string>{13, 7.5}</string>
+			</dict>
+		</array>
+		<array>
+			<dict>
+				<key>Position</key>
+				<string>{7.5, 4}</string>
+			</dict>
+			<dict>
+				<key>Position</key>
+				<string>{7.5, 5}</string>
+			</dict>
+			<dict>
+				<key>Position</key>
+				<string>{7.5, 6}</string>
+			</dict>
+			<dict>
+				<key>Position</key>
+				<string>{7.5, 7}</string>
+			</dict>
+			<dict>
+				<key>Position</key>
+				<string>{7.5, 8}</string>
+			</dict>
+			<dict>
+				<key>Position</key>
+				<string>{13.5, 4}</string>
+			</dict>
+			<dict>
+				<key>Position</key>
+				<string>{13.5, 5}</string>
+				<key>TypeValue</key>
+				<string>c2</string>
+			</dict>
+			<dict>
+				<key>Position</key>
+				<string>{13.5, 6}</string>
+				<key>TypeValue</key>
+				<string>c2</string>
+			</dict>
+			<dict>
+				<key>Position</key>
+				<string>{13.5, 7}</string>
+			</dict>
+			<dict>
+				<key>Position</key>
+				<string>{13.5, 8}</string>
+			</dict>
+		</array>
+	</array>
+	<key>Metadata</key>
+	<dict>
+		<key>Offset</key>
+		<string>{0.7, -0.1}</string>
+		<key>BonusTimeLimit</key>
+		<integer>600</integer>
+		<key>DigitChipFirstGroupNumber</key>
+		<integer>6</integer>
+		<key>DigitChipSecondGroupNumber</key>
+		<integer>9</integer>
+		<key>DragonChipGroupNumber</key>
+		<integer>3</integer>
+		<key>WindChipGroupNumber</key>
+		<integer>4</integer>
+		<key>FirstGoldenChipPosition</key>
+		<array>
+			<string>{10, 6}</string>
+		</array>
+		<key>FlowerChipGroupNumber</key>
+		<integer>0</integer>
+		<key>IsSecretChipEnabled</key>
+		<false/>
+		<key>LevelTime</key>
+		<integer>0</integer>
+		<key>SeasonChipGroupNumber</key>
+		<integer>0</integer>
+		<key>SecondGoldenChipPosition</key>
+		<array>
+			<string>{11, 6}</string>
+		</array>
+		<key>StarThreeTime</key>
+		<integer>300</integer>
+		<key>StarOneTime</key>
+		<integer>600</integer>
+		<key>StarTwoTime</key>
+		<integer>360</integer>
+	</dict>
+	<key>Tutorial</key>
+	<array>
+		<dict>
+			<key>Type</key>
+			<string>aAutozoom</string>
+			<key>Parameters</key>
+			<dict>
+				<key>Bubbles</key>
+				<array>
+					<dict>
+						<key>en</key>
+						<dict>
+							<key>PositionType</key>
+							<string>Right</string>
+							<key>Text</key>
+							<string>AutozoomTutorial</string>
+							<key>Scale</key>
+							<integer>1</integer>
+							<key>FontSize</key>
+							<integer>18</integer>
+						</dict>
+					</dict>
+				</array>
+				<key>Mentors</key>
+				<array>
+					<dict>
+						<key>Type</key>
+						<string>girl</string>
+					</dict>
+				</array>
+				<key>Handle</key>
+				<dict>
+					<key>Rotation</key>
+					<integer>0</integer>
+					<key>Offset</key>
+					<string>{0, 50}</string>
+          <key>Auto</key>
+          <integer>1</integer>
+        </dict>
+			</dict>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>bBoosterEye</string>
+			<key>Parameters</key>
+			<dict>
+				<key>Bubbles</key>
+				<array>
+					<dict>
+						<key>en</key>
+						<dict>
+							<key>PositionType</key>
+							<string>Left</string>
+							<key>PositionTypeLandscape</key>
+							<string>Left</string>
+							<key>PositionTypePortrait</key>
+							<string>Right</string>
+							<key>Text</key>
+							<string>EyeTutorial</string>
+							<key>Scale</key>
+							<integer>1</integer>
+							<key>FontSize</key>
+							<integer>18</integer>
+						</dict>
+					</dict>
+				</array>
+				<key>Mentors</key>
+				<array>
+					<dict>
+						<key>Type</key>
+						<string>man</string>
+            <key>Landscape</key>
+						<string>man</string>
+            <key>Portrait</key>
+						<string>man</string>
+            <key>PortraitFlip</key>
+						<integer>1</integer>
+					</dict>
+				</array>
+				<key>Handle</key>
+				<dict>
+					<key>Rotation</key>
+					<integer>0</integer>
+					<key>Offset</key>
+					<string>{0, 50}</string>
+				</dict>
+			</dict>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>cRegularChips</string>
+			<key>Parameters</key>
+			<dict>
+				<key>Mentors</key>
+				<array>
+					<dict>
+						<key>Type</key>
+						<string>man</string>
+					</dict>
+				</array>
+				<key>Bubbles</key>
+				<array>
+					<dict>
+						<key>en</key>
+						<dict>
+							<key>PositionType</key>
+							<string>Left</string>
+							<key>Text</key>
+							<string>CollectChipsTutorial</string>
+							<key>Scale</key>
+							<integer>1</integer>
+							<key>FontSize</key>
+							<integer>18</integer>
+						</dict>
+					</dict>
+				</array>
+				<key>Handle</key>
+				<dict>
+					<key>Rotation</key>
+					<integer>0</integer>
+					<key>Offset</key>
+					<string>{-20, 50}</string>
+				</dict>
+			</dict>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>dTimerUpCount</string>
+			<key>Parameters</key>
+			<dict>
+				<key>Mentors</key>
+				<array>
+					<dict>
+						<key>Type</key>
+						<string>girl</string>
+					</dict>
+				</array>
+				<key>Bubbles</key>
+				<array>
+					<dict>
+						<key>en</key>
+						<dict>
+							<key>PositionType</key>
+							<string>Right</string>
+							<key>Text</key>
+							<string>TargetTutorial</string>
+							<key>Scale</key>
+							<integer>1</integer>
+							<key>FontSize</key>
+							<integer>18</integer>
+						</dict>
+					</dict>
+				</array>
+			</dict>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>eBoosterHint</string>
+			<key>Parameters</key>
+			<dict>
+				<key>Mentors</key>
+				<array>
+					<dict>
+						<key>Type</key>
+						<string>girl</string>
+            <key>Landscape</key>
+						<string>girl</string>
+            <key>LandscapeFlip</key>
+						<integer>1</integer>
+            <key>Portrait</key>
+						<string>girl</string>
+					</dict>
+				</array>
+				<key>Bubbles</key>
+				<array>
+					<dict>
+						<key>en</key>
+						<dict>
+							<key>PositionType</key>
+							<string>Right</string>
+							<key>PositionTypeLandscape</key>
+							<string>Left</string>
+							<key>PositionTypePortrait</key>
+							<string>Right</string>
+							<key>Text</key>
+							<string>HintTutorial</string>
+							<key>Scale</key>
+							<integer>1</integer>
+							<key>FontSize</key>
+							<integer>18</integer>
+						</dict>
+					</dict>
+				</array>
+				<key>Handle</key>
+				<dict>
+					<key>Rotation</key>
+					<integer>0</integer>
+					<key>Offset</key>
+					<string>{10, 50}</string>
+				</dict>
+			</dict>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>gBoosterUndo</string>
+			<key>Parameters</key>
+			<dict>
+				<key>Mentors</key>
+				<array>
+					<dict>
+						<key>Type</key>
+						<string>man</string>
+					</dict>
+				</array>
+				<key>Bubbles</key>
+				<array>
+					<dict>
+						<key>en</key>
+						<dict>
+							<key>PositionType</key>
+							<string>Left</string>
+							<key>Text</key>
+							<string>UndoTutorial</string>
+							<key>Scale</key>
+							<integer>1</integer>
+							<key>FontSize</key>
+							<integer>18</integer>
+						</dict>
+					</dict>
+				</array>
+				<key>Handle</key>
+				<dict>
+					<key>Rotation</key>
+					<integer>0</integer>
+					<key>Offset</key>
+					<string>{125, 50}</string>
+				</dict>
+			</dict>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>hContinue</string>
+			<key>Parameters</key>
+			<dict>
+				<key>Mentors</key>
+				<array>
+					<dict>
+						<key>Type</key>
+						<string>man</string>
+					</dict>
+				</array>
+				<key>Bubbles</key>
+				<array>
+					<dict>
+						<key>en</key>
+						<dict>
+							<key>PositionType</key>
+							<string>Left</string>
+							<key>Text</key>
+							<string>AfterTutorial</string>
+							<key>Scale</key>
+							<integer>1</integer>
+							<key>FontSize</key>
+							<integer>18</integer>
+						</dict>
+					</dict>
+				</array>
+			</dict>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>iGoldenChips</string>
+			<key>Parameters</key>
+			<dict>
+				<key>Mentors</key>
+				<array>
+					<dict>
+						<key>Type</key>
+						<string>girl</string>
+					</dict>
+				</array>
+				<key>Bubbles</key>
+				<array>
+					<dict>
+						<key>en</key>
+						<dict>
+							<key>PositionType</key>
+							<string>Right</string>
+							<key>Text</key>
+							<string>GoldenChipsTutorial</string>
+							<key>Scale</key>
+							<integer>1</integer>
+							<key>FontSize</key>
+							<integer>18</integer>
+						</dict>
+					</dict>
+				</array>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>

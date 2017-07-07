@@ -1,0 +1,407 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>Layers</key>
+    <array>
+      <array>
+        <dict>
+          <key>Position</key>
+          <string>{6.5, 4.5}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{6.5, 5.5}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{6.5, 6.5}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{6.5, 7.5}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{7.5, 6}</string>
+		  <key>TypeValue</key>
+		  <string>t8</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{8.5, 5.5}</string>
+		  <key>TypeValue</key>
+		  <string>c8</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{8.5, 6.5}</string>
+		  <key>TypeValue</key>
+		  <string>w0</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{14.5, 5.5}</string>
+		  <key>TypeValue</key>
+		  <string>w0</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{14.5, 6.5}</string>
+		  <key>TypeValue</key>
+		  <string>f2</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{15.5, 6}</string>
+		  <key>TypeValue</key>
+		  <string>c8</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{16.5, 4.5}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{16.5, 5.5}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{16.5, 6.5}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{16.5, 7.5}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{9.5, 6}</string>
+		  <key>TypeValue</key>
+		  <string>s2</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{10.5, 6}</string>
+		  <key>TypeValue</key>
+		  <string>t8</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{11.5, 6.5}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{11.5, 5.5}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{12.5, 6}</string>
+		  <key>TypeValue</key>
+		  <string>s3</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{13.5, 6}</string>
+		  <key>TypeValue</key>
+		  <string>f3</string>
+        </dict>
+      </array>
+      <array>
+        <dict>
+          <key>Position</key>
+          <string>{13.5, 6.5}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{14.5, 7}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{14.5, 6}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{16.5, 7.5}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{16.5, 6.5}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{16.5, 4.5}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{8.5, 7}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{6.5, 7.5}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{6.5, 6.5}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{6.5, 4.5}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{8.5, 6}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{8.5, 5}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{9.5, 6.5}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{9.5, 5.5}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{13.5, 5.5}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{14.5, 5}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{6.5, 5.5}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{16.5, 5.5}</string>
+        </dict>
+      </array>
+      <array>
+        <dict>
+          <key>Position</key>
+          <string>{8.5, 6.5}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{14.5, 5.5}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{8.5, 5.5}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{9.5, 6}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{14.5, 6.5}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{13.5, 6}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{16.5, 6}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{6.5, 7}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{6.5, 6}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{6.5, 5}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{16.5, 7}</string>
+		  <key>TypeValue</key>
+		  <string>s0</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{16.5, 5}</string>
+		  <key>TypeValue</key>
+		  <string>s1</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{8.5, 7.5}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{8.5, 4.5}</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{14.5, 7.5}</string>
+		  <key>TypeValue</key>
+		  <string>f0</string>
+        </dict>
+        <dict>
+          <key>Position</key>
+          <string>{14.5, 4.5}</string>
+		  <key>TypeValue</key>
+		  <string>f1</string>
+        </dict>
+      </array>
+    </array>
+    <key>Metadata</key>
+    <dict>
+      <key>Offset</key>
+      <string>{0, 0}</string>
+      <key>BonusTimeLimit</key>
+      <integer>600</integer>
+      <key>DigitChipFirstGroupNumber</key>
+      <integer>7</integer>
+      <key>DigitChipSecondGroupNumber</key>
+      <integer>7</integer>
+      <key>DigitChipThirdGroupNumber</key>
+      <integer>7</integer>
+      <key>DragonChipGroupNumber</key>
+      <integer>2</integer>
+      <key>FirstGoldenChipPosition</key>
+      <array>
+        <string>{11.5, 6.5}</string>
+      </array>
+      <key>FlowerChipGroupNumber</key>
+      <integer>1</integer>
+      <key>MysticChipGroupNumber</key>
+      <integer>0</integer>
+      <key>IsSecretChipEnabled</key>
+      <false />
+      <key>LevelTime</key>
+      <integer>0</integer>
+      <key>SeasonChipGroupNumber</key>
+      <integer>1</integer>
+      <key>SecondGoldenChipPosition</key>
+      <array>
+        <string>{11.5, 5.5}</string>
+      </array>
+      <key>StarOneTime</key>
+      <integer>600</integer>
+      <key>StarThreeTime</key>
+      <integer>300</integer>
+      <key>StarTwoTime</key>
+      <integer>420</integer>
+      <key>WindChipGroupNumber</key>
+      <integer>0</integer>
+    </dict>
+<key>Tutorial</key>
+	<array>
+		<dict>
+			<key>Type</key>
+			<string>A_SeasonChips</string>
+			<key>Parameters</key>
+			<dict>
+				<key>Bubbles</key>
+				<array>
+					<dict>
+						<key>en</key>
+						<dict>
+							<key>PositionType</key>
+							<string>Left</string>
+							<key>Text</key>
+							<string>SeasonChipsTutorial</string>
+							<key>Scale</key>
+							<integer>1</integer>
+							<key>FontSize</key>
+							<integer>18</integer>
+						</dict>
+					</dict>
+				</array>
+				<key>Mentors</key>
+				<array>
+					<dict>
+						<key>Type</key>
+						<string>man</string>
+					</dict>
+				</array>
+				<key>Handle</key>
+				<dict>
+					<key>Rotation</key>
+					<integer>255</integer>
+					<key>Offset</key>
+					<string>{-20, 50}</string>
+				</dict>
+			</dict>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>B_FlowerChips</string>
+			<key>Parameters</key>
+			<dict>
+				<key>Bubbles</key>
+				<array>
+					<dict>
+						<key>en</key>
+						<dict>
+							<key>PositionType</key>
+							<string>Left</string>
+							<key>Text</key>
+							<string>FlowerChipsTutorial</string>
+							<key>Scale</key>
+							<integer>1</integer>
+							<key>FontSize</key>
+							<integer>18</integer>
+						</dict>
+					</dict>
+				</array>
+				<key>Mentors</key>
+				<array>
+					<dict>
+						<key>Type</key>
+						<string>man</string>
+					</dict>
+				</array>
+				<key>Handle</key>
+				<dict>
+					<key>Rotation</key>
+					<integer>255</integer>
+					<key>Offset</key>
+					<string>{-20, 50}</string>
+				</dict>
+			</dict>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>hContinue</string>
+			<key>Parameters</key>
+			<dict>
+				<key>Mentors</key>
+				<array>
+					<dict>
+						<key>Type</key>
+						<string>man</string>
+					</dict>
+				</array>
+				<key>Bubbles</key>
+				<array>
+					<dict>
+						<key>en</key>
+						<dict>
+							<key>PositionType</key>
+							<string>Left</string>
+							<key>Text</key>
+							<string>AfterTutorial</string>
+							<key>Scale</key>
+							<integer>1</integer>
+							<key>FontSize</key>
+							<integer>18</integer>
+						</dict>
+					</dict>
+				</array>
+			</dict>
+		</dict>
+	</array>
+  </dict>
+</plist>

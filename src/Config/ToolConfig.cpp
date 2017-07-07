@@ -10,6 +10,15 @@ static const std::string kLevelsForCheck = "LevelsForCheck";
 static const std::string kMin = "min";
 static const std::string kMax = "max";
 
+static const char * kDigitChipFirstGroupNumber = "DigitChipFirstGroup";
+static const char * kDigitChipSecondGroupNumber = "DigitChipSecondGroup";
+static const char * kDigitChipThirdGroupNumber = "DigitChipThirdGroup";
+static const char * kDragonChipGroupNumber = "DragonChipGroup";
+static const char * kFlowerChipGroupNumber = "FlowerChipGroup";
+static const char * kMysticChipGroupNumber = "MysticChipGroup";
+static const char * kSeasonChipGroupNumber = "SeasonChipGroup";
+static const char * kWindChipGroupNumber = "WindChipGroup";
+
 static const double defaultDifficultyMin = 0.0;
 static const double defaultDifficultyMax = 1.0;
 static const unsigned defaultLimit = 10000;
@@ -128,14 +137,26 @@ void SCFG::Load(
     const Json::Value & _cfgElement
     )
 {
-  m_iFirstGroupDigitChipsNumber =  _cfgElement.get("DigitChipFirstGroup",   0).asInt();
-  m_iSecondGroupDigitChipsNumber = _cfgElement.get("DigitChipSecondGroup",  0).asInt();
-  m_iThirdGroupDigitChipsNumber =  _cfgElement.get("DigitChipThirdGroup",   0).asInt();
-  m_iMysticGroupChipsNumber =      _cfgElement.get("MysticChipGroup",       0).asInt();
-  m_iDragonChipGroupNumber =       _cfgElement.get("DragonChipGroupNumber", 0).asInt();
-  m_iFlowerChipGroupNumber =       _cfgElement.get("FlowerChipGroup",       0).asInt();
-  m_iSeasonChipGroupNumber =       _cfgElement.get("SeasonChipGroup",       0).asInt();
-  m_iWindChipGroupNumber =         _cfgElement.get("WindChipGroup",         0).asInt();
+  m_iFirstGroupDigitChipsNumber =  _cfgElement.get(kDigitChipFirstGroupNumber,   -1).asInt();
+  m_iSecondGroupDigitChipsNumber = _cfgElement.get(kDigitChipSecondGroupNumber,  -1).asInt();
+  m_iThirdGroupDigitChipsNumber =  _cfgElement.get(kDigitChipThirdGroupNumber,   -1).asInt();
+  m_iMysticGroupChipsNumber =      _cfgElement.get(kMysticChipGroupNumber,       -1).asInt();
+  m_iDragonChipGroupNumber =       _cfgElement.get(kDragonChipGroupNumber,       -1).asInt();
+  m_iFlowerChipGroupNumber =       _cfgElement.get(kFlowerChipGroupNumber,       -1).asInt();
+  m_iSeasonChipGroupNumber =       _cfgElement.get(kSeasonChipGroupNumber,       -1).asInt();
+  m_iWindChipGroupNumber =         _cfgElement.get(kWindChipGroupNumber,         -1).asInt();
+
+  if (m_iFirstGroupDigitChipsNumber == -1 ||
+      m_iSecondGroupDigitChipsNumber == -1 ||
+      m_iThirdGroupDigitChipsNumber == -1 ||
+      m_iMysticGroupChipsNumber == -1 ||
+      m_iDragonChipGroupNumber == -1 ||
+      m_iFlowerChipGroupNumber == -1 ||
+      m_iSeasonChipGroupNumber == -1 ||
+      m_iWindChipGroupNumber == -1)
+  {
+    throw MJToolException("Config error: Not specified CFG group.");
+  }
 }
 
 SLevelParams::SLevelParams()

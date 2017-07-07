@@ -1,0 +1,435 @@
+{
+  "Levels": {
+    "level_1_29.plist" : {
+      "min": 0.1,
+      "max": 0.7
+    }
+  },
+  
+  "LevelsForCheck": [
+    "level_1_29.plist",
+    "level_1_28.plist"
+  ],
+  
+  "UseCFG": [
+    "36",
+    "35",
+    "34",
+    "33",
+    "32",
+    "31",
+    "30",
+    "29",
+    "28",
+    "27",
+    "26",
+    "25",
+    "24",
+    "23",
+    "22",
+    "21",
+    "20"
+  ],
+  "Limits": [
+    100000
+  ],
+  "SeedsNeeded": 100,
+  "SeedsCount": 10,
+  "StartSeed": 400,
+  "SeedStep": 1,
+  "HashMaxSize": 1209241920,
+  "RandomPlay": false,
+  "UseRandomType": false,
+  "RepeatTypeTimes": 1,
+  "CheckMode": false,
+
+  "ResultsFileName": "results",
+  "CFG":
+  {
+    "2":
+    {
+      "DigitChipFirstGroup": 0,
+      "DigitChipSecondGroup": 1,
+      "DigitChipThirdGroup": 1,
+      "DragonChipGroupNumber": 0,
+      "FlowerChipGroup": 0,
+      "MysticChipGroup": 0,
+      "SeasonChipGroup": 0,
+      "WindChipGroup": 0
+    },
+    "3":
+    {
+      "DigitChipFirstGroup": 1,
+      "DigitChipSecondGroup": 1,
+      "DigitChipThirdGroup": 1,
+      "DragonChipGroupNumber": 0,
+      "FlowerChipGroup": 0,
+      "MysticChipGroup": 0,
+      "SeasonChipGroup": 0,
+      "WindChipGroup": 0
+    },
+    "4":
+    {
+      "DigitChipFirstGroup": 1,
+      "DigitChipSecondGroup": 1,
+      "DigitChipThirdGroup": 2,
+      "DragonChipGroupNumber": 0,
+      "FlowerChipGroup": 0,
+      "MysticChipGroup": 0,
+      "SeasonChipGroup": 0,
+      "WindChipGroup": 0
+    },
+    "5":
+    {
+      "DigitChipFirstGroup": 1,
+      "DigitChipSecondGroup": 2,
+      "DigitChipThirdGroup": 2,
+      "DragonChipGroupNumber": 0,
+      "FlowerChipGroup": 0,
+      "MysticChipGroup": 0,
+      "SeasonChipGroup": 0,
+      "WindChipGroup": 0
+    },
+    "6":
+    {
+      "DigitChipFirstGroup": 2,
+      "DigitChipSecondGroup": 2,
+      "DigitChipThirdGroup": 2,
+      "DragonChipGroupNumber": 0,
+      "FlowerChipGroup": 0,
+      "MysticChipGroup": 0,
+      "SeasonChipGroup": 0,
+      "WindChipGroup": 0
+    },
+    "7":
+    {
+      "DigitChipFirstGroup": 2,
+      "DigitChipSecondGroup": 2,
+      "DigitChipThirdGroup": 3,
+      "DragonChipGroupNumber": 0,
+      "FlowerChipGroup": 0,
+      "MysticChipGroup": 0,
+      "SeasonChipGroup": 0,
+      "WindChipGroup": 0
+    },
+    "8":
+    {
+      "DigitChipFirstGroup": 2,
+      "DigitChipSecondGroup": 3,
+      "DigitChipThirdGroup": 3,
+      "DragonChipGroupNumber": 0,
+      "FlowerChipGroup": 0,
+      "MysticChipGroup": 0,
+      "SeasonChipGroup": 0,
+      "WindChipGroup": 0
+    },
+    "9":
+    {
+      "DigitChipFirstGroup": 3,
+      "DigitChipSecondGroup": 3,
+      "DigitChipThirdGroup": 3,
+      "DragonChipGroupNumber": 0,
+      "FlowerChipGroup": 0,
+      "MysticChipGroup": 0,
+      "SeasonChipGroup": 0,
+      "WindChipGroup": 0
+    },
+    "10":
+    {
+      "DigitChipFirstGroup": 3,
+      "DigitChipSecondGroup": 3,
+      "DigitChipThirdGroup": 3,
+      "DragonChipGroupNumber": 0,
+      "FlowerChipGroup": 0,
+      "MysticChipGroup": 0,
+      "SeasonChipGroup": 0,
+      "WindChipGroup": 1
+    },
+    "11":
+    {
+      "DigitChipFirstGroup": 3,
+      "DigitChipSecondGroup": 3,
+      "DigitChipThirdGroup": 4,
+      "DragonChipGroupNumber": 0,
+      "FlowerChipGroup": 0,
+      "MysticChipGroup": 0,
+      "SeasonChipGroup": 0,
+      "WindChipGroup": 1
+    },
+    "12":
+    {
+      "DigitChipFirstGroup": 3,
+      "DigitChipSecondGroup": 4,
+      "DigitChipThirdGroup": 4,
+      "DragonChipGroupNumber": 0,
+      "FlowerChipGroup": 0,
+      "MysticChipGroup": 0,
+      "SeasonChipGroup": 0,
+      "WindChipGroup": 1
+    },
+    "13":
+    {
+      "DigitChipFirstGroup": 4,
+      "DigitChipSecondGroup": 4,
+      "DigitChipThirdGroup": 4,
+      "DragonChipGroupNumber": 0,
+      "FlowerChipGroup": 0,
+      "MysticChipGroup": 0,
+      "SeasonChipGroup": 0,
+      "WindChipGroup": 1
+    },
+    "14":
+    {
+      "DigitChipFirstGroup": 4,
+      "DigitChipSecondGroup": 4,
+      "DigitChipThirdGroup": 4,
+      "DragonChipGroupNumber": 0,
+      "FlowerChipGroup": 0,
+      "MysticChipGroup": 0,
+      "SeasonChipGroup": 0,
+      "WindChipGroup": 2
+    },
+    "15":
+    {
+      "DigitChipFirstGroup": 4,
+      "DigitChipSecondGroup": 4,
+      "DigitChipThirdGroup": 5,
+      "DragonChipGroupNumber": 0,
+      "FlowerChipGroup": 0,
+      "MysticChipGroup": 0,
+      "SeasonChipGroup": 0,
+      "WindChipGroup": 2
+    },
+    "16":
+    {
+      "DigitChipFirstGroup": 4,
+      "DigitChipSecondGroup": 5,
+      "DigitChipThirdGroup": 5,
+      "DragonChipGroupNumber": 0,
+      "FlowerChipGroup": 0,
+      "MysticChipGroup": 0,
+      "SeasonChipGroup": 0,
+      "WindChipGroup": 2
+    },
+    "17":
+    {
+      "DigitChipFirstGroup": 5,
+      "DigitChipSecondGroup": 5,
+      "DigitChipThirdGroup": 5,
+      "DragonChipGroupNumber": 0,
+      "FlowerChipGroup": 0,
+      "MysticChipGroup": 0,
+      "SeasonChipGroup": 0,
+      "WindChipGroup": 2
+    },
+    "18":
+    {
+      "DigitChipFirstGroup": 5,
+      "DigitChipSecondGroup": 5,
+      "DigitChipThirdGroup": 5,
+      "DragonChipGroupNumber": 0,
+      "FlowerChipGroup": 0,
+      "MysticChipGroup": 0,
+      "SeasonChipGroup": 0,
+      "WindChipGroup": 3
+    },
+    "19":
+    {
+      "DigitChipFirstGroup": 5,
+      "DigitChipSecondGroup": 5,
+      "DigitChipThirdGroup": 6,
+      "DragonChipGroupNumber": 0,
+      "FlowerChipGroup": 0,
+      "MysticChipGroup": 0,
+      "SeasonChipGroup": 0,
+      "WindChipGroup": 3
+    },
+    "20":
+    {
+      "DigitChipFirstGroup": 5,
+      "DigitChipSecondGroup": 6,
+      "DigitChipThirdGroup": 6,
+      "DragonChipGroupNumber": 0,
+      "FlowerChipGroup": 0,
+      "MysticChipGroup": 0,
+      "SeasonChipGroup": 0,
+      "WindChipGroup": 3
+    },
+    "21":
+    {
+      "DigitChipFirstGroup": 6,
+      "DigitChipSecondGroup": 6,
+      "DigitChipThirdGroup": 6,
+      "DragonChipGroupNumber": 0,
+      "FlowerChipGroup": 0,
+      "MysticChipGroup": 0,
+      "SeasonChipGroup": 0,
+      "WindChipGroup": 3
+    },
+    "22":
+    {
+      "DigitChipFirstGroup": 6,
+      "DigitChipSecondGroup": 6,
+      "DigitChipThirdGroup": 6,
+      "DragonChipGroupNumber": 0,
+      "FlowerChipGroup": 0,
+      "MysticChipGroup": 0,
+      "SeasonChipGroup": 0,
+      "WindChipGroup": 4
+    },
+    "23":
+    {
+      "DigitChipFirstGroup": 6,
+      "DigitChipSecondGroup": 6,
+      "DigitChipThirdGroup": 6,
+      "DragonChipGroupNumber": 1,
+      "FlowerChipGroup": 0,
+      "MysticChipGroup": 0,
+      "SeasonChipGroup": 0,
+      "WindChipGroup": 4
+    },
+    "24":
+    {
+      "DigitChipFirstGroup": 6,
+      "DigitChipSecondGroup": 6,
+      "DigitChipThirdGroup": 7,
+      "DragonChipGroupNumber": 1,
+      "FlowerChipGroup": 0,
+      "MysticChipGroup": 0,
+      "SeasonChipGroup": 0,
+      "WindChipGroup": 4
+    },
+    "25":
+    {
+      "DigitChipFirstGroup": 6,
+      "DigitChipSecondGroup": 7,
+      "DigitChipThirdGroup": 7,
+      "DragonChipGroupNumber": 1,
+      "FlowerChipGroup": 0,
+      "MysticChipGroup": 0,
+      "SeasonChipGroup": 0,
+      "WindChipGroup": 4
+    },
+    "26":
+    {
+      "DigitChipFirstGroup": 7,
+      "DigitChipSecondGroup": 7,
+      "DigitChipThirdGroup": 7,
+      "DragonChipGroupNumber": 1,
+      "FlowerChipGroup": 0,
+      "MysticChipGroup": 0,
+      "SeasonChipGroup": 0,
+      "WindChipGroup": 4
+    },
+    "27":
+    {
+      "DigitChipFirstGroup": 7,
+      "DigitChipSecondGroup": 7,
+      "DigitChipThirdGroup": 7,
+      "DragonChipGroupNumber": 1,
+      "FlowerChipGroup": 4,
+      "MysticChipGroup": 0,
+      "SeasonChipGroup": 0,
+      "WindChipGroup": 4
+    },
+    "28":
+    {
+      "DigitChipFirstGroup": 7,
+      "DigitChipSecondGroup": 7,
+      "DigitChipThirdGroup": 7,
+      "DragonChipGroupNumber": 2,
+      "FlowerChipGroup": 4,
+      "MysticChipGroup": 0,
+      "SeasonChipGroup": 0,
+      "WindChipGroup": 4
+    },
+    "29":
+    {
+      "DigitChipFirstGroup": 7,
+      "DigitChipSecondGroup": 7,
+      "DigitChipThirdGroup": 8,
+      "DragonChipGroupNumber": 2,
+      "FlowerChipGroup": 4,
+      "MysticChipGroup": 0,
+      "SeasonChipGroup": 0,
+      "WindChipGroup": 4
+    },
+    "30":
+    {
+      "DigitChipFirstGroup": 7,
+      "DigitChipSecondGroup": 8,
+      "DigitChipThirdGroup": 8,
+      "DragonChipGroupNumber": 2,
+      "FlowerChipGroup": 4,
+      "MysticChipGroup": 0,
+      "SeasonChipGroup": 0,
+      "WindChipGroup": 4
+    },
+    "31":
+    {
+      "DigitChipFirstGroup": 8,
+      "DigitChipSecondGroup": 8,
+      "DigitChipThirdGroup": 8,
+      "DragonChipGroupNumber": 2,
+      "FlowerChipGroup": 4,
+      "MysticChipGroup": 0,
+      "SeasonChipGroup": 0,
+      "WindChipGroup": 4
+    },
+    "32":
+    {
+      "DigitChipFirstGroup": 8,
+      "DigitChipSecondGroup": 8,
+      "DigitChipThirdGroup": 8,
+      "DragonChipGroupNumber": 2,
+      "FlowerChipGroup": 4,
+      "MysticChipGroup": 0,
+      "SeasonChipGroup": 4,
+      "WindChipGroup": 4
+    },
+    "33":
+    {
+      "DigitChipFirstGroup": 8,
+      "DigitChipSecondGroup": 8,
+      "DigitChipThirdGroup": 8,
+      "DragonChipGroupNumber": 3,
+      "FlowerChipGroup": 4,
+      "MysticChipGroup": 0,
+      "SeasonChipGroup": 4,
+      "WindChipGroup": 4
+    },
+    "34":
+    {
+      "DigitChipFirstGroup": 8,
+      "DigitChipSecondGroup": 8,
+      "DigitChipThirdGroup": 9,
+      "DragonChipGroupNumber": 3,
+      "FlowerChipGroup": 4,
+      "MysticChipGroup": 0,
+      "SeasonChipGroup": 4,
+      "WindChipGroup": 4
+    },
+    "35":
+    {
+      "DigitChipFirstGroup": 8,
+      "DigitChipSecondGroup": 9,
+      "DigitChipThirdGroup": 9,
+      "DragonChipGroupNumber": 3,
+      "FlowerChipGroup": 4,
+      "MysticChipGroup": 0,
+      "SeasonChipGroup": 4,
+      "WindChipGroup": 4
+    },
+    "36":
+    {
+      "DigitChipFirstGroup": 9,
+      "DigitChipSecondGroup": 9,
+      "DigitChipThirdGroup": 9,
+      "DragonChipGroupNumber": 3,
+      "FlowerChipGroup": 4,
+      "MysticChipGroup": 0,
+      "SeasonChipGroup": 4,
+      "WindChipGroup": 4
+    }
+  }
+}

@@ -80,7 +80,7 @@ private:
 
   int         m_eChipType; // MJChipType
   std::string m_sChipTypeValue;
-  std::string m_sId; // TODO!
+  std::string m_sDebugID;
 
   SPoint2d m_position;
   int      m_zOreder;

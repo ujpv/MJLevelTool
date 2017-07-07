@@ -1,0 +1,1540 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>Layers</key>
+		<array>
+			<array>
+				<dict>
+					<key>Position</key>
+					<string>{5, 2}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{5, 3}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{5, 8}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{5, 9}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{6, 9}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{6, 8}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{6, 7}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{6, 6}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{6, 5}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{6, 4}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{6, 3}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{6, 2}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{7, 2}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{7, 3}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{7, 8}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{7, 9}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{14, 9}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{14, 8}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{14, 3}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{14, 2}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{15, 2}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{15, 3}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{15, 4}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{15, 5}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{15, 6}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{15, 7}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{15, 8}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{15, 9}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{16, 9}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{16, 8}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{16, 3}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{16, 2}</string>
+				</dict>
+			</array>
+			<array>
+				<dict>
+					<key>Position</key>
+					<string>{5, 2}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{5, 3}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{5, 8}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{5, 9}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{6, 9}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{6, 8}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{6, 7}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{6, 6}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{6, 5}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{6, 4}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{6, 3}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{6, 2}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{7, 2}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{7, 3}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{7, 8}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{7, 9}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{14, 9}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{14, 8}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{14, 3}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{14, 2}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{15, 2}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{15, 3}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{15, 4}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{15, 5}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{15, 6}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{15, 7}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{15, 8}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{15, 9}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{16, 9}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{16, 8}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{16, 3}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{16, 2}</string>
+				</dict>
+			</array>
+			<array>
+				<dict>
+					<key>Position</key>
+					<string>{5, 2}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{5, 3}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{5, 8}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{5, 9}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{6, 9}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{6, 8}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{6, 7}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{6, 6}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{6, 5}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{6, 4}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{6, 3}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{6, 2}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{7, 2}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{7, 3}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{7, 8}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{7, 9}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{14, 9}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{14, 8}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{14, 3}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{14, 2}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{15, 2}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{15, 3}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{15, 4}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{15, 5}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{15, 6}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{15, 7}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{15, 8}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{15, 9}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{16, 9}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{16, 8}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{16, 3}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{16, 2}</string>
+				</dict>
+			</array>
+			<array>
+				<dict>
+					<key>Position</key>
+					<string>{6.5, 7}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{6.5, 6}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{6.5, 5}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{6.5, 4}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{14.5, 4}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{14.5, 5}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{14.5, 6}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{14.5, 7}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{5.5, 2.5}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{5.5, 8.5}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{6.5, 8.5}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{6.5, 2.5}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{14.5, 2.5}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{14.5, 8.5}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{15.5, 8.5}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{15.5, 2.5}</string>
+				</dict>
+			</array>
+			<array>
+				<dict>
+					<key>Position</key>
+					<string>{7, 7}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{7, 6}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{7, 5}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{7, 4}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{14, 4}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{14, 5}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{14, 6}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{14, 7}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{6, 2.5}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{6, 8.5}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{15, 2.5}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{15, 8.5}</string>
+				</dict>
+			</array>
+			<array>
+				<dict>
+					<key>Position</key>
+					<string>{7, 7}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{7, 6}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{7, 5}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{7, 4}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{14, 4}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{14, 5}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{14, 6}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{14, 7}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{6, 2.5}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{6, 8.5}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{15, 2.5}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{15, 8.5}</string>
+				</dict>
+			</array>
+			<array>
+				<dict>
+					<key>Position</key>
+					<string>{7.5, 7}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{7.5, 6}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{7.5, 5}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{7.5, 4}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{13.5, 4}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{13.5, 5}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{13.5, 6}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{13.5, 7}</string>
+				</dict>
+			</array>
+			<array>
+				<dict>
+					<key>Position</key>
+					<string>{8, 7}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{8, 6}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{8, 5}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{8, 4}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{13, 4}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{13, 5}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{13, 6}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{13, 7}</string>
+				</dict>
+			</array>
+			<array>
+				<dict>
+					<key>Position</key>
+					<string>{8.5, 7}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{8.5, 6}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{8.5, 5}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{8.5, 4}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{12.5, 4}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{12.5, 5}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{12.5, 6}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{12.5, 7}</string>
+				</dict>
+			</array>
+			<array>
+				<dict>
+					<key>Position</key>
+					<string>{9, 7}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{9, 6}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{9, 5}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{9, 4}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{12, 4}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{12, 5}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{12, 6}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{12, 7}</string>
+				</dict>
+			</array>
+			<array>
+				<dict>
+					<key>Position</key>
+					<string>{9.5, 6.5}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{9.5, 5.5}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{9.5, 4.5}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{10.5, 4.5}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{10.5, 5.5}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{10.5, 6.5}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{11.5, 6.5}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{11.5, 5.5}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{11.5, 4.5}</string>
+				</dict>
+			</array>
+			<array>
+				<dict>
+					<key>Position</key>
+					<string>{10, 6}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{10, 5}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{11, 5}</string>
+				</dict>
+				<dict>
+					<key>Position</key>
+					<string>{11, 6}</string>
+				</dict>
+			</array>
+			<array>
+				<dict>
+					<key>Position</key>
+					<string>{10.5, 5.5}</string>
+				</dict>
+			</array>
+		</array>
+		<key>Metadata</key>
+		<dict>
+			<key>Offset</key>
+			<string>{0.6, 0.4}</string>
+			<key>BonusTimeLimit</key>
+			<integer>270</integer>
+			<key>DigitChipFirstGroupNumber</key>
+			<integer>7</integer>
+			<key>DigitChipSecondGroupNumber</key>
+			<integer>7</integer>
+			<key>DigitChipThirdGroupNumber</key>
+			<integer>7</integer>
+			<key>DragonChipGroupNumber</key>
+			<integer>1</integer>
+			<key>FirstGoldenChipPosition</key>
+			<array>
+				<string>{6, 7}</string>
+				<string>{6, 4}</string>
+			</array>
+			<key>FlowerChipGroupNumber</key>
+			<integer>0</integer>
+			<key>MysticChipGroupNumber</key>
+			<integer>0</integer>
+			<key>IsSecretChipEnabled</key>
+			<string>false</string>
+			<key>LevelTime</key>
+			<integer>0</integer>
+			<key>SeasonChipGroupNumber</key>
+			<integer>0</integer>
+			<key>SecondGoldenChipPosition</key>
+			<array>
+				<string>{15, 4}</string>
+				<string>{15, 7}</string>
+			</array>
+			<key>StarOneTime</key>
+			<integer>270</integer>
+			<key>StarThreeTime</key>
+			<integer>140</integer>
+			<key>StarTwoTime</key>
+			<integer>200</integer>
+			<key>WindChipGroupNumber</key>
+			<integer>4</integer>
+		</dict>
+		<key>ExtraParams</key>
+		<dict>
+			<key>Enabled</key>
+			<integer>1</integer>
+			<key>Presets</key>
+			<array>
+				<dict>
+					<key>DigitChipFirstGroupNumber</key>
+					<string>8</string>
+					<key>DigitChipSecondGroupNumber</key>
+					<string>9</string>
+					<key>DigitChipThirdGroupNumber</key>
+					<string>9</string>
+					<key>DragonChipGroupNumber</key>
+					<string>3</string>
+					<key>FlowerChipGroupNumber</key>
+					<string>4</string>
+					<key>MysticChipGroupNumber</key>
+					<string>0</string>
+					<key>SeasonChipGroupNumber</key>
+					<string>4</string>
+					<key>WindChipGroupNumber</key>
+					<string>4</string>
+					<key>Seed</key>
+					<string>258</string>
+					<key>Algorithm</key>
+					<string>L1</string>
+				</dict>
+				<dict>
+					<key>DigitChipFirstGroupNumber</key>
+					<string>8</string>
+					<key>DigitChipSecondGroupNumber</key>
+					<string>8</string>
+					<key>DigitChipThirdGroupNumber</key>
+					<string>8</string>
+					<key>DragonChipGroupNumber</key>
+					<string>3</string>
+					<key>FlowerChipGroupNumber</key>
+					<string>4</string>
+					<key>MysticChipGroupNumber</key>
+					<string>0</string>
+					<key>SeasonChipGroupNumber</key>
+					<string>4</string>
+					<key>WindChipGroupNumber</key>
+					<string>4</string>
+					<key>Seed</key>
+					<string>269</string>
+					<key>Algorithm</key>
+					<string>L1</string>
+				</dict>
+				<dict>
+					<key>DigitChipFirstGroupNumber</key>
+					<string>7</string>
+					<key>DigitChipSecondGroupNumber</key>
+					<string>7</string>
+					<key>DigitChipThirdGroupNumber</key>
+					<string>7</string>
+					<key>DragonChipGroupNumber</key>
+					<string>1</string>
+					<key>FlowerChipGroupNumber</key>
+					<string>0</string>
+					<key>MysticChipGroupNumber</key>
+					<string>0</string>
+					<key>SeasonChipGroupNumber</key>
+					<string>0</string>
+					<key>WindChipGroupNumber</key>
+					<string>4</string>
+					<key>Seed</key>
+					<string>322</string>
+					<key>Algorithm</key>
+					<string>L1</string>
+				</dict>
+				<dict>
+					<key>DigitChipFirstGroupNumber</key>
+					<string>8</string>
+					<key>DigitChipSecondGroupNumber</key>
+					<string>8</string>
+					<key>DigitChipThirdGroupNumber</key>
+					<string>8</string>
+					<key>DragonChipGroupNumber</key>
+					<string>3</string>
+					<key>FlowerChipGroupNumber</key>
+					<string>4</string>
+					<key>MysticChipGroupNumber</key>
+					<string>0</string>
+					<key>SeasonChipGroupNumber</key>
+					<string>4</string>
+					<key>WindChipGroupNumber</key>
+					<string>4</string>
+					<key>Seed</key>
+					<string>348</string>
+					<key>Algorithm</key>
+					<string>L1</string>
+				</dict>
+				<dict>
+					<key>DigitChipFirstGroupNumber</key>
+					<string>9</string>
+					<key>DigitChipSecondGroupNumber</key>
+					<string>9</string>
+					<key>DigitChipThirdGroupNumber</key>
+					<string>9</string>
+					<key>DragonChipGroupNumber</key>
+					<string>3</string>
+					<key>FlowerChipGroupNumber</key>
+					<string>4</string>
+					<key>MysticChipGroupNumber</key>
+					<string>0</string>
+					<key>SeasonChipGroupNumber</key>
+					<string>4</string>
+					<key>WindChipGroupNumber</key>
+					<string>4</string>
+					<key>Seed</key>
+					<string>361</string>
+					<key>Algorithm</key>
+					<string>L1</string>
+				</dict>
+				<dict>
+					<key>DigitChipFirstGroupNumber</key>
+					<string>8</string>
+					<key>DigitChipSecondGroupNumber</key>
+					<string>8</string>
+					<key>DigitChipThirdGroupNumber</key>
+					<string>8</string>
+					<key>DragonChipGroupNumber</key>
+					<string>2</string>
+					<key>FlowerChipGroupNumber</key>
+					<string>4</string>
+					<key>MysticChipGroupNumber</key>
+					<string>0</string>
+					<key>SeasonChipGroupNumber</key>
+					<string>0</string>
+					<key>WindChipGroupNumber</key>
+					<string>4</string>
+					<key>Seed</key>
+					<string>368</string>
+					<key>Algorithm</key>
+					<string>L1</string>
+				</dict>
+				<dict>
+					<key>DigitChipFirstGroupNumber</key>
+					<string>7</string>
+					<key>DigitChipSecondGroupNumber</key>
+					<string>8</string>
+					<key>DigitChipThirdGroupNumber</key>
+					<string>8</string>
+					<key>DragonChipGroupNumber</key>
+					<string>2</string>
+					<key>FlowerChipGroupNumber</key>
+					<string>4</string>
+					<key>MysticChipGroupNumber</key>
+					<string>0</string>
+					<key>SeasonChipGroupNumber</key>
+					<string>0</string>
+					<key>WindChipGroupNumber</key>
+					<string>4</string>
+					<key>Seed</key>
+					<string>384</string>
+					<key>Algorithm</key>
+					<string>L1</string>
+				</dict>
+				<dict>
+					<key>DigitChipFirstGroupNumber</key>
+					<string>8</string>
+					<key>DigitChipSecondGroupNumber</key>
+					<string>9</string>
+					<key>DigitChipThirdGroupNumber</key>
+					<string>9</string>
+					<key>DragonChipGroupNumber</key>
+					<string>3</string>
+					<key>FlowerChipGroupNumber</key>
+					<string>4</string>
+					<key>MysticChipGroupNumber</key>
+					<string>0</string>
+					<key>SeasonChipGroupNumber</key>
+					<string>4</string>
+					<key>WindChipGroupNumber</key>
+					<string>4</string>
+					<key>Seed</key>
+					<string>410</string>
+					<key>Algorithm</key>
+					<string>L1</string>
+				</dict>
+				<dict>
+					<key>DigitChipFirstGroupNumber</key>
+					<string>8</string>
+					<key>DigitChipSecondGroupNumber</key>
+					<string>8</string>
+					<key>DigitChipThirdGroupNumber</key>
+					<string>8</string>
+					<key>DragonChipGroupNumber</key>
+					<string>2</string>
+					<key>FlowerChipGroupNumber</key>
+					<string>4</string>
+					<key>MysticChipGroupNumber</key>
+					<string>0</string>
+					<key>SeasonChipGroupNumber</key>
+					<string>4</string>
+					<key>WindChipGroupNumber</key>
+					<string>4</string>
+					<key>Seed</key>
+					<string>417</string>
+					<key>Algorithm</key>
+					<string>L1</string>
+				</dict>
+				<dict>
+					<key>DigitChipFirstGroupNumber</key>
+					<string>8</string>
+					<key>DigitChipSecondGroupNumber</key>
+					<string>9</string>
+					<key>DigitChipThirdGroupNumber</key>
+					<string>9</string>
+					<key>DragonChipGroupNumber</key>
+					<string>3</string>
+					<key>FlowerChipGroupNumber</key>
+					<string>4</string>
+					<key>MysticChipGroupNumber</key>
+					<string>0</string>
+					<key>SeasonChipGroupNumber</key>
+					<string>4</string>
+					<key>WindChipGroupNumber</key>
+					<string>4</string>
+					<key>Seed</key>
+					<string>436</string>
+					<key>Algorithm</key>
+					<string>L1</string>
+				</dict>
+				<dict>
+					<key>DigitChipFirstGroupNumber</key>
+					<string>6</string>
+					<key>DigitChipSecondGroupNumber</key>
+					<string>6</string>
+					<key>DigitChipThirdGroupNumber</key>
+					<string>7</string>
+					<key>DragonChipGroupNumber</key>
+					<string>1</string>
+					<key>FlowerChipGroupNumber</key>
+					<string>0</string>
+					<key>MysticChipGroupNumber</key>
+					<string>0</string>
+					<key>SeasonChipGroupNumber</key>
+					<string>0</string>
+					<key>WindChipGroupNumber</key>
+					<string>4</string>
+					<key>Seed</key>
+					<string>474</string>
+					<key>Algorithm</key>
+					<string>L1</string>
+				</dict>
+				<dict>
+					<key>DigitChipFirstGroupNumber</key>
+					<string>7</string>
+					<key>DigitChipSecondGroupNumber</key>
+					<string>8</string>
+					<key>DigitChipThirdGroupNumber</key>
+					<string>8</string>
+					<key>DragonChipGroupNumber</key>
+					<string>2</string>
+					<key>FlowerChipGroupNumber</key>
+					<string>4</string>
+					<key>MysticChipGroupNumber</key>
+					<string>0</string>
+					<key>SeasonChipGroupNumber</key>
+					<string>0</string>
+					<key>WindChipGroupNumber</key>
+					<string>4</string>
+					<key>Seed</key>
+					<string>493</string>
+					<key>Algorithm</key>
+					<string>L1</string>
+				</dict>
+				<dict>
+					<key>DigitChipFirstGroupNumber</key>
+					<string>8</string>
+					<key>DigitChipSecondGroupNumber</key>
+					<string>8</string>
+					<key>DigitChipThirdGroupNumber</key>
+					<string>8</string>
+					<key>DragonChipGroupNumber</key>
+					<string>2</string>
+					<key>FlowerChipGroupNumber</key>
+					<string>4</string>
+					<key>MysticChipGroupNumber</key>
+					<string>0</string>
+					<key>SeasonChipGroupNumber</key>
+					<string>0</string>
+					<key>WindChipGroupNumber</key>
+					<string>4</string>
+					<key>Seed</key>
+					<string>505</string>
+					<key>Algorithm</key>
+					<string>L1</string>
+				</dict>
+				<dict>
+					<key>DigitChipFirstGroupNumber</key>
+					<string>7</string>
+					<key>DigitChipSecondGroupNumber</key>
+					<string>8</string>
+					<key>DigitChipThirdGroupNumber</key>
+					<string>8</string>
+					<key>DragonChipGroupNumber</key>
+					<string>2</string>
+					<key>FlowerChipGroupNumber</key>
+					<string>4</string>
+					<key>MysticChipGroupNumber</key>
+					<string>0</string>
+					<key>SeasonChipGroupNumber</key>
+					<string>0</string>
+					<key>WindChipGroupNumber</key>
+					<string>4</string>
+					<key>Seed</key>
+					<string>505</string>
+					<key>Algorithm</key>
+					<string>L1</string>
+				</dict>
+				<dict>
+					<key>DigitChipFirstGroupNumber</key>
+					<string>6</string>
+					<key>DigitChipSecondGroupNumber</key>
+					<string>6</string>
+					<key>DigitChipThirdGroupNumber</key>
+					<string>6</string>
+					<key>DragonChipGroupNumber</key>
+					<string>0</string>
+					<key>FlowerChipGroupNumber</key>
+					<string>0</string>
+					<key>MysticChipGroupNumber</key>
+					<string>0</string>
+					<key>SeasonChipGroupNumber</key>
+					<string>0</string>
+					<key>WindChipGroupNumber</key>
+					<string>4</string>
+					<key>Seed</key>
+					<string>503</string>
+					<key>Algorithm</key>
+					<string>L1</string>
+				</dict>
+				<dict>
+					<key>DigitChipFirstGroupNumber</key>
+					<string>8</string>
+					<key>DigitChipSecondGroupNumber</key>
+					<string>9</string>
+					<key>DigitChipThirdGroupNumber</key>
+					<string>9</string>
+					<key>DragonChipGroupNumber</key>
+					<string>3</string>
+					<key>FlowerChipGroupNumber</key>
+					<string>4</string>
+					<key>MysticChipGroupNumber</key>
+					<string>0</string>
+					<key>SeasonChipGroupNumber</key>
+					<string>4</string>
+					<key>WindChipGroupNumber</key>
+					<string>4</string>
+					<key>Seed</key>
+					<string>512</string>
+					<key>Algorithm</key>
+					<string>L1</string>
+				</dict>
+				<dict>
+					<key>DigitChipFirstGroupNumber</key>
+					<string>9</string>
+					<key>DigitChipSecondGroupNumber</key>
+					<string>9</string>
+					<key>DigitChipThirdGroupNumber</key>
+					<string>9</string>
+					<key>DragonChipGroupNumber</key>
+					<string>3</string>
+					<key>FlowerChipGroupNumber</key>
+					<string>4</string>
+					<key>MysticChipGroupNumber</key>
+					<string>0</string>
+					<key>SeasonChipGroupNumber</key>
+					<string>4</string>
+					<key>WindChipGroupNumber</key>
+					<string>4</string>
+					<key>Seed</key>
+					<string>536</string>
+					<key>Algorithm</key>
+					<string>L1</string>
+				</dict>
+				<dict>
+					<key>DigitChipFirstGroupNumber</key>
+					<string>8</string>
+					<key>DigitChipSecondGroupNumber</key>
+					<string>8</string>
+					<key>DigitChipThirdGroupNumber</key>
+					<string>8</string>
+					<key>DragonChipGroupNumber</key>
+					<string>2</string>
+					<key>FlowerChipGroupNumber</key>
+					<string>4</string>
+					<key>MysticChipGroupNumber</key>
+					<string>0</string>
+					<key>SeasonChipGroupNumber</key>
+					<string>4</string>
+					<key>WindChipGroupNumber</key>
+					<string>4</string>
+					<key>Seed</key>
+					<string>546</string>
+					<key>Algorithm</key>
+					<string>L1</string>
+				</dict>
+				<dict>
+					<key>DigitChipFirstGroupNumber</key>
+					<string>8</string>
+					<key>DigitChipSecondGroupNumber</key>
+					<string>9</string>
+					<key>DigitChipThirdGroupNumber</key>
+					<string>9</string>
+					<key>DragonChipGroupNumber</key>
+					<string>3</string>
+					<key>FlowerChipGroupNumber</key>
+					<string>4</string>
+					<key>MysticChipGroupNumber</key>
+					<string>0</string>
+					<key>SeasonChipGroupNumber</key>
+					<string>4</string>
+					<key>WindChipGroupNumber</key>
+					<string>4</string>
+					<key>Seed</key>
+					<string>572</string>
+					<key>Algorithm</key>
+					<string>L1</string>
+				</dict>
+				<dict>
+					<key>DigitChipFirstGroupNumber</key>
+					<string>8</string>
+					<key>DigitChipSecondGroupNumber</key>
+					<string>9</string>
+					<key>DigitChipThirdGroupNumber</key>
+					<string>9</string>
+					<key>DragonChipGroupNumber</key>
+					<string>3</string>
+					<key>FlowerChipGroupNumber</key>
+					<string>4</string>
+					<key>MysticChipGroupNumber</key>
+					<string>0</string>
+					<key>SeasonChipGroupNumber</key>
+					<string>4</string>
+					<key>WindChipGroupNumber</key>
+					<string>4</string>
+					<key>Seed</key>
+					<string>588</string>
+					<key>Algorithm</key>
+					<string>L1</string>
+				</dict>
+				<dict>
+					<key>DigitChipFirstGroupNumber</key>
+					<string>8</string>
+					<key>DigitChipSecondGroupNumber</key>
+					<string>8</string>
+					<key>DigitChipThirdGroupNumber</key>
+					<string>8</string>
+					<key>DragonChipGroupNumber</key>
+					<string>3</string>
+					<key>FlowerChipGroupNumber</key>
+					<string>4</string>
+					<key>MysticChipGroupNumber</key>
+					<string>0</string>
+					<key>SeasonChipGroupNumber</key>
+					<string>4</string>
+					<key>WindChipGroupNumber</key>
+					<string>4</string>
+					<key>Seed</key>
+					<string>584</string>
+					<key>Algorithm</key>
+					<string>L1</string>
+				</dict>
+				<dict>
+					<key>DigitChipFirstGroupNumber</key>
+					<string>8</string>
+					<key>DigitChipSecondGroupNumber</key>
+					<string>8</string>
+					<key>DigitChipThirdGroupNumber</key>
+					<string>8</string>
+					<key>DragonChipGroupNumber</key>
+					<string>2</string>
+					<key>FlowerChipGroupNumber</key>
+					<string>4</string>
+					<key>MysticChipGroupNumber</key>
+					<string>0</string>
+					<key>SeasonChipGroupNumber</key>
+					<string>4</string>
+					<key>WindChipGroupNumber</key>
+					<string>4</string>
+					<key>Seed</key>
+					<string>593</string>
+					<key>Algorithm</key>
+					<string>L1</string>
+				</dict>
+				<dict>
+					<key>DigitChipFirstGroupNumber</key>
+					<string>6</string>
+					<key>DigitChipSecondGroupNumber</key>
+					<string>6</string>
+					<key>DigitChipThirdGroupNumber</key>
+					<string>6</string>
+					<key>DragonChipGroupNumber</key>
+					<string>0</string>
+					<key>FlowerChipGroupNumber</key>
+					<string>0</string>
+					<key>MysticChipGroupNumber</key>
+					<string>0</string>
+					<key>SeasonChipGroupNumber</key>
+					<string>0</string>
+					<key>WindChipGroupNumber</key>
+					<string>3</string>
+					<key>Seed</key>
+					<string>606</string>
+					<key>Algorithm</key>
+					<string>L1</string>
+				</dict>
+				<dict>
+					<key>DigitChipFirstGroupNumber</key>
+					<string>9</string>
+					<key>DigitChipSecondGroupNumber</key>
+					<string>9</string>
+					<key>DigitChipThirdGroupNumber</key>
+					<string>9</string>
+					<key>DragonChipGroupNumber</key>
+					<string>3</string>
+					<key>FlowerChipGroupNumber</key>
+					<string>4</string>
+					<key>MysticChipGroupNumber</key>
+					<string>0</string>
+					<key>SeasonChipGroupNumber</key>
+					<string>4</string>
+					<key>WindChipGroupNumber</key>
+					<string>4</string>
+					<key>Seed</key>
+					<string>628</string>
+					<key>Algorithm</key>
+					<string>L1</string>
+				</dict>
+				<dict>
+					<key>DigitChipFirstGroupNumber</key>
+					<string>7</string>
+					<key>DigitChipSecondGroupNumber</key>
+					<string>7</string>
+					<key>DigitChipThirdGroupNumber</key>
+					<string>7</string>
+					<key>DragonChipGroupNumber</key>
+					<string>1</string>
+					<key>FlowerChipGroupNumber</key>
+					<string>4</string>
+					<key>MysticChipGroupNumber</key>
+					<string>0</string>
+					<key>SeasonChipGroupNumber</key>
+					<string>0</string>
+					<key>WindChipGroupNumber</key>
+					<string>4</string>
+					<key>Seed</key>
+					<string>622</string>
+					<key>Algorithm</key>
+					<string>L1</string>
+				</dict>
+				<dict>
+					<key>DigitChipFirstGroupNumber</key>
+					<string>8</string>
+					<key>DigitChipSecondGroupNumber</key>
+					<string>8</string>
+					<key>DigitChipThirdGroupNumber</key>
+					<string>9</string>
+					<key>DragonChipGroupNumber</key>
+					<string>3</string>
+					<key>FlowerChipGroupNumber</key>
+					<string>4</string>
+					<key>MysticChipGroupNumber</key>
+					<string>0</string>
+					<key>SeasonChipGroupNumber</key>
+					<string>4</string>
+					<key>WindChipGroupNumber</key>
+					<string>4</string>
+					<key>Seed</key>
+					<string>648</string>
+					<key>Algorithm</key>
+					<string>L1</string>
+				</dict>
+				<dict>
+					<key>DigitChipFirstGroupNumber</key>
+					<string>7</string>
+					<key>DigitChipSecondGroupNumber</key>
+					<string>7</string>
+					<key>DigitChipThirdGroupNumber</key>
+					<string>8</string>
+					<key>DragonChipGroupNumber</key>
+					<string>2</string>
+					<key>FlowerChipGroupNumber</key>
+					<string>4</string>
+					<key>MysticChipGroupNumber</key>
+					<string>0</string>
+					<key>SeasonChipGroupNumber</key>
+					<string>0</string>
+					<key>WindChipGroupNumber</key>
+					<string>4</string>
+					<key>Seed</key>
+					<string>644</string>
+					<key>Algorithm</key>
+					<string>L1</string>
+				</dict>
+				<dict>
+					<key>DigitChipFirstGroupNumber</key>
+					<string>8</string>
+					<key>DigitChipSecondGroupNumber</key>
+					<string>9</string>
+					<key>DigitChipThirdGroupNumber</key>
+					<string>9</string>
+					<key>DragonChipGroupNumber</key>
+					<string>3</string>
+					<key>FlowerChipGroupNumber</key>
+					<string>4</string>
+					<key>MysticChipGroupNumber</key>
+					<string>0</string>
+					<key>SeasonChipGroupNumber</key>
+					<string>4</string>
+					<key>WindChipGroupNumber</key>
+					<string>4</string>
+					<key>Seed</key>
+					<string>704</string>
+					<key>Algorithm</key>
+					<string>L1</string>
+				</dict>
+				<dict>
+					<key>DigitChipFirstGroupNumber</key>
+					<string>8</string>
+					<key>DigitChipSecondGroupNumber</key>
+					<string>8</string>
+					<key>DigitChipThirdGroupNumber</key>
+					<string>9</string>
+					<key>DragonChipGroupNumber</key>
+					<string>3</string>
+					<key>FlowerChipGroupNumber</key>
+					<string>4</string>
+					<key>MysticChipGroupNumber</key>
+					<string>0</string>
+					<key>SeasonChipGroupNumber</key>
+					<string>4</string>
+					<key>WindChipGroupNumber</key>
+					<string>4</string>
+					<key>Seed</key>
+					<string>704</string>
+					<key>Algorithm</key>
+					<string>L1</string>
+				</dict>
+				<dict>
+					<key>DigitChipFirstGroupNumber</key>
+					<string>9</string>
+					<key>DigitChipSecondGroupNumber</key>
+					<string>9</string>
+					<key>DigitChipThirdGroupNumber</key>
+					<string>9</string>
+					<key>DragonChipGroupNumber</key>
+					<string>3</string>
+					<key>FlowerChipGroupNumber</key>
+					<string>4</string>
+					<key>MysticChipGroupNumber</key>
+					<string>0</string>
+					<key>SeasonChipGroupNumber</key>
+					<string>4</string>
+					<key>WindChipGroupNumber</key>
+					<string>4</string>
+					<key>Seed</key>
+					<string>745</string>
+					<key>Algorithm</key>
+					<string>L1</string>
+				</dict>
+				<dict>
+					<key>DigitChipFirstGroupNumber</key>
+					<string>8</string>
+					<key>DigitChipSecondGroupNumber</key>
+					<string>9</string>
+					<key>DigitChipThirdGroupNumber</key>
+					<string>9</string>
+					<key>DragonChipGroupNumber</key>
+					<string>3</string>
+					<key>FlowerChipGroupNumber</key>
+					<string>4</string>
+					<key>MysticChipGroupNumber</key>
+					<string>0</string>
+					<key>SeasonChipGroupNumber</key>
+					<string>4</string>
+					<key>WindChipGroupNumber</key>
+					<string>4</string>
+					<key>Seed</key>
+					<string>751</string>
+					<key>Algorithm</key>
+					<string>L1</string>
+				</dict>
+				<dict>
+					<key>DigitChipFirstGroupNumber</key>
+					<string>8</string>
+					<key>DigitChipSecondGroupNumber</key>
+					<string>9</string>
+					<key>DigitChipThirdGroupNumber</key>
+					<string>9</string>
+					<key>DragonChipGroupNumber</key>
+					<string>3</string>
+					<key>FlowerChipGroupNumber</key>
+					<string>4</string>
+					<key>MysticChipGroupNumber</key>
+					<string>0</string>
+					<key>SeasonChipGroupNumber</key>
+					<string>4</string>
+					<key>WindChipGroupNumber</key>
+					<string>4</string>
+					<key>Seed</key>
+					<string>769</string>
+					<key>Algorithm</key>
+					<string>L1</string>
+				</dict>
+				<dict>
+					<key>DigitChipFirstGroupNumber</key>
+					<string>7</string>
+					<key>DigitChipSecondGroupNumber</key>
+					<string>7</string>
+					<key>DigitChipThirdGroupNumber</key>
+					<string>7</string>
+					<key>DragonChipGroupNumber</key>
+					<string>2</string>
+					<key>FlowerChipGroupNumber</key>
+					<string>4</string>
+					<key>MysticChipGroupNumber</key>
+					<string>0</string>
+					<key>SeasonChipGroupNumber</key>
+					<string>0</string>
+					<key>WindChipGroupNumber</key>
+					<string>4</string>
+					<key>Seed</key>
+					<string>761</string>
+					<key>Algorithm</key>
+					<string>L1</string>
+				</dict>
+			</array>
+		</dict>
+	</dict>
+</plist>
