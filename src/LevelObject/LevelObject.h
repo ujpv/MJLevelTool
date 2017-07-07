@@ -20,7 +20,7 @@ public:
 
   void BuildWithSeed(
       int _seed
-    ) {}
+    );
 
 private:
   void Clear();

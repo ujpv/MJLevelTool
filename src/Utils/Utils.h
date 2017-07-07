@@ -7,7 +7,15 @@ struct SPoint2d
 {
   float x;
   float y;
+  bool equals(
+      const SPoint2d & _other
+    ) const;
 };
+
+std::ostream & operator<<(
+    std::ostream &   _stream,
+    const SPoint2d & _point
+  );
 
 bool ParsePoint2d(
     const std::string & _array,

@@ -12,6 +12,8 @@
 //extern const std::string kMysticChipGroupPrefix;
 //extern const std::string kSeasonChipGroupPrefix;
 //extern const std::string kWindChipGroupPrefix;
+
+extern const std::string INITAL_CHIP_TYPE_VALUE;
 enum MJChipGroup
 {
   MJGoldChipGroup,

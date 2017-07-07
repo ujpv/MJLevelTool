@@ -114,6 +114,16 @@ void CToolConfig::Init(
   }
 }
 
+const SCFG &CToolConfig::GetCGF(
+    const std::string & _name
+  )
+{
+  std::map<std::string, SCFG>::const_iterator it = m_CFGs.find(_name);
+  if (it == m_CFGs.end())
+    throw MJToolException("Config error: Can't find CFG for name: " + _name);
+  return it->second;
+}
+
 void SCFG::Load(
     const Json::Value & _cfgElement
     )

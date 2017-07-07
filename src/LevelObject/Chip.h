@@ -39,6 +39,10 @@ public:
 
   const std::string & GetTypeValue() const;
 
+  void SetType(
+      MJChipType _type
+    );
+
   MJChipType GetType() const;
 
   const SPoint2d & GetPosition() const;
@@ -53,10 +57,20 @@ public:
       MJDirection _direction
     );
 
+  const std::set<MJChip *> & GetNeighbors(
+      MJDirection _direction
+    ) const;
+
+  bool IsBlockedByNeighbors() const;
+
+  void RemoveNeighbors();
+
 private:
   bool SetPosition(
       const Plist::dictionary_type * _params
     );
+
+  void ClearNeighborsContainers();
 
 private:
   std::set<MJChip *> m_rNeighborsTop;

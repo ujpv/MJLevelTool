@@ -5,19 +5,15 @@
 #include <cmath>
 #include <cfloat>
 
-//static const std::string kChipLayers = "Layers";
-//static const std::string kChipsLayerEdge = "ChipsLayerEdge";
 static const std::string kChipType = "Type";
 static const std::string kChipTypeValue = "TypeValue";
 static const std::string kChipPosition = "Position";
-//static const std::string kChipOffset = "Offset";
-//static const std::string kDepth = "Depth";
 
 static const float POSITION_ACCURACY = 0.1f;
 static const float POSITION_CENTER =   0.5f;
 
 MJChip::MJChip()
-  : m_eChipType(MJChipTypeUnknown)
+  : m_eChipType(MJChipTypeStandard)
   , m_sChipTypeValue("g0")
 {
 }
@@ -52,6 +48,11 @@ void MJChip::SetTypeValue(
 const std::string & MJChip::GetTypeValue() const
 {
   return m_sChipTypeValue;
+}
+
+void MJChip::SetType(MJChipType _type)
+{
+  m_eChipType = _type;
 }
 
 MJChipType MJChip::GetType() const
@@ -99,7 +100,7 @@ void MJChip::SetupNeighbors(
             (
               (fDiffY1 <= POSITION_ACCURACY && fDiffY1 >= -POSITION_ACCURACY) ||
               (fDiffY2 <= POSITION_ACCURACY && fDiffY2 >= -POSITION_ACCURACY) ||
-              (std::abs(chip.GetPosition().y - chipY) <= FLT_EPSILON)
+              (std::fabs(chip.GetPosition().y - chipY) <= FLT_EPSILON)
             )
            )
         {
@@ -115,7 +116,7 @@ void MJChip::SetupNeighbors(
             (
               (fDiffY1 <= POSITION_ACCURACY && fDiffY1 >= -POSITION_ACCURACY) ||
               (fDiffY2 <= POSITION_ACCURACY && fDiffY2 >= -POSITION_ACCURACY) ||
-              (std::abs(chipY - chip.GetPosition().y) <= FLT_EPSILON)
+              (std::fabs(chipY - chip.GetPosition().y) <= FLT_EPSILON)
             )
            )
         {
@@ -138,12 +139,12 @@ void MJChip::SetupNeighbors(
             (
               (fDiffX1 <= POSITION_ACCURACY && fDiffX1 >= -POSITION_ACCURACY) ||
               (fDiffX2 <= POSITION_ACCURACY && fDiffX2 >= -POSITION_ACCURACY) ||
-              (std::abs(chipX - chip.GetPosition().x) <= FLT_EPSILON)
+              (std::fabs(chipX - chip.GetPosition().x) <= FLT_EPSILON)
             ) &&
             (
               (fDiffY1 <= POSITION_ACCURACY && fDiffY1 >= -POSITION_ACCURACY) ||
               (fDiffY2 <= POSITION_ACCURACY && fDiffY2 >= -POSITION_ACCURACY) ||
-              (std::abs(chipY - chip.GetPosition().y) <= FLT_EPSILON)
+              (std::fabs(chipY - chip.GetPosition().y) <= FLT_EPSILON)
             )
            )
         {
@@ -166,12 +167,12 @@ void MJChip::SetupNeighbors(
             (
               (fDiffX1 <= POSITION_ACCURACY && fDiffX1 >= -POSITION_ACCURACY) ||
               (fDiffX2 <= POSITION_ACCURACY && fDiffX2 >= -POSITION_ACCURACY) ||
-              (std::abs(chipX  - chip.GetPosition().x) <= FLT_EPSILON)
+              (std::fabs(chipX  - chip.GetPosition().x) <= FLT_EPSILON)
              ) &&
             (
               (fDiffY1 <= POSITION_ACCURACY && fDiffY1 >= -POSITION_ACCURACY) ||
               (fDiffY2 <= POSITION_ACCURACY && fDiffY2 >= -POSITION_ACCURACY) ||
-              (std::abs(chipY - chip.GetPosition().y) <= FLT_EPSILON)
+              (std::fabs(chipY - chip.GetPosition().y) <= FLT_EPSILON)
             )
            )
         {
@@ -199,6 +200,47 @@ std::set<MJChip *> & MJChip::GetNeighbors(MJDirection _direction)
   }
 }
 
+const std::set<MJChip *> &MJChip::GetNeighbors(
+    MJDirection _direction
+  ) const
+{
+  switch (_direction) {
+    case Bottom:
+      return m_rNeighborsBottom;
+    case Top:
+      return m_rNeighborsTop;
+    case Left:
+      return m_rNeighborsLeft;
+    case Right:
+      return m_rNeighborsRight;
+    default:
+      throw MJToolException("MJChip::GetNeighbors const. Illegal argument _dir=" + std::to_string(_direction));
+  }
+}
+
+bool MJChip::IsBlockedByNeighbors() const
+{
+  return !m_rNeighborsTop.empty() || (m_rNeighborsRight.size() > 0 && m_rNeighborsLeft.size() > 0);
+}
+
+void MJChip::RemoveNeighbors()
+{
+  std::set<MJChip *>::iterator it = m_rNeighborsBottom.begin();
+  for (; it != m_rNeighborsBottom.end(); ++it)
+    (*it)->GetNeighbors(Top).erase(this);
+
+  for (it = m_rNeighborsLeft.begin(); it != m_rNeighborsLeft.end(); ++it)
+    (*it)->GetNeighbors(Right).erase(this);
+
+  for (it = m_rNeighborsRight.begin(); it != m_rNeighborsRight.end(); ++it)
+    (*it)->GetNeighbors(Left).erase(this);
+
+  for (it = m_rNeighborsTop.begin(); it != m_rNeighborsTop.end(); ++it)
+    (*it)->GetNeighbors(Bottom).erase(this);
+
+  ClearNeighborsContainers();
+}
+
 bool MJChip::SetPosition(
     const Plist::dictionary_type * _params
     )
@@ -208,4 +250,12 @@ bool MJChip::SetPosition(
     return false;
 
   return ParsePoint2d(value, m_position);
+}
+
+void MJChip::ClearNeighborsContainers()
+{
+  m_rNeighborsBottom.clear();
+  m_rNeighborsLeft.clear();
+  m_rNeighborsRight.clear();
+  m_rNeighborsTop.clear();
 }

@@ -114,3 +114,19 @@ bool PlistUtils::getStringForIndex(
   _value = *pValue;
   return true;
 }
+
+bool SPoint2d::equals(
+    const SPoint2d & _other
+  ) const
+{
+  return (std::fabs(x - _other.x) < FLT_EPSILON)
+      && (std::fabs(y - _other.y) < FLT_EPSILON);
+}
+
+std::ostream & operator<<(
+    std::ostream &   _stream,
+    const SPoint2d & _point
+  )
+{
+  return _stream << '{' << _point.x << ", " << _point.y << "}";
+}

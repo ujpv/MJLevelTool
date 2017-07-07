@@ -35,6 +35,10 @@ public:
       std::string _fileName
     );
 
+  const SCFG & GetCGF(
+      const std::string & _name
+    );
+
 private:
     CToolConfig();
 

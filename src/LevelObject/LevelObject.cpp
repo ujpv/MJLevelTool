@@ -8,8 +8,10 @@ static const std::string kSecondGoldenChipPosition = "SecondGoldenChipPosition";
 static const std::string kMetadata = "Metadata";
 
 MJLevelObject::MJLevelObject()
-  : m_Type(EAlgorithmType::algorithm_type_count)
-{}
+  : m_Type(EAlgorithmType::regular_type)
+{
+  m_randomiser.SetType(m_Type);
+}
 
 void MJLevelObject::initWithDictionary(
     const std::string & _levelFileName
@@ -126,6 +128,24 @@ void MJLevelObject::SetCFG(
   AddChipPairType(MJSeasonGroup, _cfg.m_iSeasonChipGroupNumber, true);
 }
 
+void MJLevelObject::BuildWithSeed(
+    int _seed
+  )
+{
+  m_randomiser.RandomizeChipsWithSeed(
+        m_levelChips,
+        m_chipsTypes,
+        m_firstGoldenChipPositions,
+        m_secondGoldenChipPositions,
+        _seed);
+
+//  std::vector<MJChip> &             _initialChips,
+//  const std::vector<ChipTypePair> & _typesList,
+//  const std::vector<SPoint2d> &     _firstGoldenChipPositions,
+//  const std::vector<SPoint2d> &     _secondGoldenChipPositions,
+//  int                               _seed)
+}
+
 void MJLevelObject::Clear()
 {
   m_startChips.clear();
@@ -146,9 +166,9 @@ void MJLevelObject::AddChipPairType(
     const std::string &prefix = ChipUtils::GetGroupPrefix(_group);
     value1 = prefix + std::to_string(i);
     if (_useRandom)
-      value2 = prefix + std::to_string(i);
-    else
       value2 = prefix + std::to_string(std::rand() % _count);
+    else
+      value2 = prefix + std::to_string(i);
 
     m_chipsTypes.push_back({value1, value2});
   }

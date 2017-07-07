@@ -8,9 +8,9 @@
 
 using namespace std;
 
-const std::string path = "d:\\develop\\MJLevelTool\\data\\level_1_29.plist";
+const std::string path = "d:\\develop\\MJLevelTool\\data\\levels\\level_1_29.plist ";
 //const std::string gConfigPath = "d:\\develop\\tool\\bin\\params_test.json";
-const std::string gConfigPath = "d:\\develop\\tool\\bin\\params.json";
+const std::string gConfigPath = "d:\\develop\\MJLevelTool\\data\\params_new.json ";
 
 inline void ExitMassage()
 {
@@ -20,10 +20,36 @@ inline void ExitMassage()
 
 int main()
 {
+  CToolConfig & config = CToolConfig::Instance();
+  std::cout << "Loadin config...";
+  try
+  {
+    config.Init(gConfigPath);
+  }
+  catch (std::exception & e)
+  {
+    std::cout << "\n Can't read config. Reason: " << e.what();
+    ExitMassage();
+    return 0;
+  }
+  std::cout << "\rLoadin config...OK\n";
+
   std::cout << "Loadin level...";
   MJLevelObject level;
   try {
     level.initWithDictionary(path);
+    level.SetCFG(config.GetCGF("25"));
+//    level.SetCFG(SCFG{
+//          9, //int m_iFirstGroupDigitChipsNumber;
+//          9, //int m_iSecondGroupDigitChipsNumber;
+//          9, //int m_iThirdGroupDigitChipsNumber;
+//          0, //int m_iMysticGroupChipsNumber;
+//          3, //int m_iDragonChipGroupNumber;
+//          4, //int m_iFlowerChipGroupNumber;
+//          4, //int m_iSeasonChipGroupNumber;
+//          4  //int m_iWindChipGroupNumber;
+//       });
+    level.BuildWithSeed(284);
   }
   catch(exception & e)
   {
@@ -31,8 +57,7 @@ int main()
     ExitMassage();
     return 1;
   }
-  std::cout << "\rLoadin config...Ok\n";
-
+  std::cout << "\rLoadin level...OK\n";
 
   ExitMassage();
   return 0;

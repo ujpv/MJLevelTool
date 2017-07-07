@@ -22,6 +22,8 @@ static std::map<MJChipGroup, std::string> chipGroupPrefix {
   {MJSeasonGroup,       "s"},
 };
 
+const std::string INITAL_CHIP_TYPE_VALUE = "g0";
+
 const std::string &ChipUtils::GetGroupPrefix(
     MJChipGroup _group
   )
