@@ -1,5 +1,6 @@
 #include "Utils.h"
 #include <sstream>
+#include <cfloat>
 
 bool PlistUtils::getIntForKey(
     const Plist::dictionary_type & _dict,
