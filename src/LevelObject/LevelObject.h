@@ -10,7 +10,7 @@ class MJLevelObject
 public:
   MJLevelObject();
 
-  void initWithDictionary(
+  void InitWithDictionary(
       const std::string & _levelFileName
     );
 
@@ -40,7 +40,6 @@ private:
   std::vector<SPoint2d>                            m_secondGoldenChipPositions;
   std::vector<std::pair<std::string, std::string>> m_chipsTypes;
 
-  SCFG           m_currentCFG;
   EAlgorithmType m_Type;
 };
 

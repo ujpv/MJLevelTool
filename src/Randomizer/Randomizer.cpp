@@ -11,7 +11,7 @@ void MJRandomizer::SetType(
   )
 {
   m_type = _type;
-  if (_type == EAlgorithmType::algorithm_type_count)
+  if (_type == EAlgorithmType::random_type)
     m_randomWrapper.SetType(CRandomWrapper::eRandomType::stdrandom);
   else
     m_randomWrapper.SetType(CRandomWrapper::eRandomType::match3random);
@@ -191,6 +191,7 @@ void MJRandomizer::SpecifyType(
         {
           int64_t index = m_randomWrapper.GetRandomValue(0, static_cast<int>(_typesList.size()) - 1);
           selectedTypesPair = _typesList.at(static_cast<size_t>(index));
+          throw MJToolException("Unxepected algorithm. EAlgorithmType::random_type");
           break;
         }
         case EAlgorithmType::regular_type:

@@ -37,7 +37,7 @@ int main()
   std::cout << "Loadin level...";
   MJLevelObject level;
   try {
-    level.initWithDictionary(path);
+    level.InitWithDictionary(path);
     level.SetCFG(config.GetCGF("25"));
 //    level.SetCFG(SCFG{
 //          9, //int m_iFirstGroupDigitChipsNumber;

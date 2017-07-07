@@ -13,7 +13,7 @@ MJLevelObject::MJLevelObject()
   m_randomiser.SetType(m_Type);
 }
 
-void MJLevelObject::initWithDictionary(
+void MJLevelObject::InitWithDictionary(
     const std::string & _levelFileName
   )
 {
@@ -161,12 +161,26 @@ void MJLevelObject::AddChipPairType(
   std::string value1;
   std::string value2;
 
+//  Original code from mapg:
+//  ========================
+//  for (int i = 0; i < _count; ++i)
+//  {
+//    const std::string &prefix = ChipUtils::GetGroupPrefix(_group);
+//    value1 = prefix + std::to_string(i);
+//    if (_useRandom)
+//      value2 = prefix + std::to_string(std::rand() % _count);
+//    else
+//      value2 = prefix + std::to_string(i);
+
+//    m_chipsTypes.push_back({value1, value2});
+//  }
+
   for (int i = 0; i < _count; ++i)
   {
     const std::string &prefix = ChipUtils::GetGroupPrefix(_group);
     value1 = prefix + std::to_string(i);
     if (_useRandom)
-      value2 = prefix + std::to_string(std::rand() % _count);
+      value2 = prefix + '0';
     else
       value2 = prefix + std::to_string(i);
 
