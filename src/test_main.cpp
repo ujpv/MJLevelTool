@@ -9,11 +9,12 @@
 
 const std::string LEVEL_PATH = "/home/chainic-vina/develop/MJLevelTool/data/levels/";
 const std::string TESTS_PATH = "/home/chainic-vina/develop/MJLevelTool/data/tests/";
+//const std::string LEVEL_PATH = "d:\\develop\\MJLevelTool\\data\\levels\\";
+//const std::string TESTS_PATH = "d:\\develop\\MJLevelTool\\data\\tests\\";
 const std::string LEVEL_PREFIX = "level_test_";
 
 static const char * kLevelName = "level_name";
 static const char * kSeed = "seed";
-static const char * kRandom = "random";
 static const char * kId = "id";
 static const char * kType = "type";
 static const char * kNeighbors = "neighbors";
