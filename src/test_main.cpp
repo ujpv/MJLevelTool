@@ -1,16 +1,14 @@
 #include <iostream>
 #include <map>
-#include <filesystem>
 #include <stdexcept>
 
 #include <Plist.hpp>
-
 #include "Config/ToolConfig.h"
 #include "LevelObject/LevelObject.h"
 #include "Exceptions/Exceptions.h"
 
-const std::string LEVEL_PATH = "d:\\develop\\MJLevelTool\\data\\levels\\";
-const std::string TESTS_PATH = "d:\\develop\\MJLevelTool\\data\\tests\\";
+const std::string LEVEL_PATH = "/home/chainic-vina/develop/MJLevelTool/data/levels/";
+const std::string TESTS_PATH = "/home/chainic-vina/develop/MJLevelTool/data/tests/";
 const std::string LEVEL_PREFIX = "level_test_";
 
 static const char * kLevelName = "level_name";
@@ -109,9 +107,9 @@ int main()
       continue;
     }
 
+    MJLevelObject level;
     try
     {
-      MJLevelObject level;
       level.InitWithDictionary(LEVEL_PATH + plistFileName);
       level.SetCFG(cfg);
       level.BuildWithSeed(seed);
@@ -124,46 +122,45 @@ int main()
 
     std::set<std::pair<std::string, std::string>> chipTypesSet;
     std::map<std::string, std::vector<std::set<std::string>>> neighborsMap;
+
+    const std::vector<MJChip> & chips = level.GetChips();
+    for (const MJChip & chip: chips)
+      chipTypesSet.insert({chip.GetID(), chip.GetTypeValue()});
+      
+    for (const MJChip & chip: chips)
+    {
+      const std::string & name = chip.GetID();
+      neighborsMap[name] = std::vector<std::set<std::string>>(4);
+
+      for (const MJChip * chip1: chip.GetNeighbors(Top))
+        neighborsMap[name][Top].insert(chip1->GetID());
+
+      for (const MJChip * chip1: chip.GetNeighbors(Bottom))
+        neighborsMap[name][Bottom].insert(chip1->GetID());
+
+      for (const MJChip * chip1: chip.GetNeighbors(Left))
+        neighborsMap[name][Left].insert(chip1->GetID());
+
+      for (const MJChip * chip1: chip.GetNeighbors(Right))
+        neighborsMap[name][Right].insert(chip1->GetID());
+    }
+
+    for (auto & pair: neighborsMap)
+    {
+      auto & test = neighborsMapTest[pair.first];
+      auto & current = pair.second;
+      if (test != current)
+        std::cout << "Neighbors error for chip: " << pair.first << '\n';
+    }
+
+    std::cout << "First:\n";
+    for (auto &item: chipTypesSetTest)
+      std::cout << item.first << ", " << item.second << '\n';
+
+    std::cout << "Second:\n";
+    for (auto &item: chipTypesSet)
+      std::cout << item.first << ", " << item.second << '\n';
   }
 
-////  std::cout << "Loadin config...";
-//  try
-//  {
-//    config.Init(gConfigPath);
-//  }
-//  catch (std::exception & e)
-//  {
-//    std::cout << "\n Can't read config. Reason: " << e.what();
-//    ExitMassage();
-//    return 0;
-//  }
-//  std::cout << "\rLoadin config...OK\n";
-
-//  std::cout << "Loadin level...";
-//  MJLevelObject level;
-//  try {
-//    level.initWithDictionary(path);
-//    level.SetCFG(config.GetCGF("25"));
-//    level.SetCFG(SCFG{
-//          9, //int m_iFirstGroupDigitChipsNumber;
-//          9, //int m_iSecondGroupDigitChipsNumber;
-//          9, //int m_iThirdGroupDigitChipsNumber;
-//          0, //int m_iMysticGroupChipsNumber;
-//          3, //int m_iDragonChipGroupNumber;
-//          4, //int m_iFlowerChipGroupNumber;
-//          4, //int m_iSeasonChipGroupNumber;
-//          4  //int m_iWindChipGroupNumber;
-//       });
-//    level.BuildWithSeed(284);
-//  }
-//  catch(exception & e)
-//  {
-//    std::cerr << (std::string("Error: ") + e.what()) << std::endl;
-//    ExitMassage();
-//    return 1;
-//  }
-//  std::cout << "\rLoadin level...OK\n";
-
-//  ExitMassage();
   return 0;
 }

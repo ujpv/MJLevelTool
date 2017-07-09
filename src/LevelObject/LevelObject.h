@@ -22,7 +22,7 @@ public:
       int _seed
     );
 
-//  std::vector<MJChip>
+  const std::vector<MJChip> & GetChips() const;
 
 private:
   void Clear();

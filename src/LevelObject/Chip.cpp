@@ -10,7 +10,7 @@ static const std::string kChipTypeValue = "TypeValue";
 static const std::string kChipPosition = "Position";
 
 static const float POSITION_ACCURACY = 0.1f;
-static const float POSITION_CENTER =   0.5f;
+static const float MIN_STEP =   0.5f;
 
 MJChip::MJChip()
   : m_eChipType(MJChipTypeStandard)
@@ -89,102 +89,193 @@ void MJChip::SetupNeighbors(
     if (&chip == this)
       continue;
 
+    float fDiffX  = chipX - chip.GetPosition().x;
+
+    float fDiffX1 = chipX - chip.GetPosition().x - MIN_STEP;
+    float fDiffX2 = chipX - chip.GetPosition().x + MIN_STEP;
+    float fDiffY1 = chipY - chip.GetPosition().y - MIN_STEP;
+    float fDiffY2 = chipY - chip.GetPosition().y + MIN_STEP;
+
+    bool isLeftDiffSmall = std::abs(fDiffX - 1.0f) <= POSITION_ACCURACY;
+    bool isRightDiffSmall = std::abs(fDiffX + 1.0f) <= POSITION_ACCURACY;
+
+    bool isDiffX1Small = std::abs(fDiffX1) <= POSITION_ACCURACY;
+    bool isDiffX2Small = std::abs(fDiffX2) <= POSITION_ACCURACY;
+    bool isNoDiffX     = std::abs(chipX - chip.GetPosition().x) <= FLT_EPSILON;
+
+    bool isDiffY1Small = std::abs(fDiffY1) <= POSITION_ACCURACY;
+    bool isDiffY2Small = std::abs(fDiffY2) <= POSITION_ACCURACY;
+    bool isNoDiffY     = std::abs(chipY - chip.GetPosition().y) <= FLT_EPSILON;
     if (m_zOreder == chip.GetZOrder())
     {
-      float fDiffX  = chipX - chip.GetPosition().x;
-      float fDiffY1 = chipY - chip.GetPosition().y - 0.5f;
-      float fDiffY2 = chipY - chip.GetPosition().y + 0.5f;
-
-      if (m_rNeighborsLeft.size() < 2)
+      if (m_rNeighborsLeft.size() < 2 &&
+          isLeftDiffSmall &&
+          (isDiffY1Small || isDiffY2Small || isNoDiffY)) // if need do  chipY - onechip->getCellPosition().y >= FLT_EPSILON
       {
-        if (
-            (fDiffX <= 2 * POSITION_ACCURACY && fDiffX >= 0.0f) &&
-            (
-              (fDiffY1 <= POSITION_ACCURACY && fDiffY1 >= -POSITION_ACCURACY) ||
-              (fDiffY2 <= POSITION_ACCURACY && fDiffY2 >= -POSITION_ACCURACY) ||
-              (std::fabs(chip.GetPosition().y - chipY) <= FLT_EPSILON)
-            )
-           )
-        {
-          m_rNeighborsLeft.insert(&chip);
-          chip.GetNeighbors(Right).insert(this);
-        }
+        m_rNeighborsLeft.insert(&chip);
+        chip.GetNeighbors(Right).insert(this);
       }
 
-      if (m_rNeighborsRight.size() < 2)
+      if (m_rNeighborsRight.size() < 2 &&
+          isRightDiffSmall &&
+          (isDiffY1Small || isDiffY2Small || isNoDiffY))
       {
-        if (
-            (fDiffX >= -2 * POSITION_ACCURACY && fDiffX <= 0.0f) &&
-            (
-              (fDiffY1 <= POSITION_ACCURACY && fDiffY1 >= -POSITION_ACCURACY) ||
-              (fDiffY2 <= POSITION_ACCURACY && fDiffY2 >= -POSITION_ACCURACY) ||
-              (std::fabs(chipY - chip.GetPosition().y) <= FLT_EPSILON)
-            )
-           )
-        {
-          m_rNeighborsRight.insert(&chip);
-          chip.GetNeighbors(Left).insert(this);
-        }
+        m_rNeighborsRight.insert(&chip);
+        chip.GetNeighbors(Left).insert(this);
       }
     }
     else
-    if (m_zOreder + 1 == chip.GetZOrder())
+    if (m_zOreder + 1 == chip.GetZOrder() &&
+        m_rNeighborsTop.size() < 4)
     {
-      if (m_rNeighborsTop.size() < 4)
+      // 'chip' onto the layer below
+      if ((isDiffX1Small || isDiffX2Small  || isNoDiffX) &&
+          (isDiffY1Small || isDiffY2Small  || isNoDiffY))
       {
-        float fDiffX1 = chipX - chip.GetPosition().x - POSITION_CENTER;
-        float fDiffX2 = chipX - chip.GetPosition().x + POSITION_CENTER;
-        float fDiffY1 = chipY - chip.GetPosition().y - POSITION_CENTER;
-        float fDiffY2 = chipY - chip.GetPosition().y + POSITION_CENTER;
-
-        if (
-            (
-              (fDiffX1 <= POSITION_ACCURACY && fDiffX1 >= -POSITION_ACCURACY) ||
-              (fDiffX2 <= POSITION_ACCURACY && fDiffX2 >= -POSITION_ACCURACY) ||
-              (std::fabs(chipX - chip.GetPosition().x) <= FLT_EPSILON)
-            ) &&
-            (
-              (fDiffY1 <= POSITION_ACCURACY && fDiffY1 >= -POSITION_ACCURACY) ||
-              (fDiffY2 <= POSITION_ACCURACY && fDiffY2 >= -POSITION_ACCURACY) ||
-              (std::fabs(chipY - chip.GetPosition().y) <= FLT_EPSILON)
-            )
-           )
-        {
-          m_rNeighborsTop.insert(&chip);
-          chip.GetNeighbors(Bottom).insert(this);
-        }
+        m_rNeighborsTop.insert(&chip);
+        chip.GetNeighbors(Bottom).insert(this);
       }
     }
     else
-    if (m_zOreder - 1 == chip.GetZOrder())
+    if (m_zOreder - 1 == chip.GetZOrder() &&
+        m_rNeighborsBottom.size() < 4)
     {
-      if (m_rNeighborsBottom.size() < 4)
+      // 'chip' onto the layer above
+      if ((isDiffX1Small || isDiffX2Small  || isNoDiffX) &&
+          (isDiffY1Small || isDiffY2Small  || isNoDiffY))
       {
-        float fDiffX1 = chipX - chip.GetPosition().x - POSITION_CENTER;
-        float fDiffX2 = chipX - chip.GetPosition().x + POSITION_CENTER;
-        float fDiffY1 = chipY - chip.GetPosition().y - POSITION_CENTER;
-        float fDiffY2 = chipY - chip.GetPosition().y + POSITION_CENTER;
-
-        if (
-            (
-              (fDiffX1 <= POSITION_ACCURACY && fDiffX1 >= -POSITION_ACCURACY) ||
-              (fDiffX2 <= POSITION_ACCURACY && fDiffX2 >= -POSITION_ACCURACY) ||
-              (std::fabs(chipX  - chip.GetPosition().x) <= FLT_EPSILON)
-             ) &&
-            (
-              (fDiffY1 <= POSITION_ACCURACY && fDiffY1 >= -POSITION_ACCURACY) ||
-              (fDiffY2 <= POSITION_ACCURACY && fDiffY2 >= -POSITION_ACCURACY) ||
-              (std::fabs(chipY - chip.GetPosition().y) <= FLT_EPSILON)
-            )
-           )
-        {
-          m_rNeighborsBottom.insert(&chip);
-          chip.GetNeighbors(Top).insert(this);
-        }
+        m_rNeighborsBottom.insert(&chip);
+        chip.GetNeighbors(Top).insert(this);
       }
     }
   }
 }
+
+//void MJChip::SetupNeighbors(
+//    std::vector<MJChip> & _chips
+//  )
+//{
+//  m_rNeighborsBottom.clear();
+//  m_rNeighborsTop.clear();
+//  m_rNeighborsLeft.clear();
+//  m_rNeighborsRight.clear();
+
+//  float chipX = m_position.x;
+//  float chipY = m_position.y;
+
+//  for (MJChip & chip: _chips)
+//  {
+//    if (&chip == this)
+//      continue;
+
+//    if (m_zOreder == chip.GetZOrder())
+//    {
+//      float fDiffX  = chipX - chip.GetPosition().x;
+
+//      float fDiffX1 = chipX - chip.GetPosition().x - MIN_STEP;
+//      float fDiffX2 = chipX - chip.GetPosition().x + MIN_STEP;
+//      float fDiffY1 = chipY - chip.GetPosition().y - MIN_STEP;
+//      float fDiffY2 = chipY - chip.GetPosition().y + MIN_STEP;
+
+//      bool isLeftDiffSmall = std::abs(fDiffX - 1.0f) <= POSITION_ACCURACY;
+//      bool isRightDiffSmall = std::abs(fDiffX + 1.0f) <= POSITION_ACCURACY;
+
+//      bool isDiffX1Small = std::abs(fDiffX1) <= POSITION_ACCURACY;
+//      bool isDiffX2Small = std::abs(fDiffX2) <= POSITION_ACCURACY;
+
+//      bool isDiffY1Small = std::abs(fDiffY1) <= POSITION_ACCURACY;
+//      bool isDiffY2Small = std::abs(fDiffY2) <= POSITION_ACCURACY;
+
+//      if (m_rNeighborsLeft.size() < 2)
+//      {
+//        if (
+//            (fDiffX <= 2 * POSITION_ACCURACY && fDiffX >= 0.0f) &&
+//            (
+//              (fDiffY1 <= POSITION_ACCURACY && fDiffY1 >= -POSITION_ACCURACY) ||
+//              (fDiffY2 <= POSITION_ACCURACY && fDiffY2 >= -POSITION_ACCURACY) ||
+//              (std::fabs(chip.GetPosition().y - chipY) <= FLT_EPSILON)
+//            )
+//           )
+//        {
+//          m_rNeighborsLeft.insert(&chip);
+//          chip.GetNeighbors(Right).insert(this);
+//        }
+//      }
+
+//      if (m_rNeighborsRight.size() < 2)
+//      {
+//        if (
+//            (fDiffX >= -2 * POSITION_ACCURACY && fDiffX <= 0.0f) &&
+//            (
+//              (fDiffY1 <= POSITION_ACCURACY && fDiffY1 >= -POSITION_ACCURACY) ||
+//              (fDiffY2 <= POSITION_ACCURACY && fDiffY2 >= -POSITION_ACCURACY) ||
+//              (std::fabs(chipY - chip.GetPosition().y) <= FLT_EPSILON)
+//            )
+//           )
+//        {
+//          m_rNeighborsRight.insert(&chip);
+//          chip.GetNeighbors(Left).insert(this);
+//        }
+//      }
+//    }
+//    else
+//    if (m_zOreder + 1 == chip.GetZOrder())
+//    {
+//      if (m_rNeighborsTop.size() < 4)
+//      {
+//        float fDiffX1 = chipX - chip.GetPosition().x - MIN_STEP;
+//        float fDiffX2 = chipX - chip.GetPosition().x + MIN_STEP;
+//        float fDiffY1 = chipY - chip.GetPosition().y - MIN_STEP;
+//        float fDiffY2 = chipY - chip.GetPosition().y + MIN_STEP;
+
+//        if (
+//            (
+//              (fDiffX1 <= POSITION_ACCURACY && fDiffX1 >= -POSITION_ACCURACY) ||
+//              (fDiffX2 <= POSITION_ACCURACY && fDiffX2 >= -POSITION_ACCURACY) ||
+//              (std::fabs(chipX - chip.GetPosition().x) <= FLT_EPSILON)
+//            ) &&
+//            (
+//              (fDiffY1 <= POSITION_ACCURACY && fDiffY1 >= -POSITION_ACCURACY) ||
+//              (fDiffY2 <= POSITION_ACCURACY && fDiffY2 >= -POSITION_ACCURACY) ||
+//              (std::fabs(chipY - chip.GetPosition().y) <= FLT_EPSILON)
+//            )
+//           )
+//        {
+//          m_rNeighborsTop.insert(&chip);
+//          chip.GetNeighbors(Bottom).insert(this);
+//        }
+//      }
+//    }
+//    else
+//    if (m_zOreder - 1 == chip.GetZOrder())
+//    {
+//      if (m_rNeighborsBottom.size() < 4)
+//      {
+//        float fDiffX1 = chipX - chip.GetPosition().x - MIN_STEP;
+//        float fDiffX2 = chipX - chip.GetPosition().x + MIN_STEP;
+//        float fDiffY1 = chipY - chip.GetPosition().y - MIN_STEP;
+//        float fDiffY2 = chipY - chip.GetPosition().y + MIN_STEP;
+
+//        if (
+//            (
+//              (fDiffX1 <= POSITION_ACCURACY && fDiffX1 >= -POSITION_ACCURACY) ||
+//              (fDiffX2 <= POSITION_ACCURACY && fDiffX2 >= -POSITION_ACCURACY) ||
+//              (std::fabs(chipX  - chip.GetPosition().x) <= FLT_EPSILON)
+//             ) &&
+//            (
+//              (fDiffY1 <= POSITION_ACCURACY && fDiffY1 >= -POSITION_ACCURACY) ||
+//              (fDiffY2 <= POSITION_ACCURACY && fDiffY2 >= -POSITION_ACCURACY) ||
+//              (std::fabs(chipY - chip.GetPosition().y) <= FLT_EPSILON)
+//            )
+//           )
+//        {
+//          m_rNeighborsBottom.insert(&chip);
+//          chip.GetNeighbors(Top).insert(this);
+//        }
+//      }
+//    }
+//  }
+//}
 
 std::set<MJChip *> & MJChip::GetNeighbors(MJDirection _direction)
 {
@@ -263,3 +354,8 @@ void MJChip::ClearNeighborsContainers()
   m_rNeighborsRight.clear();
   m_rNeighborsTop.clear();
 }
+const std::string & MJChip::GetID() const
+{
+  return m_sDebugID;
+}
+

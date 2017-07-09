@@ -7,6 +7,11 @@ static const std::string kFirstGoldenChipPosition = "FirstGoldenChipPosition";
 static const std::string kSecondGoldenChipPosition = "SecondGoldenChipPosition";
 static const std::string kMetadata = "Metadata";
 
+const std::vector<MJChip> & MJLevelObject::GetChips() const
+{
+  return m_levelChips;
+}
+
 MJLevelObject::MJLevelObject()
   : m_Type(EAlgorithmType::regular_type)
 {

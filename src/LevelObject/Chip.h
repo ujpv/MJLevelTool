@@ -65,6 +65,8 @@ public:
 
   void RemoveNeighbors();
 
+  const std::string & GetID() const;
+
 private:
   bool SetPosition(
       const Plist::dictionary_type * _params
