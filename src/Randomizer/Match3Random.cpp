@@ -30,11 +30,11 @@ void CMatch3Random::SetSeed(
     int _Seed
   )
 {
-  const unsigned int Seed = (unsigned int)(_Seed % KDUINT32_MAX);
+  const unsigned int Seed = static_cast<unsigned int>(_Seed) % KDUINT32_MAX;
 
   m_RandomSeed[0] = RandomSeed;
-  m_RandomSeed[1] = (unsigned short) Seed;
-  m_RandomSeed[2] = (unsigned short) ((unsigned long)Seed >> 16);
+  m_RandomSeed[1] = static_cast<unsigned short>(Seed);
+  m_RandomSeed[2] = static_cast<unsigned short>(Seed) >> 16;
 }
 
 void CMatch3Random::SetRandomSeedValue(

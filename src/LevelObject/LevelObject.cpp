@@ -143,12 +143,6 @@ void MJLevelObject::BuildWithSeed(
         m_firstGoldenChipPositions,
         m_secondGoldenChipPositions,
         _seed);
-
-//  std::vector<MJChip> &             _initialChips,
-//  const std::vector<ChipTypePair> & _typesList,
-//  const std::vector<SPoint2d> &     _firstGoldenChipPositions,
-//  const std::vector<SPoint2d> &     _secondGoldenChipPositions,
-//  int                               _seed)
 }
 
 void MJLevelObject::Clear()

@@ -67,7 +67,7 @@ const Plist::array_type * PlistUtils::getArrayForIndex(
     int                       _index
   )
 {
-  return boost::any_cast<Plist::array_type>(&_array[_index]);
+  return boost::any_cast<Plist::array_type>(&_array[static_cast<size_t>(_index)]);
 }
 
 bool ParsePoint2d(
@@ -108,7 +108,7 @@ bool PlistUtils::getStringForIndex(
     std::string &             _value
   )
 {
-  const Plist::string_type * pValue = boost::any_cast<Plist::string_type>(&_array[_index]);
+  const Plist::string_type * pValue = boost::any_cast<Plist::string_type>(&_array[static_cast<size_t>(_index)]);
   if (!pValue)
     return false;
 

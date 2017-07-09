@@ -154,13 +154,20 @@ int main()
         std::cout << "Neighbors error for chip: " << pair.first << '\n';
     }
 
-    std::cout << "First:\n";
-    for (auto &item: chipTypesSetTest)
-      std::cout << item.first << ", " << item.second << '\n';
+    if (chipTypesSet.size() != chipTypesSetTest.size())
+      std::cout << "chipTypesSetTest size error\n";
 
-    std::cout << "Second:\n";
-    for (auto &item: chipTypesSet)
-      std::cout << item.first << ", " << item.second << '\n';
+    for (auto & chipType: chipTypesSet)
+      if (!chipTypesSetTest.count(chipType))
+        std::cout << "chipTypesSetTest error:" << chipType.first << ", " << chipType.second<< '\n';
+
+    std::cout << "Test:\n";
+    for (auto & chipType: chipTypesSetTest)
+      std::cout << chipType.first << ", " << chipType.second << '\n';
+
+    std::cout << "Actual:\n";
+    for (auto & chipType: chipTypesSet)
+      std::cout << chipType.first << ", " << chipType.second << '\n';
   }
 
   return 0;

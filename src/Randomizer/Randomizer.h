@@ -65,12 +65,6 @@ private:
       const std::vector<MJChip *> & _chips
     );
 
-//  void SpecifyTypePairChips(
-//      MJChip *             _firstChip,
-//      MJChip *             _secondChip,
-//      const ChipTypePair & _oneChipType
-//    );
-
   void RemoveChipAndChipNeighbors(
       MJChip *                _chip,
       std::vector<MJChip *> & _chips

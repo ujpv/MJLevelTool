@@ -32,7 +32,7 @@ public:
     }
     else if (m_Type == eRandomType::stdrandom)
     {
-      m_StdRandom.seed(_seed);
+      m_StdRandom.seed(static_cast<unsigned long>(_seed));
     }
   }
 

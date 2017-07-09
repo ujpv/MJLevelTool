@@ -92,7 +92,7 @@ void MJRandomizer::ValidateGoldChips(
   if (!pFirst || !pSecond)
     throw MJToolException(!pFirst ? "invalid first gold position" : "invalid second gold position");
 
-  if (abs(_firstGoldPosition.x - _secondGoldPosition.x) <= 1.0f)
+  if (std::abs(_firstGoldPosition.x - _secondGoldPosition.x) <= 1.0f)
     return;
 
   const std::set<MJChip *> & left = pFirst->GetNeighbors(Left);
@@ -165,7 +165,6 @@ void MJRandomizer::SpecifyType(
 
     if (typesCopy.empty())
     {
-//      throw MJToolException("typesCopy.empty()");
       typesCopy.assign(_typesList.begin(), _typesList.end());
     }
 
@@ -247,16 +246,6 @@ std::vector<MJChip *> MJRandomizer::FindVacantChips(
 
   return vacantChips;
 }
-
-//void MJRandomizer::SpecifyTypePairChips(
-//    MJChip *                           _firstChip,
-//    MJChip *                           _secondChip,
-//    const MJRandomizer::ChipTypePair & _oneChipType
-//  )
-//{
-//  std::string firstType = _oneChipType.first;
-//  std::string secondType = _oneChipType.second;
-//}
 
 void MJRandomizer::RemoveChipAndChipNeighbors(
     MJChip * _chip,

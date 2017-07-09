@@ -10,11 +10,13 @@ static const std::string kChipTypeValue = "TypeValue";
 static const std::string kChipPosition = "Position";
 
 static const float POSITION_ACCURACY = 0.1f;
-static const float MIN_STEP =   0.5f;
+static const float MIN_STEP = 0.5f;
 
 MJChip::MJChip()
   : m_eChipType(MJChipTypeStandard)
   , m_sChipTypeValue("g0")
+  , m_position{-1, -1}
+  , m_zOreder(-1)
 {
 }
 
