@@ -1,4 +1,5 @@
 #include <list>
+#include <set>
 
 #include "Exceptions/Exceptions.h"
 #include "LevelObject/Chip.h"
@@ -152,7 +153,7 @@ void MJRandomizer::SpecifyType(
     randomizingChip.push_back(&chip);
 
   std::list<ChipTypePair> typesCopy(_typesList.begin(), _typesList.end());
-  std::pair<std::string, std::string> selectedTypesPair;
+  //std::pair<std::string, std::string> selectedTypesPair;
 
   int flowerAndSeasonTypesCount = 2;
   int repeatTypeCount = -1;

@@ -22,7 +22,7 @@ include_directories(
     "../src"
     )
 
-add_executable(${PROJECT_NAME}
+set (Common_sources
     ${Json_Sources}
     ${Plist_Sources}
     "../src/Utils/Utils.h"
@@ -42,7 +42,17 @@ add_executable(${PROJECT_NAME}
     "../src/Randomizer/RandomWrapper.h"
     "../src/Randomizer/Match3Random.cpp"
     "../src/Randomizer/Match3Random.h"
+    )
+
+add_executable(${PROJECT_NAME}
+    ${Common_sources}
     "../src/main.cpp"
     )
+
+add_executable(${PROJECT_NAME}TEST
+    ${Common_sources}
+    "../src/test_main.cpp"
+    )
+
 
 target_compile_features(${PROJECT_NAME} PRIVATE cxx_range_for)

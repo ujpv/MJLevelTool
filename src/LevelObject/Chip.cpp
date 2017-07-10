@@ -15,9 +15,10 @@ static const float MIN_STEP = 0.5f;
 MJChip::MJChip()
   : m_eChipType(MJChipTypeStandard)
   , m_sChipTypeValue("g0")
-  , m_position{-1, -1}
   , m_zOreder(-1)
 {
+  m_position.x = -1;
+  m_position.y = -1;
 }
 
 bool MJChip::InitWithParameters(

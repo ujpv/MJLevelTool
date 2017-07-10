@@ -7,10 +7,10 @@
 #include "LevelObject/LevelObject.h"
 #include "Exceptions/Exceptions.h"
 
-const std::string LEVEL_PATH = "/home/chainic-vina/develop/MJLevelTool/data/levels/";
-const std::string TESTS_PATH = "/home/chainic-vina/develop/MJLevelTool/data/tests/";
-//const std::string LEVEL_PATH = "d:\\develop\\MJLevelTool\\data\\levels\\";
-//const std::string TESTS_PATH = "d:\\develop\\MJLevelTool\\data\\tests\\";
+//const std::string LEVEL_PATH = "/home/chainic-vina/develop/MJLevelTool/data/levels/";
+//const std::string TESTS_PATH = "/home/chainic-vina/develop/MJLevelTool/data/tests/";
+const std::string LEVEL_PATH = "d:\\develop\\MJLevelTool\\data\\levels\\";
+const std::string TESTS_PATH = "d:\\develop\\MJLevelTool\\data\\tests\\";
 const std::string LEVEL_PREFIX = "level_test_";
 
 static const char * kLevelName = "level_name";

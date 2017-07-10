@@ -1,10 +1,7 @@
 #ifndef RANDOMIZER_H
 #define RANDOMIZER_H
 
-#include <algorithm>
 #include <vector>
-#include <set>
-#include <random>
 
 #include "Randomizer/RandomWrapper.h"
 #include "Utils/Constants.h"
@@ -20,7 +17,8 @@ private:
 
 public:
   MJRandomizer()
-    : m_type(EAlgorithmType::regular_type)
+    : m_repeatTypeTimes(1)
+    , m_type(EAlgorithmType::regular_type)
   {}
 
   void SetType(
