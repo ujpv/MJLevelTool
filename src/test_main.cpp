@@ -25,7 +25,8 @@ static const char * kLeft = "left";
 static const char * kCFG = "CFG";
 static const char * kChips = "chips";
 
-const int FILE_COUNT = 106;
+static const int FILE_COUNT = 106;
+static const size_t REPEAT_COUNT = 10000;
 
 inline void ExitMassage()
 {
@@ -118,7 +119,7 @@ int main()
       level.SetCFG(cfg);
       level.SetRepeatTypeTimes(1);
       level.BuildWithSeed(seed);
-      result = level.PlayRandomNTimes(100000);
+      result = level.PlayRandomNTimes(REPEAT_COUNT);
     }
     catch (std::exception & e)
     {
