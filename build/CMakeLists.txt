@@ -54,5 +54,5 @@ add_executable(${PROJECT_NAME}TEST
     "../src/test_main.cpp"
     )
 
-
 target_compile_features(${PROJECT_NAME} PRIVATE cxx_range_for)
+

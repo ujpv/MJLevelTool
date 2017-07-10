@@ -18,11 +18,25 @@ public:
       const SCFG & _cfg
     );
 
+  void SetRepeatTypeTimes(
+      int _count
+    );
+
   void BuildWithSeed(
       int _seed
     );
 
+  void SaveCache();
+
+  void RestoreFromCache();
+
   const std::vector<MJChip> & GetChips() const;
+
+  bool PlayRandom();
+
+  double PlayRandomNTimes(
+      size_t _count
+    );
 
 private:
   void Clear();
@@ -33,10 +47,24 @@ private:
       bool        _useRandom
     );
 
+  void TryAddActiveChips(
+      MJChip * _chip
+    );
+
+  void RemoveFromActiveChipsAndUpdate(
+      MJChip * _chip
+    );
+
+  std::pair<MJChip *, MJChip *> GetActivePair();
+
 private:
   MJRandomizer        m_randomiser;
   std::vector<MJChip> m_levelChips;
-  std::set<MJChip *>  m_startChips;
+
+  std::map<std::string, std::set<MJChip *>>                        m_activeChips;
+  std::map<std::string, std::set<MJChip *>>                        m_activeChipsCache;
+  std::vector<std::map<std::string, std::set<MJChip *>>::iterator> m_activeTypes;
+
 
   std::vector<SPoint2d>                            m_firstGoldenChipPositions;
   std::vector<SPoint2d>                            m_secondGoldenChipPositions;

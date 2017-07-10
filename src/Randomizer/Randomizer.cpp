@@ -153,7 +153,6 @@ void MJRandomizer::SpecifyType(
     randomizingChip.push_back(&chip);
 
   std::list<ChipTypePair> typesCopy(_typesList.begin(), _typesList.end());
-  //std::pair<std::string, std::string> selectedTypesPair;
 
   int flowerAndSeasonTypesCount = 2;
   int repeatTypeCount = -1;
@@ -234,6 +233,9 @@ void MJRandomizer::SpecifyType(
 
   for (MJChip & chip: _initialChips)
     chip.SetupNeighbors(_initialChips);
+
+  for (MJChip & chip: _initialChips)
+    chip.SaveNeighborsInCache();
 }
 
 std::vector<MJChip *> MJRandomizer::FindVacantChips(
@@ -242,7 +244,7 @@ std::vector<MJChip *> MJRandomizer::FindVacantChips(
 {
   std::vector<MJChip *> vacantChips;
   for (MJChip * pChip: _chips)
-    if (!pChip->IsBlockedByNeighbors() && pChip->GetType() != MJChipTypeGolden)
+    if (!pChip->IsBlockedByNeighbors() && (pChip->GetType() != MJChipTypeGolden))
       vacantChips.push_back(pChip);
 
   return vacantChips;
@@ -257,5 +259,6 @@ void MJRandomizer::RemoveChipAndChipNeighbors(
   if (it != _chips.end())
     _chips.erase(it);
 
-  _chip->RemoveNeighbors();
+  _chip->RemoveFromNeighbors();
+  _chip->ClearNeighborsContainers();
 }

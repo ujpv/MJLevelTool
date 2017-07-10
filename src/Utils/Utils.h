@@ -22,6 +22,11 @@ bool ParsePoint2d(
     SPoint2d &          _point
   );
 
+size_t LocalRandomInInterval(
+    size_t _min,
+    size_t _max
+  );
+
 namespace PlistUtils
 {
   bool getIntForKey(

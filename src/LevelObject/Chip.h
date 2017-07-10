@@ -63,22 +63,32 @@ public:
 
   bool IsBlockedByNeighbors() const;
 
-  void RemoveNeighbors();
+  void RemoveFromNeighbors();
+
+  void ClearNeighborsContainers();
+
 
   const std::string & GetID() const;
+
+  void SaveNeighborsInCache();
+
+  void ResoreNeighborsFromCache();
 
 private:
   bool SetPosition(
       const Plist::dictionary_type * _params
     );
 
-  void ClearNeighborsContainers();
-
 private:
   std::set<MJChip *> m_rNeighborsTop;
   std::set<MJChip *> m_rNeighborsLeft;
   std::set<MJChip *> m_rNeighborsRight;
   std::set<MJChip *> m_rNeighborsBottom;
+
+  std::set<MJChip *> m_rNeighborsTopCached;
+  std::set<MJChip *> m_rNeighborsLeftCached;
+  std::set<MJChip *> m_rNeighborsRightCached;
+  std::set<MJChip *> m_rNeighborsBottomCached;
 
   int         m_eChipType; // MJChipType
   std::string m_sChipTypeValue;

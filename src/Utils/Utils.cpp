@@ -1,6 +1,7 @@
 #include "Utils.h"
 #include <sstream>
 #include <cfloat>
+#include <random>
 
 bool PlistUtils::getIntForKey(
     const Plist::dictionary_type & _dict,
@@ -130,4 +131,14 @@ std::ostream & operator<<(
   )
 {
   return _stream << '{' << _point.x << ", " << _point.y << "}";
+}
+
+size_t LocalRandomInInterval(
+    size_t _min,
+    size_t _max
+  )
+{
+  static std::default_random_engine localGen(static_cast<unsigned>(time(nullptr)));
+  std::uniform_int_distribution<size_t> distr(_min, _max);
+  return distr(localGen);
 }

@@ -25,12 +25,12 @@ static const char * kLeft = "left";
 static const char * kCFG = "CFG";
 static const char * kChips = "chips";
 
-const int FILE_COUNT = 1;
+const int FILE_COUNT = 106;
 
 inline void ExitMassage()
 {
-//  std::cout << "\nPress eny key for exit...\n";
-//  std::getchar();
+  std::cout << "\nPress eny key for exit...\n";
+  std::getchar();
 }
 
 int main()
@@ -38,6 +38,8 @@ int main()
   for (int i = 0; i < FILE_COUNT; ++i)
   {
     std::string testFileName = TESTS_PATH + LEVEL_PREFIX + std::to_string(i) + ".json";
+
+    std::cout << "Running test " << testFileName << "...";
 
     std::string plistFileName;
     int seed;
@@ -109,17 +111,22 @@ int main()
     }
 
     MJLevelObject level;
+    double result = 0;
     try
     {
       level.InitWithDictionary(LEVEL_PATH + plistFileName);
       level.SetCFG(cfg);
+      level.SetRepeatTypeTimes(1);
       level.BuildWithSeed(seed);
+      result = level.PlayRandomNTimes(100000);
     }
     catch (std::exception & e)
     {
       std::cout << "\nCan't build level: " << plistFileName << ". Reason: " << e.what() << '\n';
       continue;
     }
+
+    level.RestoreFromCache();
 
     std::set<std::pair<std::string, std::string>> chipTypesSet;
     std::map<std::string, std::vector<std::set<std::string>>> neighborsMap;
@@ -146,29 +153,48 @@ int main()
         neighborsMap[name][Right].insert(chip1->GetID());
     }
 
+    bool isFailed = false;
+
     for (auto & pair: neighborsMap)
     {
       auto & test = neighborsMapTest[pair.first];
       auto & current = pair.second;
       if (test != current)
-        std::cout << "Neighbors error for chip: " << pair.first << '\n';
+      {
+        std::cout << "\nNeighbors error for chip: " << pair.first << '\n';
+        isFailed = true;
+      }
     }
 
     if (chipTypesSet.size() != chipTypesSetTest.size())
-      std::cout << "chipTypesSetTest size error\n";
+    {
+      isFailed = true;
+      std::cout << "\nchipTypesSetTest size error\n";
+    }
 
     for (auto & chipType: chipTypesSet)
+    {
       if (!chipTypesSetTest.count(chipType))
-        std::cout << "chipTypesSetTest error:" << chipType.first << ", " << chipType.second<< '\n';
+      {
+        std::cout << "\nchipTypesSet error:" << chipType.first << ", " << chipType.second<< '\n';
+        isFailed = true;
+      }
+    }
 
-    std::cout << "Test:\n";
     for (auto & chipType: chipTypesSetTest)
-      std::cout << chipType.first << ", " << chipType.second << '\n';
+    {
+      if (!chipTypesSet.count(chipType))
+      {
+        std::cout << "\nchipTypesSetTest error:" << chipType.first << ", " << chipType.second<< '\n';
+        isFailed = true;
+      }
+    }
 
-    std::cout << "Actual:\n";
-    for (auto & chipType: chipTypesSet)
-      std::cout << chipType.first << ", " << chipType.second << '\n';
+    std::cout << "\rRunning test " << testFileName << (isFailed ? "...Failed\n" : "...Ok\n");
+    std::cout << "Level: " << plistFileName << ", Seed: " << seed << ", Result: " << result << '\n';
   }
+
+  ExitMassage();
 
   return 0;
 }

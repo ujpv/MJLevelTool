@@ -40,12 +40,17 @@ bool MJChip::InitWithParameters(
 
   m_zOreder= _zLayer;
 
+  std::stringstream idStream;
+  idStream << "(" << m_sDebugID << ", " << m_zOreder << ')';
+
+  m_sDebugID = idStream.str();
+
   return true;
 }
 
 void MJChip::SetTypeValue(
     const std::string & _value
-    )
+  )
 {
   m_sChipTypeValue = _value;
 }
@@ -195,7 +200,7 @@ bool MJChip::IsBlockedByNeighbors() const
       (m_rNeighborsRight.size() > 0 && m_rNeighborsLeft.size() > 0);
 }
 
-void MJChip::RemoveNeighbors()
+void MJChip::RemoveFromNeighbors()
 {
   std::set<MJChip *>::iterator it = m_rNeighborsBottom.begin();
   for (; it != m_rNeighborsBottom.end(); ++it)
@@ -209,8 +214,6 @@ void MJChip::RemoveNeighbors()
 
   for (it = m_rNeighborsTop.begin(); it != m_rNeighborsTop.end(); ++it)
     (*it)->GetNeighbors(Bottom).erase(this);
-
-  ClearNeighborsContainers();
 }
 
 bool MJChip::SetPosition(
@@ -234,5 +237,21 @@ void MJChip::ClearNeighborsContainers()
 const std::string & MJChip::GetID() const
 {
   return m_sDebugID;
+}
+
+void MJChip::SaveNeighborsInCache()
+{
+  m_rNeighborsBottomCached = m_rNeighborsBottom;
+  m_rNeighborsLeftCached   = m_rNeighborsLeft;
+  m_rNeighborsRightCached  = m_rNeighborsRight;
+  m_rNeighborsTopCached    = m_rNeighborsTop;
+}
+
+void MJChip::ResoreNeighborsFromCache()
+{
+  m_rNeighborsBottom = m_rNeighborsBottomCached;
+  m_rNeighborsLeft   = m_rNeighborsLeftCached;
+  m_rNeighborsRight  = m_rNeighborsRightCached;
+  m_rNeighborsTop    = m_rNeighborsTopCached;
 }
 
