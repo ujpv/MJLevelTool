@@ -91,6 +91,7 @@ private:
   std::set<MJChip *> m_rNeighborsBottomCached;
 
   int         m_eChipType; // MJChipType
+
   std::string m_sChipTypeValue;
   std::string m_sDebugID;
 

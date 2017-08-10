@@ -29,7 +29,7 @@ public:
       int _repeatTypeCount
     );
 
-  void RandomizeChipsWithSeed(
+  bool RandomizeChipsWithSeed(
       std::vector<MJChip> &             _initialChips,
       const std::vector<ChipTypePair> & _typesList,
       const std::vector<SPoint2d> &     _firstGoldenChipPositions,
@@ -54,7 +54,7 @@ private:
       const std::vector<MJChip> & _initialChips
     );
 
-  void SpecifyType(
+  bool SpecifyType(
       std::vector<MJChip> &             _initialChips,
       const std::vector<ChipTypePair> & _typesList
     );

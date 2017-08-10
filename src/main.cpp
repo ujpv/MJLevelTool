@@ -1,25 +1,31 @@
 #include <iostream>
-#include <map>
+#include <stdexcept>
+#include <chrono>
+
 #include <Plist.hpp>
 
 #include "Config/ToolConfig.h"
-#include "LevelObject/LevelObject.h"
-#include <stdexcept>
+#include "Tool/Tool.h"
 
 using namespace std;
 
-const std::string path = "d:\\develop\\MJLevelTool\\data\\levels\\level_1_29.plist ";
-//const std::string gConfigPath = "d:\\develop\\tool\\bin\\params_test.json";
-const std::string gConfigPath = "d:\\develop\\MJLevelTool\\data\\params_new.json ";
+#ifdef DEBUG
+const std::string gConfigPath = "d:\\develop\\MJLevelTool\\latest_build\\config.json";
+#else
+const std::string gConfigPath = "config.json";
+#endif
 
 inline void ExitMassage()
 {
-//  std::cout << "\nPress eny key for exit...\n";
-//  std::getchar();
+  std::cout << "\nPress any key for exit...\n";
+  std::getchar();
 }
 
 int main()
 {
+  using namespace std::chrono;
+  high_resolution_clock::time_point startTime = high_resolution_clock::now();
+
   CToolConfig & config = CToolConfig::Instance();
   std::cout << "Loadin config...";
   try
@@ -28,37 +34,28 @@ int main()
   }
   catch (std::exception & e)
   {
-    std::cout << "\n Can't read config. Reason: " << e.what();
+    std::cout << "\nCan't read config. Reason: " << e.what() << std::endl;
     ExitMassage();
     return 0;
   }
   std::cout << "\rLoadin config...OK\n";
 
-  std::cout << "Loadin level...";
-  MJLevelObject level;
-  try {
-    level.InitWithDictionary(path);
-    level.SetCFG(config.GetCGF("25"));
-//    level.SetCFG(SCFG{
-//          9, //int m_iFirstGroupDigitChipsNumber;
-//          9, //int m_iSecondGroupDigitChipsNumber;
-//          9, //int m_iThirdGroupDigitChipsNumber;
-//          0, //int m_iMysticGroupChipsNumber;
-//          3, //int m_iDragonChipGroupNumber;
-//          4, //int m_iFlowerChipGroupNumber;
-//          4, //int m_iSeasonChipGroupNumber;
-//          4  //int m_iWindChipGroupNumber;
-//       });
-    level.BuildWithSeed(284);
-  }
-  catch(exception & e)
+  if (config.IsOnlyEstimateComplexity())
+    EstimateComplexity(config.GetLevelsForCheck());
+  else
   {
-    std::cerr << (std::string("Error: ") + e.what()) << std::endl;
-    ExitMassage();
-    return 1;
+    size_t pathCount = config.GetPathsCount();
+    for (size_t i = 0; i < pathCount; ++i) 
+    {
+      config.SetCurrentPathIndex(i);
+      std::cout << "Calculating leves set #" << i << ":\n" 
+                << "Levelpath: " << config.GetLevelsPath() << '\n' 
+                << "OutPath:"    << config.GetOutPath() << '\n';
+      FindSeeds(config.GetLevelsForCheck());
+    }
   }
-  std::cout << "\rLoadin level...OK\n";
 
+  std::cout << "Execution time: " << duration_cast<milliseconds>(high_resolution_clock::now() - startTime).count() << " ms\n";
   ExitMassage();
   return 0;
 }

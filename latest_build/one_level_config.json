@@ -1,0 +1,20 @@
+// Конфиг для утилиты play_level
+// Утилита играет единственный сид с заданным Seed и CFG повторя случано игру Limit раз и выводит на экран долю фейлов
+
+{
+	"LevelsFullPath": "d:\\develop\\mapg_master\\bin_full\\res\\levels\\level_1_25.plist ",
+  
+  "Seed": 0,     
+  "Limit": 10000, 
+
+	"CFG": {
+			"DigitChipFirstGroup": 8,
+			"DigitChipSecondGroup": 8,
+			"DigitChipThirdGroup": 9,
+			"DragonChipGroup": 3,
+			"FlowerChipGroup": 4,
+			"MysticChipGroup": 0,
+			"SeasonChipGroup": 4,
+			"WindChipGroup": 4
+		}
+}

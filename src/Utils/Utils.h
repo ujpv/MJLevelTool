@@ -17,6 +17,15 @@ std::ostream & operator<<(
     const SPoint2d & _point
   );
 
+inline char GetPathSeparator()
+{
+#ifdef _WIN32
+    return '\\';
+#else
+    return '/';
+#endif
+}
+
 bool ParsePoint2d(
     const std::string & _array,
     SPoint2d &          _point
@@ -52,12 +61,27 @@ namespace PlistUtils
       const std::string &            _key
     );
 
+  Plist::dictionary_type * getDictForKeyOrCreate(
+      Plist::dictionary_type & _dict,
+      const std::string &      _key
+    );
+
+  Plist::array_type * getArrayForKeyOrCreate(
+      Plist::dictionary_type & _dict,
+      const std::string &      _key
+    );
+
   const Plist::array_type * getArrayForKey(
       const Plist::dictionary_type & _dict,
       const std::string &            _key
     );
 
   const Plist::array_type * getArrayForIndex(
+      const Plist::array_type & _array,
+      int                       _index
+    );
+
+  const Plist::dictionary_type * getDictForIndex(
       const Plist::array_type & _array,
       int                       _index
     );

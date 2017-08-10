@@ -2,6 +2,10 @@ cmake_minimum_required(VERSION 3.1)
 
 project(MJLevelTool)
 
+#add_definitions(-DDEBUG)
+
+set (CMAKE_CXX_STANDARD 11)
+
 set(Plist_DIR ../lib/PlistCpp)
 set(Json_DIR  ../lib/JsonCpp)
 
@@ -42,6 +46,8 @@ set (Common_sources
     "../src/Randomizer/RandomWrapper.h"
     "../src/Randomizer/Match3Random.cpp"
     "../src/Randomizer/Match3Random.h"
+    "../src/Tool/Tool.cpp"
+    "../src/Tool/Tool.h"
     )
 
 add_executable(${PROJECT_NAME}
@@ -49,10 +55,15 @@ add_executable(${PROJECT_NAME}
     "../src/main.cpp"
     )
 
-add_executable(${PROJECT_NAME}TEST
+add_executable(${PROJECT_NAME}_TEST
     ${Common_sources}
     "../src/test_main.cpp"
     )
+    
+add_executable(play_level
+    ${Common_sources}
+    "../src/play_level.cpp"
+    )
 
-target_compile_features(${PROJECT_NAME} PRIVATE cxx_range_for)
+target_compile_features(${PROJECT_NAME} PRIVATE cxx_range_for cxx_constexpr cxx_nullptr)
 

@@ -25,12 +25,12 @@ static const char * kLeft = "left";
 static const char * kCFG = "CFG";
 static const char * kChips = "chips";
 
-static const int FILE_COUNT = 106;
+static const int FILE_COUNT = 111;
 static const size_t REPEAT_COUNT = 10000;
 
 inline void ExitMassage()
 {
-  std::cout << "\nPress eny key for exit...\n";
+  std::cout << "\nPress any key for exit...\n";
   std::getchar();
 }
 
@@ -64,7 +64,7 @@ int main()
       if (seed < 0)
         throw MJToolException("Invalid seed");
 
-      cfg.Load(root[kCFG]);
+      cfg.Load(root[kCFG], "unkown");
 
       Json::Value chipsTypes = root[kChips];
 

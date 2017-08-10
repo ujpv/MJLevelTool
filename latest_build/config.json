@@ -1,0 +1,574 @@
+{
+  "Paths": [
+    {
+      "LevelsPath": "d:\\develop\\MJLevelTool\\data\\levels",    // Директория с plist'ами с уровнями
+      "OutPath":    "d:\\develop\\MJLevelTool\\data\\out"        // Директория для результатов
+    },
+    {
+      "LevelsPath": "d:\\develop\\MJLevelTool\\data\\levels1",    // Директория с plist'ами с уровнями
+      "OutPath":    "d:\\develop\\MJLevelTool\\data\\out1"       // Директория для результатов
+    },
+    {
+      "LevelsPath": "d:\\develop\\MJLevelTool\\data\\levels",    // Директория с plist'ами с уровнями
+      "OutPath":    "d:\\develop\\MJLevelTool\\data\\out2"       // Директория для результатов
+    }
+  ],
+    
+  // true - сделать только превичную оценку сложности используя EstimateComplexityLimit и 
+  // EstimateComplexitySeedCount. Сиды с количеством фейлов более чем максимальное значение в EstimateComplexityRanges отбрасываются.
+  "OnlyEstimateComplexity": false,
+  "ReportFileName": "results.csv",    
+  // Имя файла отчета оценки сложности уровня
+  "EstimateComplexityLimit": 100,      // Количество опытов которое произоводитья с одним сидом при оценке уровня сложности
+  "EstimateComplexitySeedCount": 1000, // Количество сидов которое нужно проверить (только "хорошие сиды", с проходимостью меньше максимальной правой границы диапазона)
+  "EstimateComplexityRanges": [        // Диапазоны, в которые кластеризуются результаты
+    { "min": 0.00, "max": 0.01 }, 
+    { "min": 0.06, "max": 0.16 },   
+    { "min": 0.12, "max": 0.22 }, 
+    { "min": 0.18, "max": 0.28 },   
+    { "min": 0.24, "max": 0.34 }, 
+    { "min": 0.30, "max": 0.40 },   
+    { "min": 0.36, "max": 0.46 }, 
+    { "min": 0.42, "max": 0.52 }, 
+    { "min": 0.48, "max": 0.58 }, 
+    { "min": 0.54, "max": 0.64 },   
+    { "min": 0.60, "max": 0.70 }, 
+    { "min": 0.66, "max": 0.76 },   
+    { "min": 0.72, "max": 0.82 },   
+    { "min": 0.78, "max": 0.88 },   
+    { "min": 0.84, "max": 0.94 }   
+    ,{ "min": 0.941, "max": 1.0 }
+  ],
+  
+  "LevelsForCheck": [ // Уровни для обработки
+    "level_3_100.plist",
+    "level_3_101.plist",
+    "level_3_102.plist"
+  ],
+    
+  // Начальный сид для просчета уровня выбирается как максимум из:
+  // - start из файла config.json
+  // - значение из поля ExtraParams::LastSeed, если отсутствует, то максимальный сид из plist'a уровня + 1
+  
+  "Levels": {            // Настройки уровней
+    "level_1_4.plist": {
+      "min": 0.0,        // Минимально требуемая сложность
+      "max": 0.9,        // Максимально требуемая сложность
+      "start": 100,      // Начальный сид для просчёта. Необязательный параметр. По-умолячанию 0. 
+      "count": 10,       // Требуемое количество сидов      
+      "limit": 1000      // Количество повторенний игры с одним сидом при просчете
+    },
+    "level_1_5.plist": {
+      "min": 0.4,
+      "max": 0.6,
+      "start": 100,
+      "count": 10,
+      "limit": 1000
+    },
+    "level_3_100.plist": {
+      "min": 0.05,
+      "max": 0.99,
+      "start": 250,
+      "count": 10,
+      "limit": 1000
+    },
+    "level_1_6.plist": {
+      "min": 0.4,
+      "max": 0.6,
+      "start": 100,
+      "count": 10,
+      "limit": 1000
+    },
+    "level_1_7.plist": {
+      "min": 0.4,
+      "max": 0.6,
+      "start": 100,
+      "count": 10,
+      "limit": 1000
+    },
+    "level_1_8.plist": {
+      "min": 0.4,
+      "max": 0.6,
+      "start": 100,
+      "count": 10,
+      "limit": 1000
+    },
+    "level_1_20.plist": {
+      "min": 0.4,
+      "max": 0.6,
+      "start": 100,
+      "count": 10,
+      "limit": 1000
+    },
+    "level_1_25.plist": {
+      "min": 0.4,
+      "max": 0.6,
+      "start": 100,
+      "count": 10,
+      "limit": 1000
+    },
+    "level_1_29.plist": {
+      "min": 0.4,
+      "max": 0.6,
+      "start": 100,
+      "count": 10,
+      "limit": 1000
+    },
+    "level_1_30.plist": {
+      "min": 0.4,
+      "max": 0.6,
+      "start": 100,
+      "count": 10,
+      "limit": 1000
+    },
+    "level_1_31.plist": {
+      "min": 0.4,
+      "max": 0.6,
+      "start": 100,
+      "count": 10,
+      "limit": 1000
+    },
+    "level_1_32.plist": {
+      "min": 0.4,
+      "max": 0.6,
+      "start": 100,
+      "count": 10,
+      "limit": 1000
+    },
+    "level_1_40.plist": {
+      "min": 0.4,
+      "max": 0.6,
+      "start": 100,
+      "count": 10,
+      "limit": 1000
+    },
+    "level_2_41.plist": {
+      "min": 0.4,
+      "max": 0.6,
+      "start": 100,
+      "count": 10,
+      "limit": 1000
+    },
+    "level_2_42.plist": {
+      "min": 0.4,
+      "max": 0.6,
+      "start": 100,
+      "count": 10,
+      "limit": 1000
+    },
+    "level_2_44.plist": {
+      "min": 0.4,
+      "max": 0.6,
+      "start": 100,
+      "count": 10,
+      "limit": 1000
+    },
+    "level_3_101.plist": {
+      "min": 0.1,
+      "max": 0.9,
+      "start": 100,
+      "count": 25,
+      "limit": 1000
+    },
+    "level_3_102.plist": {
+      "min": 0.1,
+      "max": 0.9,
+      "start": 100,
+      "count": 25,
+      "limit": 1000
+    },
+    "level_1_103.plist": {
+      "min": 0.1,
+      "max": 0.9,
+      "start": 100,
+      "count": 25,
+      "limit": 1000
+    },
+    "level_4_161.plist": {
+      "min": 0.95,
+      "max": 1.0,
+      "start": 500,
+      "count": 20,
+      "limit": 1000
+    },
+    "level_4_165.plist": {
+      "min": 0.95,
+      "max": 1.0,
+      "start": 500,
+      "count": 10,
+      "limit": 1000
+    }
+  },
+  
+    "UseCFG": [
+  "36",
+  "35",
+  "34",
+  "33",
+  "32",
+  "31",
+  "30",
+  "29",
+  "28",
+  "27",
+  "26",
+  "25",
+  "24",
+  "23",
+  "22",
+  "21",
+  "20"
+  ],
+  "CFG": {
+    "2": {
+      "DigitChipFirstGroup": 0,
+      "DigitChipSecondGroup": 1,
+      "DigitChipThirdGroup": 1,
+      "DragonChipGroup": 0,
+      "FlowerChipGroup": 0,
+      "MysticChipGroup": 0,
+      "SeasonChipGroup": 0,
+      "WindChipGroup": 0
+    },
+    "3": {
+      "DigitChipFirstGroup": 1,
+      "DigitChipSecondGroup": 1,
+      "DigitChipThirdGroup": 1,
+      "DragonChipGroup": 0,
+      "FlowerChipGroup": 0,
+      "MysticChipGroup": 0,
+      "SeasonChipGroup": 0,
+      "WindChipGroup": 0
+    },
+    "4": {
+      "DigitChipFirstGroup": 1,
+      "DigitChipSecondGroup": 1,
+      "DigitChipThirdGroup": 2,
+      "DragonChipGroup": 0,
+      "FlowerChipGroup": 0,
+      "MysticChipGroup": 0,
+      "SeasonChipGroup": 0,
+      "WindChipGroup": 0
+    },
+    "5": {
+      "DigitChipFirstGroup": 1,
+      "DigitChipSecondGroup": 2,
+      "DigitChipThirdGroup": 2,
+      "DragonChipGroup": 0,
+      "FlowerChipGroup": 0,
+      "MysticChipGroup": 0,
+      "SeasonChipGroup": 0,
+      "WindChipGroup": 0
+    },
+    "6": {
+      "DigitChipFirstGroup": 2,
+      "DigitChipSecondGroup": 2,
+      "DigitChipThirdGroup": 2,
+      "DragonChipGroup": 0,
+      "FlowerChipGroup": 0,
+      "MysticChipGroup": 0,
+      "SeasonChipGroup": 0,
+      "WindChipGroup": 0
+    },
+    "7": {
+      "DigitChipFirstGroup": 2,
+      "DigitChipSecondGroup": 2,
+      "DigitChipThirdGroup": 3,
+      "DragonChipGroup": 0,
+      "FlowerChipGroup": 0,
+      "MysticChipGroup": 0,
+      "SeasonChipGroup": 0,
+      "WindChipGroup": 0
+    },
+    "8": {
+      "DigitChipFirstGroup": 2,
+      "DigitChipSecondGroup": 3,
+      "DigitChipThirdGroup": 3,
+      "DragonChipGroup": 0,
+      "FlowerChipGroup": 0,
+      "MysticChipGroup": 0,
+      "SeasonChipGroup": 0,
+      "WindChipGroup": 0
+    },
+    "9": {
+      "DigitChipFirstGroup": 3,
+      "DigitChipSecondGroup": 3,
+      "DigitChipThirdGroup": 3,
+      "DragonChipGroup": 0,
+      "FlowerChipGroup": 0,
+      "MysticChipGroup": 0,
+      "SeasonChipGroup": 0,
+      "WindChipGroup": 0
+    },
+    "10": {
+      "DigitChipFirstGroup": 3,
+      "DigitChipSecondGroup": 3,
+      "DigitChipThirdGroup": 3,
+      "DragonChipGroup": 0,
+      "FlowerChipGroup": 0,
+      "MysticChipGroup": 0,
+      "SeasonChipGroup": 0,
+      "WindChipGroup": 1
+    },
+    "11": {
+      "DigitChipFirstGroup": 3,
+      "DigitChipSecondGroup": 3,
+      "DigitChipThirdGroup": 4,
+      "DragonChipGroup": 0,
+      "FlowerChipGroup": 0,
+      "MysticChipGroup": 0,
+      "SeasonChipGroup": 0,
+      "WindChipGroup": 1
+    },
+    "12": {
+      "DigitChipFirstGroup": 3,
+      "DigitChipSecondGroup": 4,
+      "DigitChipThirdGroup": 4,
+      "DragonChipGroup": 0,
+      "FlowerChipGroup": 0,
+      "MysticChipGroup": 0,
+      "SeasonChipGroup": 0,
+      "WindChipGroup": 1
+    },
+    "13": {
+      "DigitChipFirstGroup": 4,
+      "DigitChipSecondGroup": 4,
+      "DigitChipThirdGroup": 4,
+      "DragonChipGroup": 0,
+      "FlowerChipGroup": 0,
+      "MysticChipGroup": 0,
+      "SeasonChipGroup": 0,
+      "WindChipGroup": 1
+    },
+    "14": {
+      "DigitChipFirstGroup": 4,
+      "DigitChipSecondGroup": 4,
+      "DigitChipThirdGroup": 4,
+      "DragonChipGroup": 0,
+      "FlowerChipGroup": 0,
+      "MysticChipGroup": 0,
+      "SeasonChipGroup": 0,
+      "WindChipGroup": 2
+    },
+    "15": {
+      "DigitChipFirstGroup": 4,
+      "DigitChipSecondGroup": 4,
+      "DigitChipThirdGroup": 5,
+      "DragonChipGroup": 0,
+      "FlowerChipGroup": 0,
+      "MysticChipGroup": 0,
+      "SeasonChipGroup": 0,
+      "WindChipGroup": 2
+    },
+    "16": {
+      "DigitChipFirstGroup": 4,
+      "DigitChipSecondGroup": 5,
+      "DigitChipThirdGroup": 5,
+      "DragonChipGroup": 0,
+      "FlowerChipGroup": 0,
+      "MysticChipGroup": 0,
+      "SeasonChipGroup": 0,
+      "WindChipGroup": 2
+    },
+    "17": {
+      "DigitChipFirstGroup": 5,
+      "DigitChipSecondGroup": 5,
+      "DigitChipThirdGroup": 5,
+      "DragonChipGroup": 0,
+      "FlowerChipGroup": 0,
+      "MysticChipGroup": 0,
+      "SeasonChipGroup": 0,
+      "WindChipGroup": 2
+    },
+    "18": {
+      "DigitChipFirstGroup": 5,
+      "DigitChipSecondGroup": 5,
+      "DigitChipThirdGroup": 5,
+      "DragonChipGroup": 0,
+      "FlowerChipGroup": 0,
+      "MysticChipGroup": 0,
+      "SeasonChipGroup": 0,
+      "WindChipGroup": 3
+    },
+    "19": {
+      "DigitChipFirstGroup": 5,
+      "DigitChipSecondGroup": 5,
+      "DigitChipThirdGroup": 6,
+      "DragonChipGroup": 0,
+      "FlowerChipGroup": 0,
+      "MysticChipGroup": 0,
+      "SeasonChipGroup": 0,
+      "WindChipGroup": 3
+    },
+    "20": {
+      "DigitChipFirstGroup": 5,
+      "DigitChipSecondGroup": 6,
+      "DigitChipThirdGroup": 6,
+      "DragonChipGroup": 0,
+      "FlowerChipGroup": 0,
+      "MysticChipGroup": 0,
+      "SeasonChipGroup": 0,
+      "WindChipGroup": 3
+    },
+    "21": {
+      "DigitChipFirstGroup": 6,
+      "DigitChipSecondGroup": 6,
+      "DigitChipThirdGroup": 6,
+      "DragonChipGroup": 0,
+      "FlowerChipGroup": 0,
+      "MysticChipGroup": 0,
+      "SeasonChipGroup": 0,
+      "WindChipGroup": 3
+    },
+    "22": {
+      "DigitChipFirstGroup": 6,
+      "DigitChipSecondGroup": 6,
+      "DigitChipThirdGroup": 6,
+      "DragonChipGroup": 0,
+      "FlowerChipGroup": 0,
+      "MysticChipGroup": 0,
+      "SeasonChipGroup": 0,
+      "WindChipGroup": 4
+    },
+    "23": {
+      "DigitChipFirstGroup": 6,
+      "DigitChipSecondGroup": 6,
+      "DigitChipThirdGroup": 6,
+      "DragonChipGroup": 1,
+      "FlowerChipGroup": 0,
+      "MysticChipGroup": 0,
+      "SeasonChipGroup": 0,
+      "WindChipGroup": 4
+    },
+    "24": {
+      "DigitChipFirstGroup": 6,
+      "DigitChipSecondGroup": 6,
+      "DigitChipThirdGroup": 7,
+      "DragonChipGroup": 1,
+      "FlowerChipGroup": 0,
+      "MysticChipGroup": 0,
+      "SeasonChipGroup": 0,
+      "WindChipGroup": 4
+    },
+    "25": {
+      "DigitChipFirstGroup": 6,
+      "DigitChipSecondGroup": 7,
+      "DigitChipThirdGroup": 7,
+      "DragonChipGroup": 1,
+      "FlowerChipGroup": 0,
+      "MysticChipGroup": 0,
+      "SeasonChipGroup": 0,
+      "WindChipGroup": 4
+    },
+    "26": {
+      "DigitChipFirstGroup": 7,
+      "DigitChipSecondGroup": 7,
+      "DigitChipThirdGroup": 7,
+      "DragonChipGroup": 1,
+      "FlowerChipGroup": 0,
+      "MysticChipGroup": 0,
+      "SeasonChipGroup": 0,
+      "WindChipGroup": 4
+    },
+    "27": {
+      "DigitChipFirstGroup": 7,
+      "DigitChipSecondGroup": 7,
+      "DigitChipThirdGroup": 7,
+      "DragonChipGroup": 1,
+      "FlowerChipGroup": 4,
+      "MysticChipGroup": 0,
+      "SeasonChipGroup": 0,
+      "WindChipGroup": 4
+    },
+    "28": {
+      "DigitChipFirstGroup": 7,
+      "DigitChipSecondGroup": 7,
+      "DigitChipThirdGroup": 7,
+      "DragonChipGroup": 2,
+      "FlowerChipGroup": 4,
+      "MysticChipGroup": 0,
+      "SeasonChipGroup": 0,
+      "WindChipGroup": 4
+    },
+    "29": {
+      "DigitChipFirstGroup": 7,
+      "DigitChipSecondGroup": 7,
+      "DigitChipThirdGroup": 8,
+      "DragonChipGroup": 2,
+      "FlowerChipGroup": 4,
+      "MysticChipGroup": 0,
+      "SeasonChipGroup": 0,
+      "WindChipGroup": 4
+    },
+    "30": {
+      "DigitChipFirstGroup": 7,
+      "DigitChipSecondGroup": 8,
+      "DigitChipThirdGroup": 8,
+      "DragonChipGroup": 2,
+      "FlowerChipGroup": 4,
+      "MysticChipGroup": 0,
+      "SeasonChipGroup": 0,
+      "WindChipGroup": 4
+    },
+    "31": {
+      "DigitChipFirstGroup": 8,
+      "DigitChipSecondGroup": 8,
+      "DigitChipThirdGroup": 8,
+      "DragonChipGroup": 2,
+      "FlowerChipGroup": 4,
+      "MysticChipGroup": 0,
+      "SeasonChipGroup": 0,
+      "WindChipGroup": 4
+    },
+    "32": {
+      "DigitChipFirstGroup": 8,
+      "DigitChipSecondGroup": 8,
+      "DigitChipThirdGroup": 8,
+      "DragonChipGroup": 2,
+      "FlowerChipGroup": 4,
+      "MysticChipGroup": 0,
+      "SeasonChipGroup": 4,
+      "WindChipGroup": 4
+    },
+    "33": {
+      "DigitChipFirstGroup": 8,
+      "DigitChipSecondGroup": 8,
+      "DigitChipThirdGroup": 8,
+      "DragonChipGroup": 3,
+      "FlowerChipGroup": 4,
+      "MysticChipGroup": 0,
+      "SeasonChipGroup": 4,
+      "WindChipGroup": 4
+    },
+    "34": {
+      "DigitChipFirstGroup": 8,
+      "DigitChipSecondGroup": 8,
+      "DigitChipThirdGroup": 9,
+      "DragonChipGroup": 3,
+      "FlowerChipGroup": 4,
+      "MysticChipGroup": 0,
+      "SeasonChipGroup": 4,
+      "WindChipGroup": 4
+    },
+    "35": {
+      "DigitChipFirstGroup": 8,
+      "DigitChipSecondGroup": 9,
+      "DigitChipThirdGroup": 9,
+      "DragonChipGroup": 3,
+      "FlowerChipGroup": 4,
+      "MysticChipGroup": 0,
+      "SeasonChipGroup": 4,
+      "WindChipGroup": 4
+    },
+    "36": {
+      "DigitChipFirstGroup": 9,
+      "DigitChipSecondGroup": 9,
+      "DigitChipThirdGroup": 9,
+      "DragonChipGroup": 3,
+      "FlowerChipGroup": 4,
+      "MysticChipGroup": 0,
+      "SeasonChipGroup": 4,
+      "WindChipGroup": 4
+    }
+  }
+}

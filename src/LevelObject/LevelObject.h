@@ -22,7 +22,7 @@ public:
       int _count
     );
 
-  void BuildWithSeed(
+  bool BuildWithSeed(
       int _seed
     );
 
@@ -32,6 +32,8 @@ public:
 
   const std::vector<MJChip> & GetChips() const;
 
+  size_t GetLastSeed() const;
+
   bool PlayRandom();
 
   double PlayRandomNTimes(
@@ -39,6 +41,10 @@ public:
     );
 
 private:
+  void FindLastSeed(
+      const Plist::dictionary_type & _extraParamsDict
+    );
+
   void Clear();
 
   void AddChipPairType(
@@ -47,7 +53,7 @@ private:
       bool        _useRandom
     );
 
-  void TryAddActiveChips(
+  void TryToAddActiveChips(
       MJChip * _chip
     );
 
@@ -65,12 +71,12 @@ private:
   std::map<std::string, std::set<MJChip *>>                        m_activeChipsCache;
   std::vector<std::map<std::string, std::set<MJChip *>>::iterator> m_activeTypes;
 
-
   std::vector<SPoint2d>                            m_firstGoldenChipPositions;
   std::vector<SPoint2d>                            m_secondGoldenChipPositions;
   std::vector<std::pair<std::string, std::string>> m_chipsTypes;
 
-  EAlgorithmType m_Type;
+  EAlgorithmType m_type;
+  size_t         m_lastSeed;
 };
 
 #endif // LEVELOBJECT_H

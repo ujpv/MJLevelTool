@@ -5,11 +5,21 @@
 static const std::string kChipLayers = "Layers";
 static const std::string kFirstGoldenChipPosition = "FirstGoldenChipPosition";
 static const std::string kSecondGoldenChipPosition = "SecondGoldenChipPosition";
-static const std::string kMetadata = "Metadata";
+
+static const std::string kMetadata    = "Metadata";
+static const std::string kExtraParams = "ExtraParams";
+static const std::string kLastSeed    = "LastSeed";
+static const std::string kPresets     = "Presets";
+static const std::string kSeed        = "Seed";
 
 const std::vector<MJChip> & MJLevelObject::GetChips() const
 {
   return m_levelChips;
+}
+
+size_t MJLevelObject::GetLastSeed() const
+{
+  return m_lastSeed;
 }
 
 bool MJLevelObject::PlayRandom()
@@ -51,13 +61,42 @@ double MJLevelObject::PlayRandomNTimes(size_t _count)
     else
       ++failCount;
   }
-  return static_cast<double>(succesesCount) / static_cast<double>(succesesCount + failCount);
+  return static_cast<double>(failCount) / static_cast<double>(succesesCount + failCount);
 }
 
-MJLevelObject::MJLevelObject()
-  : m_Type(EAlgorithmType::regular_type)
+void MJLevelObject::FindLastSeed(
+    const Plist::dictionary_type & _extraParamsDict
+  )
 {
-  m_randomiser.SetType(m_Type);
+  int lastSeed = -1;
+  PlistUtils::getIntForKey(_extraParamsDict, kLastSeed, lastSeed);
+  if (lastSeed >= 0)
+  {
+    m_lastSeed = static_cast<size_t>(lastSeed);
+    return;
+  }
+
+  const Plist::array_type * pPresets = PlistUtils::getArrayForKey(_extraParamsDict, kPresets);
+  if (!pPresets || pPresets->empty())
+    return;
+
+  for (size_t i = 0; i < pPresets->size(); ++i)
+  {
+    const Plist::dictionary_type * preset = PlistUtils::getDictForIndex(*pPresets, int(i));
+    if (!preset)
+      throw MJToolException("Illegal state: preset == nullptr");
+
+    std::string sSeed;
+    if (PlistUtils::getStringForKey(*preset, kSeed, sSeed) && !sSeed.empty())
+      m_lastSeed = std::max(m_lastSeed, static_cast<size_t>(std::stoi(sSeed) + 1)); ;
+  }
+}
+
+MJLevelObject::MJLevelObject(): 
+  m_type(EAlgorithmType::regular_type), 
+  m_lastSeed(0)
+{
+  m_randomiser.SetType(m_type);
 }
 
 void MJLevelObject::InitWithDictionary(
@@ -146,12 +185,19 @@ void MJLevelObject::InitWithDictionary(
 
     m_secondGoldenChipPositions.push_back(point);
   }
+
+  const Plist::dictionary_type * pExtraParams = PlistUtils::getDictForKey(params, kExtraParams);
+  if (pExtraParams)
+    FindLastSeed(*pExtraParams);
+
+  SaveCache();
 }
 
 void MJLevelObject::SetCFG(
     const SCFG & _cfg
   )
 {
+  m_chipsTypes.clear();
   AddChipPairType(MJFirstDigitGroup,  _cfg.m_iFirstGroupDigitChipsNumber,  false);
   AddChipPairType(MJSecondDigitGroup, _cfg.m_iSecondGroupDigitChipsNumber, false);
   AddChipPairType(MJThirdDigitGroup,  _cfg.m_iThirdGroupDigitChipsNumber,  false);
@@ -162,14 +208,14 @@ void MJLevelObject::SetCFG(
   int flowerChipGroupNumber = _cfg.m_iFlowerChipGroupNumber;
   int seasonChipGroupNumber = _cfg.m_iSeasonChipGroupNumber;
 
-  if (m_Type != EAlgorithmType::algorithm_type_count)
+  if (m_type != EAlgorithmType::algorithm_type_count)
   {
     flowerChipGroupNumber = std::min(1, flowerChipGroupNumber);
     seasonChipGroupNumber = std::min(1, seasonChipGroupNumber);
   }
 
-  AddChipPairType(MJFlowerGroup, _cfg.m_iFlowerChipGroupNumber, true);
-  AddChipPairType(MJSeasonGroup, _cfg.m_iSeasonChipGroupNumber, true);
+  AddChipPairType(MJFlowerGroup, flowerChipGroupNumber, true);
+  AddChipPairType(MJSeasonGroup, seasonChipGroupNumber, true);
 }
 
 void MJLevelObject::SetRepeatTypeTimes(
@@ -179,16 +225,26 @@ void MJLevelObject::SetRepeatTypeTimes(
   m_randomiser.SetRepeatTypeTimes(_count);
 }
 
-void MJLevelObject::BuildWithSeed(
+bool MJLevelObject::BuildWithSeed(
     int _seed
   )
 {
-  m_randomiser.RandomizeChipsWithSeed(
+  RestoreFromCache();
+  for (MJChip & chip: m_levelChips)
+  {
+    chip.SetTypeValue(INITAL_CHIP_TYPE_VALUE);
+    chip.SetType(MJChipType::MJChipTypeStandard);
+  }
+
+  if (!m_randomiser.RandomizeChipsWithSeed(
         m_levelChips,
         m_chipsTypes,
         m_firstGoldenChipPositions,
         m_secondGoldenChipPositions,
-        _seed);
+        _seed))
+  {
+    return false;
+  }
 
   m_activeChips.clear();
   for (MJChip & chip: m_levelChips)
@@ -196,10 +252,11 @@ void MJLevelObject::BuildWithSeed(
     if (!m_activeChips.count(chip.GetTypeValue()))
       m_activeChips[chip.GetTypeValue()] = std::set<MJChip *>();
 
-    TryAddActiveChips(&chip);
+    TryToAddActiveChips(&chip);
   }
 
   SaveCache();
+  return true;
 }
 
 void MJLevelObject::SaveCache()
@@ -243,7 +300,7 @@ void MJLevelObject::AddChipPairType(
 //      value2 = prefix + std::to_string(std::rand() % _count);
 //    else
 //      value2 = prefix + std::to_string(i);
-
+//
 //    m_chipsTypes.push_back({value1, value1});
 //  }
 
@@ -258,7 +315,7 @@ void MJLevelObject::AddChipPairType(
   }
 }
 
-void MJLevelObject::TryAddActiveChips(
+void MJLevelObject::TryToAddActiveChips(
     MJChip * _chip
   )
 {
@@ -268,7 +325,7 @@ void MJLevelObject::TryAddActiveChips(
   const std::string & typeValue = _chip->GetTypeValue();
   std::map<std::string, std::set<MJChip *>>::iterator it = m_activeChips.find(typeValue);
   if (it == m_activeChips.end())
-    throw MJToolException("Illegal state: TryAddActiveChips(). it == m_activeChips.end()");
+    throw MJToolException("Illegal state: TryToAddActiveChips(). it == m_activeChips.end()");
   it->second.insert(_chip);
 }
 
@@ -283,13 +340,13 @@ void MJLevelObject::RemoveFromActiveChipsAndUpdate(
   it->second.erase(_chip);
 
   for (MJChip * chip: _chip->GetNeighbors(Top))
-    TryAddActiveChips(chip);
+    TryToAddActiveChips(chip);
   for (MJChip * chip: _chip->GetNeighbors(Bottom))
-    TryAddActiveChips(chip);
+    TryToAddActiveChips(chip);
   for (MJChip * chip: _chip->GetNeighbors(Left))
-    TryAddActiveChips(chip);
+    TryToAddActiveChips(chip);
   for (MJChip * chip: _chip->GetNeighbors(Right))
-    TryAddActiveChips(chip);
+    TryToAddActiveChips(chip);
 }
 
 std::pair<MJChip *, MJChip *> MJLevelObject::GetActivePair()

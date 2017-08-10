@@ -51,7 +51,24 @@ const Plist::dictionary_type * PlistUtils::getDictForKey(
   return boost::any_cast<Plist::dictionary_type>(&it->second);
 }
 
-const Plist::array_type *PlistUtils::getArrayForKey(
+Plist::dictionary_type * PlistUtils::getDictForKeyOrCreate(
+    Plist::dictionary_type & _dict,
+    const std::string &      _key
+  )
+{
+  Plist::dictionary_type::iterator it = _dict.find(_key);
+  if (it != _dict.end())
+  {
+    Plist::dictionary_type * pResult = boost::any_cast<Plist::dictionary_type>(&it->second);
+    if (pResult)
+      return pResult;
+  }
+
+  _dict[_key] = Plist::dictionary_type();
+  return boost::any_cast<Plist::dictionary_type>(&_dict[_key]);
+}
+
+const Plist::array_type * PlistUtils::getArrayForKey(
     const Plist::dictionary_type & _dict,
     const std::string &            _key
   )
@@ -63,12 +80,37 @@ const Plist::array_type *PlistUtils::getArrayForKey(
   return boost::any_cast<Plist::array_type>(&it->second);
 }
 
+Plist::array_type * PlistUtils::getArrayForKeyOrCreate(
+    Plist::dictionary_type & _dict,
+    const std::string &      _key
+  )
+{
+  Plist::dictionary_type::iterator it = _dict.find(_key);
+  if (it != _dict.end())
+  {
+    Plist::array_type * pResult = boost::any_cast<Plist::array_type>(&it->second);
+    if (pResult)
+      return pResult;
+  }
+
+  _dict[_key] = Plist::array_type();
+  return boost::any_cast<Plist::array_type>(&_dict[_key]);
+}
+
 const Plist::array_type * PlistUtils::getArrayForIndex(
     const Plist::array_type & _array,
     int                       _index
   )
 {
-  return boost::any_cast<Plist::array_type>(&_array[static_cast<size_t>(_index)]);
+  return boost::any_cast<Plist::array_type>(&_array.at(static_cast<size_t>(_index)));
+}
+
+const Plist::dictionary_type * PlistUtils::getDictForIndex(
+    const Plist::array_type & _array,
+    int                       _index
+  )
+{
+  return boost::any_cast<Plist::dictionary_type>(&_array.at(static_cast<size_t>(_index)));
 }
 
 bool ParsePoint2d(
@@ -142,3 +184,4 @@ size_t LocalRandomInInterval(
   std::uniform_int_distribution<size_t> distr(_min, _max);
   return distr(localGen);
 }
+

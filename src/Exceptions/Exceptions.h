@@ -7,7 +7,7 @@ class MJToolException : public std::runtime_error
 {
 public:
   MJToolException(
-      const std::string & _what_arg
+      const std::string & _whatArg
     );
 };
 

@@ -18,12 +18,14 @@ void MJRandomizer::SetType(
     m_randomWrapper.SetType(CRandomWrapper::eRandomType::match3random);
 }
 
-void MJRandomizer::SetRepeatTypeTimes(int _repeatTypeCount)
+void MJRandomizer::SetRepeatTypeTimes(
+    int _repeatTypeCount
+  )
 {
   m_repeatTypeTimes = _repeatTypeCount;
 }
 
-void MJRandomizer::RandomizeChipsWithSeed(
+bool MJRandomizer::RandomizeChipsWithSeed(
     std::vector<MJChip> &             _initialChips,
     const std::vector<ChipTypePair> & _typesList,
     const std::vector<SPoint2d> &     _firstGoldenChipPositions,
@@ -39,7 +41,7 @@ void MJRandomizer::RandomizeChipsWithSeed(
 
   ValidateChips(_initialChips);
 
-  SpecifyType(_initialChips, _typesList);
+  return SpecifyType(_initialChips, _typesList);
 }
 
 void MJRandomizer::SetupGoldChips(
@@ -139,11 +141,11 @@ void MJRandomizer::ValidateChips(
   for (const MJChip & chip: _initialChips)
   {
     if (chip.GetTypeValue() != INITAL_CHIP_TYPE_VALUE)
-      throw MJToolException("Invalid chip type: " + chip.GetTypeValue());
+      throw MJToolException("Invalid chip valueType: " + chip.GetTypeValue());
   }
 }
 
-void MJRandomizer::SpecifyType(
+bool MJRandomizer::SpecifyType(
     std::vector<MJChip> &             _initialChips,
     const std::vector<ChipTypePair> & _typesList
   )
@@ -161,7 +163,7 @@ void MJRandomizer::SpecifyType(
     std::vector<MJChip *> vacantChips = FindVacantChips(randomizingChip);
 
     if (vacantChips.size() < 2)
-      throw MJToolException("vacantChips.size() < 2");
+      return false;
 
     if (typesCopy.empty())
     {
@@ -177,8 +179,7 @@ void MJRandomizer::SpecifyType(
     vacantChips.erase(vacantChips.begin() + static_cast<int>(secondIndex));
 
     if (firstChip == secondChip)
-      throw ("SpecifyType. Chips must be different.");
-
+      throw MJToolException("SpecifyType. Chips must be different.");
 
     ChipTypePair selectedTypesPair;
     if (repeatTypeCount < 0)
@@ -236,6 +237,8 @@ void MJRandomizer::SpecifyType(
 
   for (MJChip & chip: _initialChips)
     chip.SaveNeighborsInCache();
+
+  return true;
 }
 
 std::vector<MJChip *> MJRandomizer::FindVacantChips(
@@ -251,7 +254,7 @@ std::vector<MJChip *> MJRandomizer::FindVacantChips(
 }
 
 void MJRandomizer::RemoveChipAndChipNeighbors(
-    MJChip * _chip,
+    MJChip *                _chip,
     std::vector<MJChip *> & _chips
   )
 {

@@ -1,9 +1,10 @@
 #include <sstream>
-
-#include "Exceptions/Exceptions.h"
-#include "Chip.h"
 #include <cmath>
 #include <cfloat>
+
+#include "Exceptions/Exceptions.h"
+#include "Utils/Constants.h"
+#include "Chip.h"
 
 static const std::string kChipType = "Type";
 static const std::string kChipTypeValue = "TypeValue";
@@ -14,7 +15,7 @@ static const float MIN_STEP = 0.5f;
 
 MJChip::MJChip()
   : m_eChipType(MJChipTypeStandard)
-  , m_sChipTypeValue("g0")
+  , m_sChipTypeValue(INITAL_CHIP_TYPE_VALUE)
   , m_zOreder(-1)
 {
   m_position.x = -1;
@@ -60,7 +61,9 @@ const std::string & MJChip::GetTypeValue() const
   return m_sChipTypeValue;
 }
 
-void MJChip::SetType(MJChipType _type)
+void MJChip::SetType(
+    MJChipType _type
+  )
 {
   m_eChipType = _type;
 }
@@ -202,25 +205,24 @@ bool MJChip::IsBlockedByNeighbors() const
 
 void MJChip::RemoveFromNeighbors()
 {
-  std::set<MJChip *>::iterator it = m_rNeighborsBottom.begin();
-  for (; it != m_rNeighborsBottom.end(); ++it)
-    (*it)->GetNeighbors(Top).erase(this);
+  for (MJChip * pChip : m_rNeighborsBottom)
+    pChip->GetNeighbors(Top).erase(this);
 
-  for (it = m_rNeighborsLeft.begin(); it != m_rNeighborsLeft.end(); ++it)
-    (*it)->GetNeighbors(Right).erase(this);
+  for (MJChip * pChip : m_rNeighborsTop)
+    pChip->GetNeighbors(Bottom).erase(this);
 
-  for (it = m_rNeighborsRight.begin(); it != m_rNeighborsRight.end(); ++it)
-    (*it)->GetNeighbors(Left).erase(this);
+  for (MJChip * pChip : m_rNeighborsLeft)
+    pChip->GetNeighbors(Right).erase(this);
 
-  for (it = m_rNeighborsTop.begin(); it != m_rNeighborsTop.end(); ++it)
-    (*it)->GetNeighbors(Bottom).erase(this);
+  for (MJChip * pChip : m_rNeighborsRight)
+    pChip->GetNeighbors(Left).erase(this);
 }
 
 bool MJChip::SetPosition(
     const Plist::dictionary_type * _params
     )
 {
-  std::string value; // expected format - {x, y}
+  std::string value; // expected format - "{x, y}"
   if (!_params || !PlistUtils::getStringForKey(*_params, kChipPosition, value))
     return false;
 
